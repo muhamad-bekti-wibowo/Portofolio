@@ -1,0 +1,517 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <style>
+        html {
+            font: Times;
+            font-size: 20px;
+        }
+
+        ul,
+        ol,
+        li {
+            line-height: 25px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <ol style="text-align: left;">
+        <li onclick="TabACtoDCStepDown()">AC to DC Step Down 220 V to XX</li>
+        <div id="ACtoDCStepDown">
+            <script>
+                var Tab = 1;
+                let ACtoDCStepDown = `
+                            <ol>
+                            <li>Power Supply</li>
+                            </ol>
+                            `;
+                function TabACtoDCStepDown() {
+                    if (Tab == 1) {
+                        document.getElementById("ACtoDCStepDown").innerHTML = ACtoDCStepDown;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("ACtoDCStepDown").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabBAReceiver()">Bluetooth Audio Receiver</li>
+        <div id="TabBAReceiver">
+            <script>
+                var Tab = 1;
+                let BAReceiver = `
+                            <ol>
+                            <li>B-09</li>
+                            <li>BT-801</li>
+                            <li>BT-CK-02</li>
+                            <li>VHM-314</li>
+                            </ol>
+                            `;
+                function TabBAReceiver() {
+                    if (Tab == 1) {
+                        document.getElementById("TabBAReceiver").innerHTML = BAReceiver;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabBAReceiver").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabCharging()">Charging</li>
+        <div id="TabCharging">
+            <script>
+                var Tab = 1;
+                let Charging = `
+                            <ol>
+                            <li>TP4056 4,2 V</li>
+                            <li>TP5010 8,4 V</li>
+                            </ol>
+                            `;
+                function TabCharging() {
+                    if (Tab == 1) {
+                        document.getElementById("TabCharging").innerHTML = Charging;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabCharging").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabDCtoDCIsolator()">DC to DC Isolator</li>
+        <div id="TabDCtoDCIsolator">
+            <script>
+                var Tab = 1;
+                let DCtoDCIsolator = `
+                            <ol>
+                            <li>B0505S</li>
+                            </ol>
+                            `;
+                function TabDCtoDCIsolator() {
+                    if (Tab == 1) {
+                        document.getElementById("TabDCtoDCIsolator").innerHTML = DCtoDCIsolator;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabDCtoDCIsolator").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabDCtoDCStepDown()">DC to DC Step Down </li>
+        <div id="TabDCtoDCStepDown">
+            <script>
+                var Tab = 1;
+                let DCtoDCStepDown = `
+                            <ol>
+                                <li>LM2596</li>
+                                <li>MP1584</li>
+                                <li>XL4005</li>
+                                <li>XL4016</li>
+                            </ol>
+                            `;
+                function TabDCtoDCStepDown() {
+                    if (Tab == 1) {
+                        document.getElementById("TabDCtoDCStepDown").innerHTML = DCtoDCStepDown;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabDCtoDCStepDown").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabDCtoDCStepUp()">DC to DC Step Up</li>
+        <div id="TabDCtoDCStepUp">
+            <script>
+                var Tab = 1;
+                let DCtoDCStepUp = `
+                            <ol>
+                            <li>MT3608</li>
+                            </ol>
+                            `;
+                function TabDCtoDCStepUp() {
+                    if (Tab == 1) {
+                        document.getElementById("TabDCtoDCStepUp").innerHTML = DCtoDCStepUp;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabDCtoDCStepUp").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabDCtoDCStepUpdanDown()">DC to DC Step Up dan Down</li>
+        <li onclick="TabDisplay()">Display</li>
+        <div id="TabDisplay">
+            <script>
+                var Tab = 1;
+                let Display = `
+                            <ol>
+                            <li>LCD 1602 16X2</li>
+                            <li>LCD 2004 20X4</li>
+                            <li>OLED Display 0,91” I2C 128X32</li>
+                            <li>OLED Display 0,96” I2C 128X64</li>
+                            <li>WS2812</li>
+                            </ol>
+                            `;
+                function TabDisplay() {
+                    if (Tab == 1) {
+                        document.getElementById("TabDisplay").innerHTML = Display;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabDisplay").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabInput()">Input</li>
+        <div id="TabInput">
+            <script>
+                var Tab = 1;
+                let Input = `
+                            <ol>
+                            <li>ADC ADS11115</li>
+                            <li>Arus / Magnet ACS 172</li>
+                            <li>Cahaya GY-302 / BH1750</li>
+                            <li>Capasitansi TTP223</li>
+                            <li>Clock Rotary Encoder</li>
+                            <li>Gas Karbon Monoksida MQ07</li>
+                            <li>Gas LPG, Butane, LNG MQ06</li>
+                            <li>Gas LPG, Butane, Metana, Asap MQ02</li>
+                            <li>Gerak HC-SR501</li>
+                            <li>Infrared HX1838</li>
+                            <li>Jarak GY-530</li>
+                            <li>Jarak HC-SR04</li>
+                            <li>Jarak JSN-SR04T</li>
+                            <li>Jarak Obstacle Avoidance</li>
+                            <li>Sinyal RF 433 MHz </li>
+                            <li>Suara KY 037</li>
+                            <li>Suara MAX4466</li>
+                            <li>Suhu dan Humidity AHT10</li>
+                            <li>Suhu dan Humidity DHT11</li>
+                            <li>Suhu dan Humidity DHT22</li>
+                            <li>Tegangan Joystick</li>
+                            <li>Tegangan, Arus INA219</li>
+                            <li>Tegangan, Arus, Watt, KWH, Frekuensi, Faktor Daya, Listrik AC PZEM 004</li>
+                            <li>Waktu DS3231</li>
+                            </ol>
+                            `;
+                function TabInput() {
+                    if (Tab == 1) {
+                        document.getElementById("TabInput").innerHTML = Input;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabInput").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabOutput()">Output</li>
+        <div id="TabOutput">
+            <script>
+                var Tab = 1;
+                let Output = `<ol>
+                            <li>Buzzer </li>
+                            <li>DF-PLayer</li>
+                            <li>Kipas FAN DC 12V</li>
+                            <li>L298N</li>
+                            <li>Laser KY-008</li>
+                            <li>LED</li>
+                            <li>Motor Servo Tower Pro SG90</li>
+                            <li>Speaker</li>
+                            </ol>
+                            `;
+                function TabOutput() {
+                    if (Tab == 1) {
+                        document.getElementById("TabOutput").innerHTML = Output;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabOutput").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabOPAmplifier()">OP / Pre Amplifier</li>
+        <div id="TabOPAmplifier">
+            <script>
+                var Tab = 1;
+                let OPAmplifier = `
+                            <ol>
+                                <li>JRC4558</li>
+                                <li>JRC4580</li>
+                                <li>LF353</li>
+                                <li>LM4562NA</li>
+                                <li>MAX9812L</li>
+                                <li>NE5532</li>
+                                <li>TL072</li>
+                            </ol>
+                            `;
+                function TabOPAmplifier() {
+                    if (Tab == 1) {
+                        document.getElementById("TabOPAmplifier").innerHTML = OPAmplifier;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabOPAmplifier").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabPowerAmplifier()">Power Amplifier</li>
+        <div id="TabPowerAmplifier">
+            <script>
+                var Tab = 1;
+                let PowerAmplifier = `
+                            <ol>
+                                <li>Class A</li>
+                                <ol>
+                                    <li>TIP42</li>
+                                </ol>
+                                <li>Class AB</li>
+                                <ol>
+                                    <li>TDA2030</li>
+                                    <li>TDA1308</li>
+                                    <li>TDA2050</li>
+                                </ol>
+                                <li>Class D</li>
+                                <ol>
+                                    <li>PAM8304</li>
+                                    <li>PAM8410</li>
+                                    <li>TPA3118</li>
+                                    <li>XH-M139</li>
+                                    <li>XH-M544</li>
+                                    <li>XY-P15Y</li>
+                                </ol>
+                            </ol>
+                            `;
+                function TabPowerAmplifier() {
+                    if (Tab == 1) {
+                        document.getElementById("TabPowerAmplifier").innerHTML = PowerAmplifier;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabPowerAmplifier").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabComparator()">Comparator</li>
+        <div id="TabComparator">
+            <script>
+                var Tab = 1;
+                let Comparator = `
+                            <ol>
+                            <li>LM358</li>
+                            </ol>
+                            `;
+                function TabComparator() {
+                    if (Tab == 1) {
+                        document.getElementById("TabComparator").innerHTML = Comparator;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabComparator").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabProtection()">Protection</li>
+        <div id="TabProtection">
+            <script>
+                var Tab = 1;
+                let Protection = `
+                            <ol>
+                            <li>HX - 2S - JH20 </li>
+                            </ol>`;
+                function TabProtection() {
+                    if (Tab == 1) {
+                        document.getElementById("TabProtection").innerHTML = Protection;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabProtection").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabRegulatorTegangan()">Regulator Tegangan</li>
+        <div id="TabRegulatorTegangan">
+            <script>
+                var Tab = 1;
+                let RegulatorTegangan = `
+                            <ol>
+                                <li>78LXX</li>
+                                <li>78XX</li>
+                                <li>AMS1117 XX</li>
+                                <li>LM317</li>
+                            </ol>
+                            `;
+                function TabRegulatorTegangan() {
+                    if (Tab == 1) {
+                        document.getElementById("TabRegulatorTegangan").innerHTML = RegulatorTegangan;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabRegulatorTegangan").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabSwitch()">Switch</li>
+        <div id="TabSwitch">
+            <script>
+                var Tab = 1; var Tab1 = 1; var Tab2 = 1; var Tab3 = 1;
+                let Switch = `
+                            <ol>
+                            <li onclick="Tab1BipolarTransistor()">Bipolar Transistor</li>
+                                <div id="Tab1BipolarTransistor"></div>
+                                <li>Driver Mosfet TC4420CPA 6A </li>
+                                <li onclick="Tab2Mosfet()">Mosfet</li>
+                                <div id="Tab2Mosfet"></div>
+                                <li onclick="Tab3Relay()">Relay</li>
+                                <div id="Tab3Relay"></div>
+                                <li>TRIAC 16 A 600 V</li>
+                                <li>UC3843 </li>
+                            </ol>
+                            `;
+                let Relay = `
+                            <ul>
+                                <li>1 Channel 5V</li>
+                                <li>2 Channel 5V</li>
+                                <li>4 Channel 5V</li>
+                            </ul>
+                            `;
+                let BipolarTransistor = `
+                            <ul>
+                                <li>BC548</li>
+                                <li>BC558</li>
+                                <li>S9011</li>
+                                <li>S9012</li>
+                                <li>S9013</li>
+                                <li>TIP41C</li>
+                                <li>TIP42C</li>
+                            </ul>
+                            `;
+                let Mosfet = `
+                            <ul>
+                                <li>7A 600 V</li>
+                                <li>A2sHB 20 V 2,1 A</li>
+                                <li>IRF3205 55V 110 A</li>
+                                <li>IRF3205BF 55V 98A</li>
+                                <li>IRF4905 74 A 55 V</li>
+                                <li>IRFZ44N 55 V 49 A</li>
+                            </ul>
+                            `;
+                function Tab1BipolarTransistor() {
+                    if (Tab1 == 1) {
+                        document.getElementById("Tab1BipolarTransistor").innerHTML = BipolarTransistor;
+                        Tab1 = 0;
+                    }
+                    else {
+                        document.getElementById("Tab1BipolarTransistor").innerHTML = "";
+                        Tab1 = 1;
+                    }
+                }
+                function Tab2Mosfet() {
+                    if (Tab2 == 1) {
+                        document.getElementById("Tab2Mosfet").innerHTML = Mosfet;
+                        Tab2 = 0;
+                    }
+                    else {
+                        document.getElementById("Tab2Mosfet").innerHTML = "";
+                        Tab2 = 1;
+                    }
+                }
+                function Tab3Relay() {
+                    if (Tab3 == 1) {
+                        document.getElementById("Tab3Relay").innerHTML = Relay;
+                        Tab3 = 0;
+                    }
+                    else {
+                        document.getElementById("Tab3Relay").innerHTML = "";
+                        Tab3 = 1;
+                    }
+                }
+                function TabSwitch() {
+                    if (Tab == 1) {
+                        document.getElementById("TabSwitch").innerHTML = Switch;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabSwitch").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabTimer()">Timer</li>
+        <div id="TabTimer">
+            <script>
+                var Tab = 1;
+                let Timer = `
+                            <ol>
+                                <li>CD4017</li>
+                                <li>NE555</li>
+                                <li>TLC555CP</li>
+                            </ol>`;
+                function TabTimer() {
+                    if (Tab == 1) {
+                        document.getElementById("TabTimer").innerHTML = Timer;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabTimer").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+        <li onclick="TabPenyearah()">Penyearah</li>
+        <div id="TabPenyearah">
+            <script>
+                var Tab = 1;
+                let Penyearah = `
+                            <ol>
+                            <li>SS34 30 V 4 A</li>
+                            <li>UF4007</li>
+                            </ol>`;
+                function TabPenyearah() {
+                    if (Tab == 1) {
+                        document.getElementById("TabPenyearah").innerHTML = Penyearah;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabPenyearah").innerHTML = "";
+                        Tab = 1;
+                    }
+                }
+            </script>
+        </div>
+    </ol>
+</body>
+
+</html>
