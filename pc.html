@@ -20,12 +20,12 @@
 </head>
 
 <body>
-    <div onclick="TabSpekPC()">My Spek PC</div>
-    <br />
-    <div id="TabSpekPC">
-        <script>
-            var Tab = 1;
-            let SpekPC = `
+    <div style="font-size: 10px; letter-spacing: 0.1px; line-height: 15px;">
+        <div onclick="TabSpekPC()">My Spek PC</div>
+        <div id="TabSpekPC">
+            <script>
+                var Tab = 1;
+                let SpekPC = `
             <ul style="text-align: left;">
         <li>Prosesor | Ryzen 5 3400G | OC Speed 4,250 Ghz 1,45 V | 4 Core 8 Treads | Rp 2.178.000
         </li>
@@ -53,26 +53,25 @@
         <li>Monitor | LED 24" 24MP59 | 99 % RGB 75hz | Rp1.798.000
         </li>
     </ul>Total = 9.637.500,-<div>`;
-            function TabSpekPC() {
-                if (Tab == 1) {
-                    document.getElementById("TabSpekPC").innerHTML = SpekPC;
-                    Tab = 0;
+                function TabSpekPC() {
+                    if (Tab == 1) {
+                        document.getElementById("TabSpekPC").innerHTML = SpekPC;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabSpekPC").innerHTML = "";
+                        Tab = 1;
+                    }
                 }
-                else {
-                    document.getElementById("TabSpekPC").innerHTML = "";
-                    Tab = 1;
-                }
-            }
-        </script>
-    </div>
-    
-    <br />
-    <div onclick="TabAksesorisPC()">Aksesoris PC</div>
-    <br />
-    <div id="TabSpekPC">
-        <script>
-            var Tab = 1;
-            let AksesorisPC = `
+            </script>
+        </div>
+
+        
+        <div onclick="TabAksesorisPC()">Aksesoris PC</div>
+        <div id="TabAksesorisPC">
+            <script>
+                var Tab = 1;
+                let AksesorisPC = `
                 <ul style="text-align: left;">
             <li>Mouse | Logitech M170 | Rp 105.000
             </li>
@@ -106,25 +105,25 @@
                 <li>Power Supply</li>
             </ul>
         </ul>Total = 801.300,-<div>`;
-            function TabAksesorisPC() {
-                if (Tab == 1) {
-                    document.getElementById("TabAksesorisPC").innerHTML = AksesorisPC;
-                    Tab = 0;
+                function TabAksesorisPC() {
+                    if (Tab == 1) {
+                        document.getElementById("TabAksesorisPC").innerHTML = AksesorisPC;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabAksesorisPC").innerHTML = "";
+                        Tab = 1;
+                    }
                 }
-                else {
-                    document.getElementById("TabAksesorisPC").innerHTML = "";
-                    Tab = 1;
-                }
-            }
-        </script>
-    </div>
-    
-    <br />
-    <div onclick="TabSuperAksesoris()">Super Aksesoris<br /></div>
-    <div id="SuperAksesoris">
-        <script>
-            var Tab = 1;
-            let SuperAksesoris = `<ul style="text-align: left;">
+            </script>
+        </div>
+
+        
+        <div onclick="TabSuperAksesoris()">Super Aksesoris<br /></div>
+        <div id="TabSuperAksesoris">
+            <script>
+                var Tab = 1;
+                let SuperAksesoris = `<ul style="text-align: left;">
                 <li>Google Home Mini | Rp 399.000
                 </li>
                 <li>Mikrotik | RB941-2nD | 4 LAN | 1 WLAN | Rp 352.550
@@ -143,23 +142,23 @@
                 </li>
             </ul>Total = 13.954.350,-
         </div>`;
-            function TabSuperAksesoris() {
-                if (Tab == 1) {
-                    document.getElementById("TabSuperAksesoris").innerHTML = SuperAksesoris;
-                    Tab = 0;
+                function TabSuperAksesoris() {
+                    if (Tab == 1) {
+                        document.getElementById("TabSuperAksesoris").innerHTML = SuperAksesoris;
+                        Tab = 0;
+                    }
+                    else {
+                        document.getElementById("TabSuperAksesoris").innerHTML = "";
+                        Tab = 1;
+                    }
                 }
-                else {
-                    document.getElementById("TabSuperAksesoris").innerHTML = "";
-                    Tab = 1;
-                }
-            }
-        </script>
-    </div>
-    
-    <div>Total Semua = 24.393.150,-
-        <br />Spek Seperti ini saya gunakan untuk banyak hal dari mulai main game, bikin
-        vidio, bikin program dll
-    </div>
+            </script>
+        </div>
+
+        <div>Total Semua = 24.393.150,-
+            <br />Spek Seperti ini saya gunakan untuk banyak hal dari mulai main game, bikin
+            vidio, bikin program dll
+        </div>
     </div>
 </body>
 
