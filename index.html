@@ -1,729 +1,361 @@
-<!DOCTYPE>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <head>
-    <title>Page Control My Home</title>
-    <link href='https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0AuJo-L59TBEj-Kw/root/content' rel='stylesheet'
-        type='text/css' />
-    <!-- Slider -->
-    <link href='https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLgax_wGJCutbDntXNKw/root/content' rel='stylesheet'
-        type='text/css' />
-    <!-- Switch -->
     <style>
-        #VVIP {
-            width: 500px;
-            background-color: rgb(39, 39, 39);
-            color: white;
-            margin: 0px auto;
+        html {background-color: rgb(19, 19, 19);
+            font: Times;
+            font-size: 20px;
+        }
+
+        ul,
+        ol,
+        li {
+            line-height: 25px;
+            letter-spacing: 0.5px;
         }
     </style>
-    
 </head>
 
 <body>
-    <div id="VVIP">
-        <div>
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Enter Password with this slider :
-                    </div>
-                    <span style="margin: 15px 6px 0px 10px; ">Pass : </span>
-                    <span id="Password-Server" style="margin: 15px 6px 0px 10px; ">0</span>
-                </div>
-                <div style="width: 200px;">
-                    <div style=" margin: 11px 0px 0px 10px;"><span>A</span>
-                        <span id="Pass-A">100</span>
-                        <input type="range" onchange="PassA(this.value)" id="PasswordA" min="0" max="100" value="100"
-                            step="1" class="Control-Volume">
-                    </div>
-                    <div style=" margin: 5px 0px 0px 10px;"><span>B</span>
-                        <span id="Pass-B">0</span>
-                        <input type="range" onchange="PassB(this.value)" id="PasswordB" min="0" max="100" value="0"
-                            step="1" class="Control-Volume">
-                    </div>
-                    <div style=" margin: 5px 0px 0px 10px;"><span>C</span>
-                        <span id="Pass-C">0</span>
-                        <input type="range" onchange="PassC(this.value)" id="PasswordC" min="0" max="100" value="0"
-                            step="1" class="Control-Volume">
-                    </div>
-                    <div style=" margin: 5px 0px 0px 10px;"><span>D</span>
-                        <span id="Pass-D">0</span>
-                        <input type="range" onchange="PassD(this.value)" id="PasswordD" min="0" max="100" value="0"
-                            step="1" class="Control-Volume">
-                    </div>
-                    <div style=" margin: 5px 0px 0px 10px;"><span>E</span>
-                        <span id="Pass-E">0</span>
-                        <input type="range" onchange="PassE(this.value)" id="PasswordE" min="0" max="100" value="0"
-                            step="1" class="Control-Volume">
-                    </div>
-                    <div style=" margin: 5px 0px 0px 10px;"><span>F</span>
-                        <span id="Pass-F">0</span>
-                        <input type="range" onchange="PassF(this.value)" id="PasswordF" min="0" max="100" value="0"
-                            step="1" class="Control-Volume">
-                    </div>
-                </div>
-            </div>
-            <script src='https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0Di9COz4RGUKctmA/root/content'
-                type='text/javascript'>
-                    <!-- Password -->
-                </script>
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Street lights :
-                    </div>
-                    <div style="display: flex; ">
-                        <div style="margin: 24px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 200px;">
-                    <div style=" margin: 57px 6px 6px 10px;">
+    <!-- <div>
+        Welcome !
 
-                        A Voice Level :
-                    </div>
-                    <div style=" margin: 22px 6px 6px 10px;">
-                        A Motion :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
+    </div>
+    <div>
+        I am
 
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StreetlightsSwitch(this.checked)">
-                            <span class="slider"></span>
+    </div>
+    <div>
+        Muhamad Bekti Wibowo
 
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <script src='https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0BRLH0OSpvMl3p9Q/root/content'
-                type='text/javascript'>
-                    <!-- Street lights Switch -->
-                </script>
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Front Lamp :
-                    </div>
-                    <div style="display: flex; ">
-                        <div style="margin: 24px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 200px;">
-                    <div style=" margin: 57px 6px 6px 10px;">
-                        A Voice Level :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="ubahposisi(this.checked)">
-                            <span class="slider"></span>
 
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
+    </div>
+    <div>
+        Programer
+    </div>
+    <div>
+        Portofolio
+    </div>
+    <div>
+        View Work
+    </div>
+    <div>
+        Hire Me !
+    </div>-->
+    <div style="display: flex; color:white; padding: 20px;  ">
+        <div style="width:500px;">
+            <span style="font-size: 40px;">Keahlian Saya</span>
+            <div style="letter-spacing: 0.5px; line-height: 25px;">
+                <ol style="text-align: left;">
+                    <li id="BahasaP" onclick="TabProgramming()">Programing</li>
+                    <div id="Bahasa"style="display: none;">
+                        <script>
+                            $(document).ready(function(){
+  $("#BahasaP").click(function(){
+    $("#Bahasa").slideToggle("slow");
+  });
+});
+                            var Tab = 1;
+                            let BProgramming = `
+                            <ul style=" margin: 0px 0px 0px -25px; text-align: left; font-size: 15px; letter-spacing: 0.1px; line-height: 15px;">
+                                <li>Microcontroller</li>
+                                <ul style=" margin: 0px 0px 0px -25px;">
+                                    <li>Arduino Programing</li>
+                                    <ol style=" margin: 0px 0px 0px -25px;">
+                                        <li>Arduino Mega</li>
+                                        <li>Arduino Uno R3</li>
+                                        <li>Arduino Pro Mini</li>
+                                    </ol>
+                                    <li>ESP8266 Programing</li>
+                                    <ol style=" margin: 0px 0px 0px -25px;">
+                                        <li>01</li>
+                                        <li>NodeMCU</li>
+                                        <li>Wemos-D1-Mini</li>
+                                    </ol>
+                                    <li> ESP32 Programing</li>
+                                    <ol style=" margin: 0px 0px 0px -25px;">
+                                        <li>Dev Module</li>
+                                        <li>AI Thinker CAM</li>
+                                    </ol>
+                                    <li onclick="TabTested()">Modul dan Komponen Tested</li>
+                                    <div id="Lihat">
+                                    </div>
+                                </ul>
+                                <li> Server Programing</li>
+                                <ol style=" margin: 0px 0px 0px -25px;">
+                                    <li>MySQL Programing Or Setting</li>
+                                    <li>PHP Programing</li>
+                                    <li>XML Programing For Blogger</li>
+                                </ol>
+                                <li>Website Programing</li>
+                                <ol style=" margin: 0px 0px 0px -25px;">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Javascript</li>
+                                <ol style=" margin: 0px 0px 0px -25px;">
+                                    <li>Javascript</li>
+                                    <li>J Query</li>
+                                </ol>
+                            </ol>
+                            <li>PLC Programing With Software...</li>
+                                <ol style=" margin: 0px 0px 0px -25px;">
+                                    <li> CX Programmer </li>
+                                    <li> Out Seal</li>
+                                </ol>
+                            </ul>`;
+                            function TabProgramming() {
+                                if (Tab == 1) {
+                                    document.getElementById("Bahasa").innerHTML = BProgramming;
+                                    Tab = 0;
+                                }
+                                else {
+                                       Tab = 1;
+                                }
+                            }
+                        </script>
                     </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Front RGB Lamp :
-                    </div>
-                    <div style="display: flex; ">
-                        <div id="idRGBFrontLampFeatures" style="margin: 28px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 200px;">
-                    <div id="RGB-FrontLamp" style="display: flex; flex-direction: column;">
-                    </div>
-                    <div id="idRGBFrontLamp" style=" margin: 78px 6px 6px 10px;">
-                        A Voice Level :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="RGBFrontLamp(this.checked)">
-                            <span class="slider"></span>
+                    <li onclick="TabProduk()">Buat Produk Elektronik</li>
 
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
+                    <div id="Hasil-Produk"></div>
+                    <li onclick="Tab()">Maintenance Sistem
+                        Kelistrikan</li>
+                    <li onclick="TabMikroTik()">Konfigurasi MikroTik</li>
+                    <div id="Hasil-Konfig"></div>
+                    <li id="panel" onclick="TabKomputer()">Merakit Komputer</li>
+                    <div id="MyPC">
+                        <script>
+                            var Tab = 1;
+                            function TabKomputer() {
+                                if (Tab == 1) {
+                                    $("#MyPC").load("https://muhamad-bekti-wibowo.github.io/Portofolio/pc.html");
+                                    Tab = 0;
+                                }
+                                else {
+                                    document.getElementById("MyPC").innerHTML = "";
+                                    Tab = 1;
+                                    
+                                }
+                            }
+                        </script>
                     </div>
-                    <div id="idRGBFrontLampVoice" style=" margin: 28px 10px 10px 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <script src='https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0CdHTtn2aOR0k4Rg/root/content'
-                type='text/javascript'>
-                    <!-- RGB Lamp -->
-                </script>
-            <script src='https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0FqvCsl57fkeQuCw/root/content'
-                type='text/javascript'>
-                    <!-- Time -->
-                </script>
 
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Living Room Lamp :
-                    </div>
-                    <div style="display: flex; ">
-                        <div style="margin: 24px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 200px;">
-                    <div style=" margin: 57px 6px 6px 10px;">
-                        A Motion :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="ubahstatus(this.checked)">
-                            <span class="slider"></span>
+                    <li onclick="TabKonsultasi()">Konsultasi</li>
+                    <div id="Contoh-Konsul"></div>
+                    <li>Project Me</li>
+                    <ol>
+                        <li onclick="TabProjectSmartHome()">Smart Home [Control your home anywhere and any website]
+                        </li>
+                        <li onclick="TabProjectSmartBel()">Smart Bel</li>
+                        <li onclick="TabProjectSmartRoom()">Smart Room</li>
+                    </ol>
+                </ol>
 
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
+                <div id="Tested">
+                    <script>
+                        var Tab = 1;
+                        function TabTested() {
+                            if (Tab == 1) {
+                                $("#Tested").load("https://muhamad-bekti-wibowo.github.io/Portofolio/list.html");
+                                Tab = 0;
+                                document.getElementById("Lihat").innerHTML = "~~~~ Lihat di bawah ~~~~";
+                            }
+                            else {
+                                document.getElementById("Tested").innerHTML = "";
+                                document.getElementById("Lihat").innerHTML = "";
+                                Tab = 1;
+                            }
+                        }
+                    </script>
                 </div>
+
             </div>
 
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Dining Room Lights :
-                    </div>
-                    <div style="display: flex; ">
-                        <div style="margin: 24px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 200px;">
-                    <div style=" margin: 57px 6px 6px 10px;">
-                        A Motion :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="nano(this.checked)">
-                            <span class="slider"></span>
 
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                </div>
+
+
+
+
+
+
+
+
+
+        </div>
+        <div style="width:3%;">
+            Foto
+        </div>
+        <div style="width:3%;">
+            Siapa Saya
+        </div>
+
+
+        <!--
+    <div class="sizez">
+
+        <hr />
+        <div class="display" id="Konsultasi">
+            <div class="Text" id="Konsultasi"><span class="konsul">Contact Me...</span>
+                <hr />
+                <a href="https://wa.me/088212711176" title="WhatsApp"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPn_HLOX5NVut-8hd1D_MSsvioVVujfyLmTJYN91wnCOzRbb4fYJmZKI7EIjBLJ0KF-ID0lWHRWNuNuVH3z_dqTITEg2gLB0-Ydh7Vlu2yXW9MqWE6PKtIxO1gBw71pvaxtXGKguk3okziojoz4jiELBhvYUCx_Ed4tkpj1pVVk__iyj5TGcadSCjs1A/s1600/watsap.png" />&nbsp;<span
+                        class="konsul">WhatsApp</span></a>
+                <hr />
+                <a href="https://t.me/MBektiW" title="Telegram"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHbgQEjlD6WN_rpb1qO3wXj0MpqZXNfB1wlyQ9g624qJ-uYPGHDk7kNYOHNZCF5JzpVXtij10-5COsgOdmdopUsMnYoAxCekKg_ukPQMlTEfKXd250vghEQTXnuzRKAvplMCee7BheEtOAQxhFJ9PzzNEMYkWANOynKW4faBMPrCg0nJOEG7OiHhpdhA/s16/telegram.png" />&nbsp;<span
+                        class="konsul">Telegram</span></a>
+                <hr />
+                <a href="https://m.me/Muhamad.bekti.Wibowo" title="Facebook Messengger"><img height="16" id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRbmA3pInt-3irdVZncHtQwNB_Nnti64TmC0rsm2jBRKGDWNt4yDd9-AV4Q7SCHIUCGfHINlCEYLpnXLeWkXGwUkF-Q0xFTs0_P8HvyQA1W2kZNO8dfnQSTIgah20RHq6nRa_116dBHH2x1zUanf0Di4HSaAsvhOrHiyjLfrKAnx8z_5P8VEa3MB9llQ/s1600/facebook-messenger.png"
+                        width="16" />&nbsp;<span class="konsul">Facebook Messenger</span></a><br />
+                <hr />
             </div>
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        My Room
-                    </div>
-                    <div style="display: flex; ">
-                        <div style="margin: 105px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-
-                <div style="width: 200px;">
-                    <div style=" margin: 15px 6px 6px 10px;">
-                        Fan :
-                    </div>
-                    <div style=" margin: 22px 6px 6px 10px;">
-                        Lamp :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            Anti Trip System :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-
-                    </div>
-                    <div style=" margin: 23px 6px 6px 10px;">
-
-                        A Voice Level :
-                    </div>
-                    <div style=" margin: 22px 6px 6px 10px;">
-                        A Motion :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="ubahstatus(this.checked)">
-                            <span class="slider"></span>
-
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="ubahstatus(this.checked)">
-                            <span class="slider"></span>
-
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-
-                </div>
+            <div class="Text" id="Konsultasi"><span class="konsul">Konten Me...</span>
+                <hr />
+                <a href="https://stat-upgrade.blogspot.com" title="Blog"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYEvcRwYMixI7HmozkUi8AePvBcuEFhh3ZfT2rGNTFJzoXhNjSRIbkzrHHO02FCLxymT-leZTfPAhR8V3Qv7TLOJwjXPfw2izfr3TX4orxu5YvzMa23Lc4udtToakqiQ4lb4lmvwLZM9P1TT0yDHM5EKZMwPe226CZovMgUF92nBVmAZ-jEQF46etTPg/s1600/blog.png" />&nbsp;<span
+                        class="Konten">Konten Edukasi By Me ~Blog</span></a>
+                <hr />
+                <a href="https://www.youtube.com/@muhamad-bekti-wibowo" title="Youtube"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkz__6cDsyDDLJsMMubzbVflGyIdZPBwvPJFmzmrN-FHRxW2REneUr6ZPtOpayK5ZtDbJhWge1_-7XAM6uH6tdhfPilJAkmcgCQAK3SmQFgDCaKYtQi4k63-fh8Zm0sk3bif0RrkZ8UmnZKP4NB1Aw3chY_7K8G5mQGkpi6EdzH4aRLMGyYGBg_GaZkg/s16000/youtube.png" />&nbsp;<span
+                        class="Konten">Konten Edukasi By Me ~Youtube</span></a>
+                <hr />
+                <a href="https://www.youtube.com/@obow-bermain-game" title="Youtube"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkz__6cDsyDDLJsMMubzbVflGyIdZPBwvPJFmzmrN-FHRxW2REneUr6ZPtOpayK5ZtDbJhWge1_-7XAM6uH6tdhfPilJAkmcgCQAK3SmQFgDCaKYtQi4k63-fh8Zm0sk3bif0RrkZ8UmnZKP4NB1Aw3chY_7K8G5mQGkpi6EdzH4aRLMGyYGBg_GaZkg/s16000/youtube.png" />&nbsp;<span
+                        class="Konten">Konten Bermain Game ~Youtube</span></a>
+                <hr />
             </div>
+            <div class="Text" id="Konsultasi"><span class="konsul">Follow Me...</span>
+                <hr />
+                <a href="www.facebook.com/muhamad.bektiwibowo" title="Facebook"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVE7C8Lty9MOI94v_L5GUYmgDPzGjGuDoiMz96M3ciFo4a2htNEI9O6dxo40e2QaZWU41razWxRdiPTEsR5IG1yWPPSkKFiaJXj6rKqC7Qw7Q3LLeqZ3mrTuI-CJQt_dwdvGvdCma3fk4-Y6g4VKpKvFcmZpsB7bipUtDynM4wef-pOTN0fZS03OVIpg/s1600/facebook.png" />&nbsp;<span
+                        class="Sosmed">Facebook</span></a>
 
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Dining Room Lights :
-                    </div>
-                    <div style="display: flex; ">
-                        <div style="margin: 24px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 200px;">
-                    <div style=" margin: 57px 6px 6px 10px;">
-                        A Motion :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="ubahstatus(this.checked)">
-                            <span class="slider"></span>
+                <hr />
+                <a href="https://www.instagram.com/muhamadbekti.wibowo" title="Instagram"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLes64W42hPn_14sxvbMgEa3J2AWQOaTFd3RGqM3lFNmEiFoqTdLH-cNYz2MfWC9ot_BeX4CSdCQ0_N3yjFbRgEH29UmmrUcEvKFZbsV5aCyNVnRrv5yNsMn5V60TgCpHMCaCJBhq96g5cXZ05R7shaySnunCFVKcl2xi2HjJxeh_ITE7-RrIBGlcoWw/s1600/instagram.png" />&nbsp;<span
+                        class="Sosmed">Instagram</span></a>
 
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                </div>
+                <hr />
+                <a href="https://www.tiktok.com/@muhamadbektiwibowo" title="Tik Tok"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhErR7XRNo_iDM9-0CMG7dxpVxe9_OJXOwD1O2hoOtAnaz6j7l-RE9RQXnLT_kouFQPEi0-yT5NWVAN6Ki52P9HUhHwBSosGtfRfvs5pdYg3RdFO1obp-LIj4_9th91aRqTdJ6VxqdTApY9B4cMh-c5qv8sOKF7bEM6r4zQKUaPYDvo7tSszcjfi7er0g/s1600/tiktok.png" />&nbsp;<span
+                        class="Sosmed">Tik Tok</span></a>
+                <hr />
             </div>
-
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Kitchen
-                    </div>
-                    <div style="display: flex; ">
-                        <div style="margin: 64px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-
-                <div style="width: 200px;">
-                    <div style=" margin: 15px 6px 6px 10px;">
-                        Lamp :
-                    </div>
-                    <div style=" margin: 22px 6px 6px 10px;">
-                        Water pump :
-                    </div>
-                    <div style=" margin: 23px 6px 6px 10px;">
-
-                        A Voice Level :
-                    </div>
-                    <div style=" margin: 22px 6px 6px 10px;">
-                        A Motion :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="ubahstatus(this.checked)">
-                            <span class="slider"></span>
-
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="ubahstatus(this.checked)">
-                            <span class="slider"></span>
-
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-
-
-                </div>
-            </div>
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Headlights for the second floor :
-                    </div>
-                    <div style="display: flex; ">
-                        <div style="margin: 9px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 200px;">
-                    <div style=" margin: 57px 6px 6px 10px;">
-                        A Motion :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="ubahstatus(this.checked)">
-                            <span class="slider"></span>
-
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Second floor living room lamp :
-                    </div>
-                    <div style="display: flex; ">
-                        <div style="margin: 9px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 200px;">
-                    <div style=" margin: 57px 6px 6px 10px;">
-                        A Motion :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="ubahstatus(this.checked)">
-                            <span class="slider"></span>
-
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div style="display: flex; margin: 20px; width: 92.5%; background-color: rgb(34, 34, 34);">
-                <div style="width: 34%;  ">
-                    <div style="margin: 15px 6px 0px 10px; ">
-                        Second floor tail light :
-                    </div>
-                    <div style="display: flex; ">
-                        <div style="margin: 9px 6px 0px 10px; ">
-                            AI System Features :
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 200px;">
-                    <div style=" margin: 57px 6px 6px 10px;">
-                        A Motion :
-                    </div>
-                    <div>
-                        <div style=" margin: 19px 6px 6px 10px;">
-                            A Time :
-                        </div>
-                    </div>
-                    <div>
-                        <div id="IDStatsTime" style="display: flex;"></div>
-                    </div>
-                </div>
-                <div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="ubahstatus(this.checked)">
-                            <span class="slider"></span>
-
-                            <span class="labels" data-on="ON" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                    <div style=" margin: 10px;">
-                        <label class="toggle">
-                            <input type="checkbox" onchange="StatsTime(this.checked)" id="test">
-                            <span class="slider"></span>
-                            <span class="labels" data-on="A" data-off="OFF"></span>
-                        </label>
-                    </div>
-                </div>
+            <div class="Text" id="Konsultasi"><span class="konsul">Product Me...</span>
+                <hr />
+                <a href="https://shopee.co.id/muhamadbektiwibowo" title="Shopee"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVx0sNnkV2aNwTYK-IfaVKYs9fr4HtaMH8dAsf2TVMIpz4j60VcjrTtHVChdiEMhfJDEE7iiSTZijXUoUClETtr5p9-yE7_4BFDu-iXD9iO0ZT7_sriENa1-V7cb8uVurVqQAU3WKYs46rq3Hal2kmJUdJ-SNPqhuUoSRCK_b9cVR90lpKrLNo5fS16w/s1600/shope.png" />&nbsp;<span
+                        class="Toko">Shopee</span></a>
+                <hr />
+                <a href="https://shopee.co.id/muhamadbektiwibowo" title="Toko di blog"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYEvcRwYMixI7HmozkUi8AePvBcuEFhh3ZfT2rGNTFJzoXhNjSRIbkzrHHO02FCLxymT-leZTfPAhR8V3Qv7TLOJwjXPfw2izfr3TX4orxu5YvzMa23Lc4udtToakqiQ4lb4lmvwLZM9P1TT0yDHM5EKZMwPe226CZovMgUF92nBVmAZ-jEQF46etTPg/s1600/blog.png" />&nbsp;<span
+                        class="Toko">Toko di Blog</span></a>
+                <hr />
+                <a href="https://shopee.co.id/muhamadbektiwibowo" title="Shopee"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVx0sNnkV2aNwTYK-IfaVKYs9fr4HtaMH8dAsf2TVMIpz4j60VcjrTtHVChdiEMhfJDEE7iiSTZijXUoUClETtr5p9-yE7_4BFDu-iXD9iO0ZT7_sriENa1-V7cb8uVurVqQAU3WKYs46rq3Hal2kmJUdJ-SNPqhuUoSRCK_b9cVR90lpKrLNo5fS16w/s1600/shope.png" />&nbsp;<span
+                        class="Toko">Website</span></a>
+                <hr />
             </div>
         </div>
-    </div>
+        <div class="display" id="Konsultasi">
+            <div class="Text-Kanan" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
+                        class="Data-Free">Koleksi Me...</span>
+                    <hr />
+                </a><a href="https://drive.google.com/drive/folders/18J1ZBaUhDTAq0q4G-koLkY3eNM6rBsKB" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
+                        class="Data-Free">Data Sheet </span></a>
 
-        Chache Data :
-        <span id="Fist-Time-Load">0</span>
-        <span id="Status-Switch">0</span>
-        <span id="Nilai-RGB-Lamp">0</span>
 
-        <script src='https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0E_SpHOAvcMH5Okw/root/content'
-            type='text/javascript'>
-                <!-- Fist Time Load -->
-            </script>
+            </div>
+            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
+                        class="Data-Free">...</span>
+                    <hr />
+                </a><a href="https://drive.google.com/drive/u/1/folders/1Ap1plemhbPigrbRau6pEVav27ScygiC4"
+                    title="Blog"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
+                        class="Data-Free">Program Pendukung</span></a>
+
+
+            </div>
+            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
+                        class="Data-Free">...</span>
+                    <hr />
+                </a><a href="https://drive.google.com/drive/folders/17ekq8yaImmQHhflgfFvDhNlbHU6kygsD" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
+                        class="Data-Free">Liblary Arduino</span></a>
+
+
+            </div>
+            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
+                        class="Data-Free">...</span>
+                    <hr />
+                </a><a href="https://drive.google.com/drive/folders/18pZEb3JIcBuFdzMOM0W8zVH3nOtxFLCz" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
+                        class="Data-Free">Skema</span></a>
+
+
+            </div>
+            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
+                        class="Data-Free">...</span>
+                    <hr />
+                </a><a href="https://drive.google.com/drive/folders/1p9NIZPOYD4cb0rxvSpUIOLmIVp9GgQUV" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
+                        class="Data-Free">Program Arduino</span></a>
+
+
+            </div>
+            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
+                        class="Data-Free">...</span>
+                    <hr />
+                </a><a href="https://drive.google.com/drive/folders/1bw2F-4wlqWNLwhnpA6BwDpDSlulDLFHR" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
+                        class="Data-Free">Rumus dalam Excel</span></a>
+
+
+            </div>
+            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
+                        class="Data-Free">...</span>
+                    <hr />
+                </a><a href="https://drive.google.com/drive/u/1/folders/1nkaMDoX_8OppSktkJ600s9p1EZSHHKv3"
+                    title="Blog"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
+                        class="Data-Free">Script Mikrotik</span></a>
+
+
+            </div>
+
+            <div class="Text-Kiri" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+                        id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
+                        class="Data-Free">...</span>
+                    <hr />
+                </a><a href="https://drive.google.com/drive/u/1/folders/1MOfZX-Zqhs9-IKcNIZGDpwJCn-jmYHXk"
+                    title="Blog"><img id="tautan"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
+                        class="Data-Free">Freeware</span></a>
+            </div>
+        </div>
+    </div>-->
 </body>
 
 </html>
