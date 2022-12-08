@@ -1,32 +1,13 @@
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<head>
-    <title>Page Control My Home</title>
-    <style>
-        html {
-            font: Times;
-            font-size: 20px;
-        }
-
-        ul,
-        ol,
-        li {
-            line-height: 25px;
-            letter-spacing: 0.5px;
-        }
-    </style>
-</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <body>
-    <div style="font-size: 10px; letter-spacing: 0.1px; line-height: 15px;">
-        <div onclick="TabSpekPC()">My Spek PC</div>
-        <div id="TabSpekPC">
-            <script>
-                var Tab = 1;
-                let SpekPC = `
-            <ul style="text-align: left;">
+    Computer Assembling <br>
+    Below is an Example of Computer Specs... what I currently have can be used for anything but not
+    enough to be used with 3D animation applications
+    <div onclick="TabSpekPC()">My Spek PC</div>
+    <ul id="TabSpekPC" class="d-none">
         <li>Prosesor | Ryzen 5 3400G | OC Speed 4,250 Ghz 1,45 V | 4 Core 8 Treads | Rp 2.178.000
         </li>
         <li>RAM T Force | 2 x 8 GB | OC 3200 Mhz | Rp 1.000.000
@@ -52,114 +33,82 @@
         </li>
         <li>Monitor | LED 24" 24MP59 | 99 % RGB 75hz | Rp1.798.000
         </li>
-    </ul>Total = 9.637.500,-<div>`;
-                function TabSpekPC() {
-                    if (Tab == 1) {
-                        document.getElementById("TabSpekPC").innerHTML = SpekPC;
-                        Tab = 0;
-                    }
-                    else {
-                        document.getElementById("TabSpekPC").innerHTML = "";
-                        Tab = 1;
-                    }
-                }
-            </script>
-        </div>
+        Total = 9.637.500,-
+    </ul>
+    <script>
+        function TabSpekPC() {
+            $("#TabSpekPC").slideToggle("fast");
+        }
+    </script>
+    <div onclick="TabAksesorisPC()">Aksesoris PC</div>
+    <ul id="TabAksesorisPC" class="d-none">
+        <li>Mouse | Logitech M170 | Rp 105.000
+        </li>
+        <li>Keyboard | Logitech K200 | Rp 125.000
+        </li>
+        <li>Keyboard | Logitech K120 | Rp 107.000
+        </li>
+        <li>Keyboard Kostum Bluetooth | ESP 32S | Rp 73.000
+        </li>
+        <li>Head Set | Robot Wired RH-G10 | Rp129.300
+        </li>
+        <li>Mic | Electret Microphone Condenser SMD | Rp 500
+        </li>
+        <li>Penguat Suara Mic | IC LM4562NA | Rp 15.500
+        </li>
+        <li>Box Speaker | Multi Media Speaker Sistem Model G101 | Rp 20.000
+        </li>
+        <li>Speaker | Speaker Copotan 2 inch | Rp 12.000
+        </li>
+        <li>Penguat Suara Speaker | Modul PAM8403 3 W x 2 | Rp 4.000
+        </li>
+        <li>Bluetooth Receiver | VHM - 314 | Rp 22.000
+        </li>
+        <li>Video Capture HDMI Loop | Rp 118.000 Usb Hub | LDNIO 6 Port DL-H6 | Rp 70.000
+        </li>
+        <li>Anti Trip Komputer Wih ESP 8266</li>
+        <ul>
+            <li>Relay 4 Channel</li>
+            <li>HX1838 + Remot</li>
+            <li>ESP8266 NodeMCU</li>
+            <li>Power Supply</li>
+        </ul>
+        Total = 801.300,-
+    </ul>
+    <script>
+        function TabAksesorisPC() {
+            $("#TabAksesorisPC").slideToggle("fast");
+        }
+    </script>
 
-        
-        <div onclick="TabAksesorisPC()">Aksesoris PC</div>
-        <div id="TabAksesorisPC">
-            <script>
-                var Tab = 1;
-                let AksesorisPC = `
-                <ul style="text-align: left;">
-            <li>Mouse | Logitech M170 | Rp 105.000
-            </li>
-            <li>Keyboard | Logitech K200 | Rp 125.000
-            </li>
-            <li>Keyboard | Logitech K120 | Rp 107.000
-            </li>
-            <li>Keyboard Kostum Bluetooth | ESP 32S | Rp 73.000
-            </li>
-            <li>Head Set | Robot Wired RH-G10 | Rp129.300
-            </li>
-            <li>Mic | Electret Microphone Condenser SMD | Rp 500
-            </li>
-            <li>Penguat Suara Mic | IC LM4562NA | Rp 15.500
-            </li>
-            <li>Box Speaker | Multi Media Speaker Sistem Model G101 | Rp 20.000
-            </li>
-            <li>Speaker | Speaker Copotan 2 inch | Rp 12.000
-            </li>
-            <li>Penguat Suara Speaker | Modul PAM8403 3 W x 2 | Rp 4.000
-            </li>
-            <li>Bluetooth Receiver | VHM - 314 | Rp 22.000
-            </li>
-            <li>Video Capture HDMI Loop | Rp 118.000 Usb Hub | LDNIO 6 Port DL-H6 | Rp 70.000
-            </li>
-            <li>Anti Trip Komputer Wih ESP 8266</li>
-            <ul>
-                <li>Relay 4 Channel</li>
-                <li>HX1838 + Remot</li>
-                <li>ESP8266 NodeMCU</li>
-                <li>Power Supply</li>
-            </ul>
-        </ul>Total = 801.300,-<div>`;
-                function TabAksesorisPC() {
-                    if (Tab == 1) {
-                        document.getElementById("TabAksesorisPC").innerHTML = AksesorisPC;
-                        Tab = 0;
-                    }
-                    else {
-                        document.getElementById("TabAksesorisPC").innerHTML = "";
-                        Tab = 1;
-                    }
-                }
-            </script>
-        </div>
 
-        
-        <div onclick="TabSuperAksesoris()">Super Aksesoris<br /></div>
-        <div id="TabSuperAksesoris">
-            <script>
-                var Tab = 1;
-                let SuperAksesoris = `<ul style="text-align: left;">
-                <li>Google Home Mini | Rp 399.000
-                </li>
-                <li>Mikrotik | RB941-2nD | 4 LAN | 1 WLAN | Rp 352.550
-                </li>
-                <li>Router | Toto Link N200 RE | 3 LAN | 5 WLAN | Rp 114.800
-                </li>
-                <li>Router | Mifon R1 | 3 LAN | 3 WLAN | Rp 160.000
-                </li>
-                <li>Laptop | HP 14-BW001AX | AMD A9 9420 4GB 1TB 14 inch | Rp 5.499.000
-                </li>
-                <li>IP Kamera | ESP 32 CAM | Rp 75.000
-                </li>
-                <li>Kamera | Realme 3 Pro | Rp 2.999.000
-                </li>
-                <li>Kamera | Realme 9 Pro + | Rp 4.499.000
-                </li>
-            </ul>Total = 13.954.350,-
-        </div>`;
-                function TabSuperAksesoris() {
-                    if (Tab == 1) {
-                        document.getElementById("TabSuperAksesoris").innerHTML = SuperAksesoris;
-                        Tab = 0;
-                    }
-                    else {
-                        document.getElementById("TabSuperAksesoris").innerHTML = "";
-                        Tab = 1;
-                    }
-                }
-            </script>
-        </div>
 
-        <div>Total Semua = 24.393.150,-
-            <br />Spek Seperti ini saya gunakan untuk banyak hal dari mulai main game, bikin
-            vidio, bikin program dll
-        </div>
-    </div>
+    <div onclick="TabSuperAksesoris()">Super Aksesoris</div>
+    <ul id="TabSuperAksesoris" class="d-none">
+
+        <li>Google Home Mini | Rp 399.000
+        </li>
+        <li>Mikrotik | RB941-2nD | 4 LAN | 1 WLAN | Rp 352.550
+        </li>
+        <li>Router | Toto Link N200 RE | 3 LAN | 5 WLAN | Rp 114.800
+        </li>
+        <li>Router | Mifon R1 | 3 LAN | 3 WLAN | Rp 160.000
+        </li>
+        <li>Laptop | HP 14-BW001AX | AMD A9 9420 4GB 1TB 14 inch | Rp 5.499.000
+        </li>
+        <li>IP Kamera | ESP 32 CAM | Rp 75.000
+        </li>
+        <li>Kamera | Realme 3 Pro | Rp 2.999.000
+        </li>
+        <li>Kamera | Realme 9 Pro + | Rp 4.499.000
+        </li>Total = 13.954.350,-
+    </ul>
+    <script>
+        function TabSuperAksesoris() {
+            $("#TabSuperAksesoris").slideToggle("fast");
+        }
+    </script><br>
+    Total Semua = 24.393.150,-
 </body>
 
 </html>
