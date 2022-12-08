@@ -33,9 +33,7 @@
             padding: 20px;
             color: #fff;
             background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            display: block;
+            
 
         }
 
@@ -48,7 +46,7 @@
             display: none;
         }
 
-        .Sidebar {
+        .SidebarT {
             height: 100%;
             width: 0;
             position: fixed;
@@ -61,7 +59,7 @@
             padding-top: 60px;
         }
 
-        .Sidebar a {
+        .SidebarT a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
@@ -70,11 +68,11 @@
             transition: 0.3s;
         }
 
-        .Sidebar a:hover {
+        .SidebarT a:hover {
             color: #f1f1f1;
         }
 
-        .Sidebar .closebtn {
+        .SidebarT .closebtn {
             position: absolute;
             top: 0;
             right: 25px;
@@ -102,11 +100,11 @@
 
         /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
         @media screen and (max-height: 450px) {
-            .Sidebar {
+            .SidebarT {
                 padding-top: 15px;
             }
 
-            .Sidebar a {
+            .SidebarT a {
                 font-size: 18px;
             }
         }
@@ -184,8 +182,8 @@
         <a href="#contact">Contact</a>
         <span>Support</span>
     </div>
-    <div id="Sidebar-Modul-dan-Komponen" class="Sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="CloseSidebarModulKomponen()">×</a>
+    <div id="SidebarT-Modul-dan-Komponen" class="SidebarT">
+        <a href="javascript:void(0)" class="closebtn" onclick="CloseSidebarTModulKomponen()">×</a>
         <div id="Judul" class="f-color center">List Modul Dan Komponen Yang Sudah Di Test</div>
         <div id="List-Modul-Komponen" class="f-color"></div>
     </div>
@@ -205,7 +203,7 @@
                     </ul>
                     <li onclick="TabElektronika()">Electronics Skills</li>
                     <ul id="Hasil-Elektronika" class="d-none">
-                        <li onclick="OpenSidebarModulKomponen()">Modul dan Komponen Tested</li>
+                        <li onclick="OpenSidebarTModulKomponen()">Modul dan Komponen Tested</li>
                     </ul>
                     <script>
                         function TabElektronika() {
@@ -214,11 +212,11 @@
                         document.getElementById("List-Modul-Komponen").style.width = window.innerWidth - 50 + "px";
                         document.getElementById("Judul").style.width = window.innerWidth - 50 + "px";
 
-                        function OpenSidebarModulKomponen() {
-                            document.getElementById("Sidebar-Modul-dan-Komponen").style.width = "100%";
+                        function OpenSidebarTModulKomponen() {
+                            document.getElementById("SidebarT-Modul-dan-Komponen").style.width = "100%";
                         }
-                        function CloseSidebarModulKomponen() {
-                            document.getElementById("Sidebar-Modul-dan-Komponen").style.width = "0";
+                        function CloseSidebarTModulKomponen() {
+                            document.getElementById("SidebarT-Modul-dan-Komponen").style.width = "0";
                         }
                     </script>
 
@@ -259,12 +257,12 @@
 
 
                     function openNav() {
-                        document.getElementById("mySidebar").style.width = "250px";
+                        document.getElementById("mySidebarT").style.width = "250px";
                         document.getElementById("main").style.marginLeft = "250px";
                     }
 
                     function closeNav() {
-                        document.getElementById("mySidebar").style.width = "0";
+                        document.getElementById("mySidebarT").style.width = "0";
                         document.getElementById("main").style.marginLeft = "0";
                     }
                 </script>
