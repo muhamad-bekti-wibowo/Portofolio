@@ -1,9 +1,11 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <head>
     <style>
-        html {background-color: rgb(19, 19, 19);
+        html {
+            background-color: rgb(19, 19, 19);
             font: Times;
             font-size: 20px;
         }
@@ -14,6 +16,139 @@
             line-height: 25px;
             letter-spacing: 0.5px;
         }
+
+        .margin-25 {
+            margin: 0px 0px 0px -25px;
+        }
+
+        .margin3 {
+            margin: 0px 0px 0px -15.65px;
+        }
+
+        .margin-ol {
+            margin: 0px 0px 0px -19.86px;
+        }
+
+        .f-color {
+            padding: 20px;
+            color: #fff;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            display: block;
+
+        }
+
+        .center {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .Sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .Sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .Sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .Sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        .openbtn:hover {
+            background-color: #444;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .Sidebar {
+                padding-top: 15px;
+            }
+
+            .Sidebar a {
+                font-size: 18px;
+            }
+        }
+
+        #navbar {
+            background-color: #333;
+            position: fixed;
+            top: -50px;
+            width: 100%;
+            display: block;
+            transition: top 0.3s;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar span {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar span:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
     </style>
 </head>
 
@@ -22,7 +157,7 @@
         Welcome !
 
     </div>
-    <div>
+    <div
         I am
 
     </div>
@@ -43,154 +178,206 @@
     <div>
         Hire Me !
     </div>-->
+    <div id="navbar">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <span>Support</span>
+    </div>
+    <div id="Sidebar-Modul-dan-Komponen" class="Sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="CloseSidebarModulKomponen()">×</a>
+        <div id="Judul" class="f-color center">List Modul Dan Komponen Yang Sudah Di Test</div>
+        <div id="List-Modul-Komponen" class="f-color"></div>
+    </div>
     <div style="display: flex; color:white; padding: 20px;  ">
         <div style="width:500px;">
-            <span style="font-size: 40px;">Keahlian Saya</span>
+            <span style="font-size: 40px;">About Me</span>
             <div style="letter-spacing: 0.5px; line-height: 25px;">
                 <ol style="text-align: left;">
-                    <li id="BahasaP" onclick="TabProgramming()">Programing</li>
-                    <div id="Bahasa"style="display: none;">
+                    <li onclick="TabKelistrikan()">Electrical Skills</li>
+                    <ul id="Hasil-Kelistrikan" class="d-none">
+                        <li>Maintenance ~Belum Ada Data</li>
                         <script>
-                            $(document).ready(function(){
-  $("#BahasaP").click(function(){
-    $("#Bahasa").slideToggle("slow");
-  });
-});
-                            var Tab = 1;
-                            let BProgramming = `
-                            <ul style=" margin: 0px 0px 0px -25px; text-align: left; font-size: 15px; letter-spacing: 0.1px; line-height: 15px;">
-                                <li>Microcontroller</li>
-                                <ul style=" margin: 0px 0px 0px -25px;">
-                                    <li>Arduino Programing</li>
-                                    <ol style=" margin: 0px 0px 0px -25px;">
-                                        <li>Arduino Mega</li>
-                                        <li>Arduino Uno R3</li>
-                                        <li>Arduino Pro Mini</li>
-                                    </ol>
-                                    <li>ESP8266 Programing</li>
-                                    <ol style=" margin: 0px 0px 0px -25px;">
-                                        <li>01</li>
-                                        <li>NodeMCU</li>
-                                        <li>Wemos-D1-Mini</li>
-                                    </ol>
-                                    <li> ESP32 Programing</li>
-                                    <ol style=" margin: 0px 0px 0px -25px;">
-                                        <li>Dev Module</li>
-                                        <li>AI Thinker CAM</li>
-                                    </ol>
-                                    <li onclick="TabTested()">Modul dan Komponen Tested</li>
-                                    <div id="Lihat">
-                                    </div>
-                                </ul>
-                                <li> Server Programing</li>
-                                <ol style=" margin: 0px 0px 0px -25px;">
-                                    <li>MySQL Programing Or Setting</li>
-                                    <li>PHP Programing</li>
-                                    <li>XML Programing For Blogger</li>
-                                </ol>
-                                <li>Website Programing</li>
-                                <ol style=" margin: 0px 0px 0px -25px;">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Javascript</li>
-                                <ol style=" margin: 0px 0px 0px -25px;">
-                                    <li>Javascript</li>
-                                    <li>J Query</li>
-                                </ol>
-                            </ol>
-                            <li>PLC Programing With Software...</li>
-                                <ol style=" margin: 0px 0px 0px -25px;">
-                                    <li> CX Programmer </li>
-                                    <li> Out Seal</li>
-                                </ol>
-                            </ul>`;
-                            function TabProgramming() {
-                                if (Tab == 1) {
-                                    document.getElementById("Bahasa").innerHTML = BProgramming;
-                                    Tab = 0;
-                                }
-                                else {
-                                       Tab = 1;
-                                }
+                            function TabKelistrikan() {
+                                $("#Hasil-Kelistrikan").slideToggle("fast");
                             }
                         </script>
-                    </div>
-                    <li onclick="TabProduk()">Buat Produk Elektronik</li>
-
-                    <div id="Hasil-Produk"></div>
-                    <li onclick="Tab()">Maintenance Sistem
-                        Kelistrikan</li>
-                    <li onclick="TabMikroTik()">Konfigurasi MikroTik</li>
-                    <div id="Hasil-Konfig"></div>
-                    <li id="panel" onclick="TabKomputer()">Merakit Komputer</li>
-                    <div id="MyPC">
-                        <script>
-                            var Tab = 1;
-                            function TabKomputer() {
-                                if (Tab == 1) {
-                                    $("#MyPC").load("https://muhamad-bekti-wibowo.github.io/Portofolio/pc.html");
-                                    Tab = 0;
-                                }
-                                else {
-                                    document.getElementById("MyPC").innerHTML = "";
-                                    Tab = 1;
-                                    
-                                }
-                            }
-                        </script>
-                    </div>
-
-                    <li onclick="TabKonsultasi()">Konsultasi</li>
-                    <div id="Contoh-Konsul"></div>
-                    <li>Project Me</li>
-                    <ol>
-                        <li onclick="TabProjectSmartHome()">Smart Home [Control your home anywhere and any website]
-                        </li>
-                        <li onclick="TabProjectSmartBel()">Smart Bel</li>
-                        <li onclick="TabProjectSmartRoom()">Smart Room</li>
-                    </ol>
-                </ol>
-
-                <div id="Tested">
+                    </ul>
+                    <li onclick="TabElektronika()">Electronics Skills</li>
+                    <ul id="Hasil-Elektronika" class="d-none">
+                        <li onclick="OpenSidebarModulKomponen()">Modul dan Komponen Tested</li>
+                    </ul>
                     <script>
-                        var Tab = 1;
-                        function TabTested() {
-                            if (Tab == 1) {
-                                $("#Tested").load("https://muhamad-bekti-wibowo.github.io/Portofolio/list.html");
-                                Tab = 0;
-                                document.getElementById("Lihat").innerHTML = "~~~~ Lihat di bawah ~~~~";
-                            }
-                            else {
-                                document.getElementById("Tested").innerHTML = "";
-                                document.getElementById("Lihat").innerHTML = "";
-                                Tab = 1;
-                            }
+                        function TabElektronika() {
+                            $("#Hasil-Elektronika").slideToggle("fast");
+                        }
+                        document.getElementById("List-Modul-Komponen").style.width = window.innerWidth - 50 + "px";
+                        document.getElementById("Judul").style.width = window.innerWidth - 50 + "px";
+
+                        function OpenSidebarModulKomponen() {
+                            document.getElementById("Sidebar-Modul-dan-Komponen").style.width = "100%";
+                        }
+                        function CloseSidebarModulKomponen() {
+                            document.getElementById("Sidebar-Modul-dan-Komponen").style.width = "0";
                         }
                     </script>
-                </div>
 
+                    <li onclick="TabKomputer()">Computer Skills</li>
+                    <div id="PC" class="d-none"></div>
+                    <script>
+                        function TabKomputer() {
+                            $("#PC").slideToggle("fast");
+                        }
+                    </script>
+            <li onclick="TabJaringan()">Computer Networking Skills</li>
+            <div id="Hasil-Jaringan"></div>
+
+            <li id="BahasaP" onclick="TabProgramming()">Programming Skills</li>
+            <div id="Bahasa" style="display: none;"></div>
+
+            <li onclick="TabKonsultasi()">Consultation Of The Above Skills</li>
+            <div id="Contoh-Konsul"></div>
+            <li>My Current Project</li>
+            <ol class="margin-25">
+                <li onclick="TabProjectSmartHome()">Smart Home [Control your home anywhere and any website]
+                </li>
+                <li onclick="TabProjectSmartBel()">Smart Bel</li>
+                <li onclick="TabProjectSmartRoom()">Smart Room</li>
+            </ol>
+            </ol>
+
+
+
+            <div id="Tested">
+                <script>
+                    $(document).ready(
+                        function () {
+                            $("#List-Modul-Komponen").load("https://muhamad-bekti-wibowo.github.io/Portofolio/list.html");
+                            $("#PC").load("https://muhamad-bekti-wibowo.github.io/Portofolio/pc.html");
+                     
+                        });
+
+
+                    function openNav() {
+                        document.getElementById("mySidebar").style.width = "250px";
+                        document.getElementById("main").style.marginLeft = "250px";
+                    }
+
+                    function closeNav() {
+                        document.getElementById("mySidebar").style.width = "0";
+                        document.getElementById("main").style.marginLeft = "0";
+                    }
+                </script>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-        </div>
-        <div style="width:3%;">
-            Foto
-        </div>
-        <div style="width:3%;">
-            Siapa Saya
         </div>
 
 
-        <!--
+
+
+
+
+
+
+
+
+
+    </div>
+    <div style="width:3%;">
+        Foto
+    </div>
+    <div style="width:3%;">
+        Siapa Saya
+    </div>
+    <script>
+        var Tab = 1;
+        let BProgramming = `
+            <ul class="margin-25" style="text-align: left; font-size: 15px; letter-spacing: 0.1px; line-height: 15px;">
+            <li onclick="TabMicrocontroller()">Microcontroller</li>
+            <ul class="margin-25 d-none" id="Microcontroller">
+                <li onclick="TabArduino()">Arduino</li>
+                <ol class="margin-25 d-none" id="Arduino">
+                    <li>Mega</li>
+                    <li>Uno R3</li>
+                    <li>Pro Mini</li>
+                </ol>
+                <li onclick="TabESP8266()">ESP8266</li>
+                <ol class="margin-25 d-none" id="ESP8266">
+                    <li>01</li>
+                    <li>NodeMCU</li>
+                    <li>Wemos D1 Mini</li>
+                </ol>
+                <li onclick="TabESP32()">ESP32</li>
+                <ol class="margin-25 d-none" id="ESP32">
+                    <li>Dev Module</li>
+                    <li>AI Thinker CAM</li>
+                </ol>
+                <li onclick="openNav()">Modul dan Komponen Tested</li>
+                <div id="Lihat">
+                </div>
+            </ul>
+            <li onclick="TabServer()">Server</li>
+            <ol class="margin-25 d-none" id="Server">
+                <li>My Structured Query Language</li>
+                <li>Hypertext Preprocessor</li>
+                <li>Extensible Markup Language</li>
+            </ol>
+            <li onclick="TabWebsite()">Website</li>
+            <ol class="margin-25 d-none" id="Website" style="margin: 0px 0px 0px -25px;">
+                <li>HyperText Markup Language</li>
+                <li>Cascading Style Sheet</li>
+                <li onclick="TabJavascript()">Javascript</li>
+                <ol class="margin-25 d-none" id="Javascript">
+                    <li>Javascript</li>
+                    <li>J Query</li>
+                </ol>
+            </ol>
+            <li onclick="TabPLC()">Programmable Logic Controller</li>
+            <ol class="margin-25 d-none" id="PLC">
+                <li> CX Programmer </li>
+                <li> Out Seal</li>
+            </ol>
+            </ul>
+            `;
+        function TabMicrocontroller() {
+            $("#Microcontroller").slideToggle("slow");
+        }
+        function TabServer() {
+            $("#Server").slideToggle("slow");
+        }
+        function TabWebsite() {
+            $("#Website").slideToggle("slow");
+        }
+        function TabJavascript() {
+            $("#Javascript").slideToggle("slow");
+        }
+        function TabPLC() {
+            $("#PLC").slideToggle("slow");
+        }
+        function TabArduino() {
+            $("#Arduino").slideToggle("slow");
+        }
+        function TabESP8266() {
+            $("#ESP8266").slideToggle("slow");
+        }
+        function TabESP32() {
+            $("#ESP32").slideToggle("slow");
+        }
+
+        function TabProgramming() {
+
+            if (Tab == 1) {
+                document.getElementById("Bahasa").innerHTML = BProgramming;
+                Tab = 0; $("#Bahasa").slideToggle("slow");
+            }
+            else {
+                Tab = 1; $("#Bahasa").slideToggle("slow");
+            }
+        }
+
+    </script>
+
+    <!--
     <div class="sizez">
 
         <hr />
@@ -356,6 +543,95 @@
             </div>
         </div>
     </div>-->
+    </div>
 </body>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+<p>Scroll to the top to hide the navbar.</p>
+<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p>
+
+<script src='https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0bbMdTv1H4pVsgfA/root/content' type='text/javascript'>
+    <!-- PC -->
+</script>
+<script>
+    // When the user scrolls down 20px from the top of the document, slide down the navbar
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-50px";
+        }
+    }
+</script>
 
 </html>
