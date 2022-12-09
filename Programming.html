@@ -27,12 +27,12 @@
         }
     </style>
     <ul class=" style="text-align: left; font-size: 15px; letter-spacing: 0.1px; line-height: 15px;">
-        <li onclick="TabMicrocontroller()">Microcontroller</li>
+        <li id="Width-T100" onclick="TabMicrocontroller()">Microcontroller</li>
         <ul class="d-none" id="Microcontroller" style="margin: 0px 0px 0px -25px;">
-            <li onclick="TabArduino()">Arduino</li>
+            <li id="Width-T100" onclick="TabArduino()">Arduino</li>
             <ol class="d-none" id="Arduino">
-                <div style="display:flex;">
-                    <li onclick="OpenMega()" style="width: 40%; ">Mega 2560</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenMega()" >Mega 2560</li>
                    <img id="ImageMega" class="sidebar" onclick="CloseMega()" 
                         src="https://cf.shopee.co.id/file/e386fdc7d48dea4c88e1421ae5ddf8a8" alt="Mega">
                 </div>
@@ -44,8 +44,8 @@
                         document.getElementById("ImageMega").style.width = "0";
                     }
                 </script>
-                <div style="display:flex;">
-                    <li onclick="OpenUnoR3()" style="width: 40%; ">Uno R3</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenUnoR3()" >Uno R3</li>
                     <img class="sidebar" onclick="CloseUnoR3()" id="Image-UnoR3"
                         src="https://cf.shopee.co.id/file/e196f6ea5d88ca49fa4a00c666bca77c" alt="UnoR3">
                 </div>
@@ -57,8 +57,8 @@
                         document.getElementById("Image-UnoR3").style.width = "0";
                     }
                 </script>
-                <div style="display:flex;">
-                    <li onclick="OpenProMini()" style="width: 40%; ">Pro Mini</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenProMini()" >Pro Mini</li>
                     <img class="sidebar" onclick="CloseProMini()" id="Image-ProMini"
                         src="https://cf.shopee.co.id/file/65bedf4072423647bce7efa1328538bc" alt="ProMini">
                 </div>
@@ -71,10 +71,10 @@
                     }
                 </script>
             </ol>
-            <li onclick="TabESP8266()">ESP8266</li>
+            <li id="Width-T100" onclick="TabESP8266()">ESP8266</li>
             <ol class="d-none" id="ESP8266">
-                <div style="display:flex;">
-                    <li onclick="Open01()" style="width: 40%; ">01</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="Open01()" >01</li>
                     <img class="sidebar" onclick="Close01()" id="Image-01"
                         src="https://cf.shopee.co.id/file/020e9b5c31e512e8be6287997b8336a9" alt="01">
                 </div>
@@ -87,8 +87,8 @@
                     }
                 </script>
 
-                <div style="display:flex;">
-                    <li onclick="OpenNodeMCU()" style="width: 40%; ">NodeMCU</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenNodeMCU()" >NodeMCU</li>
                     <img class="sidebar" onclick="CloseNodeMCU()" id="Image-NodeMCU"
                         src="https://cf.shopee.co.id/file/a6526333c15953506003fc0c9f643a4a" alt="NodeMCU">
                 </div>
@@ -101,8 +101,8 @@
                     }
                 </script>
 
-                <div style="display:flex;">
-                    <li onclick="OpenWemosD1Mini()" style="width: 40%; ">Wemos D1 Mini</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenWemosD1Mini()" >Wemos D1 Mini</li>
                     <img class="sidebar" onclick="CloseWemosD1Mini()" id="Image-WemosD1Mini"
                         src="https://cf.shopee.co.id/file/59c57e9f0984bf461ee64463ab6d4893" alt="WemosD1Mini">
                 </div>
@@ -115,10 +115,10 @@
                     }
                 </script>
             </ol>
-            <li onclick="TabESP32()">ESP32</li>
+            <li id="Width-T100" onclick="TabESP32()">ESP32</li>
             <ol class="d-none" id="ESP32">
-                <div style="display:flex;">
-                    <li onclick="OpenDevModule()" style="width: 40%; ">Dev Module</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenDevModule()" >Dev Module</li>
                     <img class="sidebar" onclick="CloseDevModule()" id="Image-DevModule"
                         src="https://cf.shopee.co.id/file/b5037a3910564f8cf225deca5cc97c05" alt="DevModule">
                 </div>
@@ -130,8 +130,8 @@
                         document.getElementById("Image-DevModule").style.width = "0";
                     }
                 </script>
-                <div style="display:flex;">
-                    <li onclick="OpenAIThinkerCAM()" style="width: 40%; ">AIThinkerCAM</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenAIThinkerCAM()" >AIThinkerCAM</li>
                     <img class="sidebar" onclick="CloseAIThinkerCAM()" id="Image-AIThinkerCAM"
                         src="https://cf.shopee.co.id/file/c4c7ff7ba504f70d8e27473a08363ae3" alt="AIThinkerCAM">
                 </div>
@@ -144,13 +144,13 @@
                     }
                 </script>
             </ol>
-            <li onclick="TabExample()">Example</li>
+            <li id="Width-T100" onclick="TabExample()">Example</li>
             <ol class="d-none" id="Example">
-                <div style="display:flex;"> 
-                    <div style="display:flex; width: 95%;">
-                        <li onclick="OpenArduino()" style="width: 35%; ">Arduino</li>
-                        <div id="Div-Youtube-Arduino" class="sidebar" >
-                            <iframe style="height: 0; " id="Youtube-Arduino" src="https://www.youtube.com/embed/T2AwxAHLKMQ"
+                <div id="before" style="display:flex; height: 20px;"> 
+                    <div id="Pemisah" style="display:flex; width: 95%;">
+                        <li id="Width-T100" onclick="OpenArduino()" style="width: 35%; ">Arduino</li>
+                        <div  id="Div-Youtube-Arduino" class="sidebar" >
+                            <iframe   style="height: 0; " id="Youtube-Arduino" src="https://www.youtube.com/embed/T2AwxAHLKMQ"
                                 youtube-src-id="T2AwxAHLKMQ"></iframe>
                         </div>
                     </div>
@@ -167,17 +167,20 @@
                         document.getElementById("Div-Youtube-Arduino").style.height = b + "px";
                         document.getElementById("Youtube-Arduino").style.width = "100%";
                         document.getElementById("Youtube-Arduino").style.height = b + "px";
+                        document.getElementById("before").style.height = "auto";
                     }
                     function CloseArduino() {
                         document.getElementById("Close-Arduino").style.padding = "0";
                         document.getElementById("Div-Youtube-Arduino").style.width = "0";
                         document.getElementById("Div-Youtube-Arduino").style.height = "0";
                         document.getElementById("Youtube-Arduino").style.width = "0";
+                        
+                        document.getElementById("before").style.height = "20px";
                         document.getElementById("Youtube-Arduino").style.height = "0";
                     }
                 </script>
-                <div style="display:flex;">
-                    <li onclick="OpenESPHTTPServer()" style="width: 40%; ">ESP HTTP Server</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenESPHTTPServer()" >ESP HTTP Server</li>
                     <img class="sidebar" onclick="CloseESPHTTPServer()" id="Image-ESPHTTPServer"
                         src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0hKjquhoiBHiIFFg/root/content"
                         alt="ESPHTTPServer">
@@ -190,8 +193,8 @@
                         document.getElementById("Image-ESPHTTPServer").style.width = "0";
                     }
                 </script>
-                <div style="display:flex;">
-                    <li onclick="OpenESPCAM()" style="width: 40%; ">Web Server ESP CAM</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenESPCAM()" >Web Server ESP CAM</li>
                     <img class="sidebar" onclick="CloseESPCAM()" id="Image-ESPCAM"
                         src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0jBLW2gB_ARJstZg/root/content"
                         alt="ESPCAM">
@@ -206,10 +209,10 @@
                 </script>
             </ol>
         </ul>
-        <li onclick="TabServer()">Server</li>
+        <li id="Width-T100" onclick="TabServer()">Server</li>
         <ol class="d-none" id="Server">
-            <div style="display:flex;">
-                <li onclick="OpenMyStructuredQueryLanguage()" style="width: 40%; ">My Structured Query Language</li>
+            <div id="Pemisah" style="display:flex;">
+                <li id="Width-T100" onclick="OpenMyStructuredQueryLanguage()" >My Structured Query Language</li>
                 <img class="sidebar" onclick="CloseMyStructuredQueryLanguage()" id="Image-MyStructuredQueryLanguage"
                     src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="MyStructuredQueryLanguage">
             </div>
@@ -221,8 +224,8 @@
                     document.getElementById("Image-MyStructuredQueryLanguage").style.width = "0";
                 }
             </script>
-            <div style="display:flex;">
-                <li onclick="OpenHypertextPreprocessor()" style="width: 40%; ">Hypertext Preprocessor</li>
+            <div id="Pemisah" style="display:flex;">
+                <li id="Width-T100" onclick="OpenHypertextPreprocessor()" >Hypertext Preprocessor</li>
                 <img class="sidebar" onclick="CloseHypertextPreprocessor()" id="Image-HypertextPreprocessor"
                     src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="HypertextPreprocessor">
             </div>
@@ -234,8 +237,8 @@
                     document.getElementById("Image-HypertextPreprocessor").style.width = "0";
                 }
             </script>
-            <div style="display:flex;">
-                <li onclick="OpenExtensibleMarkupLanguage()" style="width: 40%; ">Extensible Markup Language</li>
+            <div id="Pemisah" style="display:flex;">
+                <li id="Width-T100" onclick="OpenExtensibleMarkupLanguage()" >Extensible Markup Language</li>
                 <img class="sidebar" onclick="CloseExtensibleMarkupLanguage()" id="Image-ExtensibleMarkupLanguage"
                     src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="ExtensibleMarkupLanguage">
             </div>
@@ -248,10 +251,10 @@
                 }
             </script>
         </ol>
-        <li onclick="TabWebsite()">Website</li>
+        <li id="Width-T100" onclick="TabWebsite()">Website</li>
         <ol class="d-none" id="Website">
-            <div style="display:flex;">
-                <li onclick="OpenHyperTextMarkupLanguage()" style="width: 40%; ">HyperText Markup Language</li>
+            <div id="Pemisah" style="display:flex;">
+                <li id="Width-T100" onclick="OpenHyperTextMarkupLanguage()" >HyperText Markup Language</li>
                 <img class="sidebar" onclick="CloseHyperTextMarkupLanguage()" id="Image-HyperTextMarkupLanguage"
                     src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="HyperTextMarkupLanguage">
             </div>
@@ -263,8 +266,8 @@
                     document.getElementById("Image-HyperTextMarkupLanguage").style.width = "0";
                 }
             </script>
-            <div style="display:flex;">
-                <li onclick="OpenCascadingStyleSheet()" style="width: 40%; ">Cascading Style Sheet</li>
+            <div id="Pemisah" style="display:flex;">
+                <li id="Width-T100" onclick="OpenCascadingStyleSheet()" >Cascading Style Sheet</li>
                 <img class="sidebar" onclick="CloseCascadingStyleSheet()" id="Image-CascadingStyleSheet"
                     src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="CascadingStyleSheet">
             </div>
@@ -277,10 +280,10 @@
                 }
             </script>
 
-            <li onclick="TabJavascript()">Javascript</li>
+            <li id="Width-T100" onclick="TabJavascript()">Javascript</li>
             <ol class="d-none" id="Javascript">
-                <div style="display:flex;">
-                    <li onclick="OpenJavaScript()" style="width: 40%; ">Java Script</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenJavaScript()" >Java Script</li>
                     <img class="sidebar" onclick="CloseJavaScript()" id="Image-JavaScript"
                         src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="JavaScript">
                 </div>
@@ -293,8 +296,8 @@
                     }
                 </script>
 
-                <div style="display:flex;">
-                    <li onclick="OpenJQuery()" style="width: 40%; ">J Query</li>
+                <div id="Pemisah" style="display:flex;">
+                    <li id="Width-T100" onclick="OpenJQuery()" >J Query</li>
                     <img class="sidebar" onclick="CloseJQuery()" id="Image-JQuery"
                         src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="JQuery">
                 </div>
@@ -308,10 +311,10 @@
                 </script>
             </ol>
         </ol>
-        <li onclick="TabPLC()">Programmable Logic Controller</li>
+        <li id="Width-T100" onclick="TabPLC()">Programmable Logic Controller</li>
         <ol class="d-none" id="PLC">
-            <li> CX Programmer </li>
-            <li> Out Seal</li>
+            <li id="Width-T100"> CX Programmer </li>
+            <li id="Width-T100"> Out Seal</li>
         </ol>
     </ul>
     <script>
