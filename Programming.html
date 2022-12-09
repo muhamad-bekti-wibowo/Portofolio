@@ -1,0 +1,350 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<body>
+    <style>
+        #Width-T100 {
+            width: 50%;
+        }
+
+        .Sidebar {
+            width: 0;
+            padding:0;
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+
+        @media (max-width: 1000px) {
+            #Pemisah {
+                flex-direction: column;
+                max-height: 80%;
+            }
+
+            #Width-T100 {
+                width: 100%;
+            }
+        }
+    </style>
+    <ul class="margin-25" style="text-align: left; font-size: 15px; letter-spacing: 0.1px; line-height: 15px;">
+        <li onclick="TabMicrocontroller()">Microcontroller</li>
+        <ul class="margin-25 d-none" id="Microcontroller" style="margin: 0px 0px 0px -25px;">
+            <li onclick="TabArduino()">Arduino</li>
+            <ol class="margin-25 d-none" id="Arduino">
+                <div style="display:flex;">
+                    <li onclick="OpenMega()" style="width: 40%; ">Mega 2560</li>
+                   <img id="ImageMega" class="sidebar" onclick="CloseMega()" 
+                        src="https://cf.shopee.co.id/file/e386fdc7d48dea4c88e1421ae5ddf8a8" alt="Mega">
+                </div>
+                <script>
+                    function OpenMega() {
+                        document.getElementById("ImageMega").style.width = "60%";
+                    }
+                    function CloseMega() {
+                        document.getElementById("ImageMega").style.width = "0";
+                    }
+                </script>
+                <div style="display:flex;">
+                    <li onclick="OpenUnoR3()" style="width: 40%; ">Uno R3</li>
+                    <img class="sidebar" onclick="CloseUnoR3()" id="Image-UnoR3"
+                        src="https://cf.shopee.co.id/file/e196f6ea5d88ca49fa4a00c666bca77c" alt="UnoR3">
+                </div>
+                <script>
+                    function OpenUnoR3() {
+                        document.getElementById("Image-UnoR3").style.width = "60%";
+                    }
+                    function CloseUnoR3() {
+                        document.getElementById("Image-UnoR3").style.width = "0";
+                    }
+                </script>
+                <div style="display:flex;">
+                    <li onclick="OpenProMini()" style="width: 40%; ">Pro Mini</li>
+                    <img class="sidebar" onclick="CloseProMini()" id="Image-ProMini"
+                        src="https://cf.shopee.co.id/file/65bedf4072423647bce7efa1328538bc" alt="ProMini">
+                </div>
+                <script>
+                    function OpenProMini() {
+                        document.getElementById("Image-ProMini").style.width = "60%";
+                    }
+                    function CloseProMini() {
+                        document.getElementById("Image-ProMini").style.width = "0";
+                    }
+                </script>
+            </ol>
+            <li onclick="TabESP8266()">ESP8266</li>
+            <ol class="margin-25 d-none" id="ESP8266">
+                <div style="display:flex;">
+                    <li onclick="Open01()" style="width: 40%; ">01</li>
+                    <img class="sidebar" onclick="Close01()" id="Image-01"
+                        src="https://cf.shopee.co.id/file/020e9b5c31e512e8be6287997b8336a9" alt="01">
+                </div>
+                <script>
+                    function Open01() {
+                        document.getElementById("Image-01").style.width = "60%";
+                    }
+                    function Close01() {
+                        document.getElementById("Image-01").style.width = "0";
+                    }
+                </script>
+
+                <div style="display:flex;">
+                    <li onclick="OpenNodeMCU()" style="width: 40%; ">NodeMCU</li>
+                    <img class="sidebar" onclick="CloseNodeMCU()" id="Image-NodeMCU"
+                        src="https://cf.shopee.co.id/file/a6526333c15953506003fc0c9f643a4a" alt="NodeMCU">
+                </div>
+                <script>
+                    function OpenNodeMCU() {
+                        document.getElementById("Image-NodeMCU").style.width = "60%";
+                    }
+                    function CloseNodeMCU() {
+                        document.getElementById("Image-NodeMCU").style.width = "0";
+                    }
+                </script>
+
+                <div style="display:flex;">
+                    <li onclick="OpenWemosD1Mini()" style="width: 40%; ">Wemos D1 Mini</li>
+                    <img class="sidebar" onclick="CloseWemosD1Mini()" id="Image-WemosD1Mini"
+                        src="https://cf.shopee.co.id/file/59c57e9f0984bf461ee64463ab6d4893" alt="WemosD1Mini">
+                </div>
+                <script>
+                    function OpenWemosD1Mini() {
+                        document.getElementById("Image-WemosD1Mini").style.width = "60%";
+                    }
+                    function CloseWemosD1Mini() {
+                        document.getElementById("Image-WemosD1Mini").style.width = "0";
+                    }
+                </script>
+            </ol>
+            <li onclick="TabESP32()">ESP32</li>
+            <ol class="margin-25 d-none" id="ESP32">
+                <div style="display:flex;">
+                    <li onclick="OpenDevModule()" style="width: 40%; ">Dev Module</li>
+                    <img class="sidebar" onclick="CloseDevModule()" id="Image-DevModule"
+                        src="https://cf.shopee.co.id/file/b5037a3910564f8cf225deca5cc97c05" alt="DevModule">
+                </div>
+                <script>
+                    function OpenDevModule() {
+                        document.getElementById("Image-DevModule").style.width = "60%";
+                    }
+                    function CloseDevModule() {
+                        document.getElementById("Image-DevModule").style.width = "0";
+                    }
+                </script>
+                <div style="display:flex;">
+                    <li onclick="OpenAIThinkerCAM()" style="width: 40%; ">AIThinkerCAM</li>
+                    <img class="sidebar" onclick="CloseAIThinkerCAM()" id="Image-AIThinkerCAM"
+                        src="https://cf.shopee.co.id/file/c4c7ff7ba504f70d8e27473a08363ae3" alt="AIThinkerCAM">
+                </div>
+                <script>
+                    function OpenAIThinkerCAM() {
+                        document.getElementById("Image-AIThinkerCAM").style.width = "60%";
+                    }
+                    function CloseAIThinkerCAM() {
+                        document.getElementById("Image-AIThinkerCAM").style.width = "0";
+                    }
+                </script>
+            </ol>
+            <li onclick="TabExample()">Example</li>
+            <ol class="margin-25 d-none" id="Example">
+                <div style="display:flex;"> 
+                    <div style="display:flex; width: 95%;">
+                        <li onclick="OpenArduino()" style="width: 35%; ">Arduino</li>
+                        <div id="Div-Youtube-Arduino" class="sidebar" >
+                            <iframe style="height: 0; " id="Youtube-Arduino" src="https://www.youtube.com/embed/T2AwxAHLKMQ"
+                                youtube-src-id="T2AwxAHLKMQ"></iframe>
+                        </div>
+                    </div>
+                    <div id="Close-Arduino" class="sidebar" onclick="CloseArduino()"
+                     style="font-size:40px;">X</div>
+                </div>
+                <script>
+                    let b = 1;
+                    b = window.innerWidth;
+                    b = b * 55 / 100 ;
+                    function OpenArduino() {
+                        document.getElementById("Close-Arduino").style.padding = "10px 30px 6px 2px";
+                        document.getElementById("Div-Youtube-Arduino").style.width = "90%";
+                        document.getElementById("Div-Youtube-Arduino").style.height = b + "px";
+                        document.getElementById("Youtube-Arduino").style.width = "100%";
+                        document.getElementById("Youtube-Arduino").style.height = b + "px";
+                    }
+                    function CloseArduino() {
+                        document.getElementById("Close-Arduino").style.padding = "0";
+                        document.getElementById("Div-Youtube-Arduino").style.width = "0";
+                        document.getElementById("Div-Youtube-Arduino").style.height = "0";
+                        document.getElementById("Youtube-Arduino").style.width = "0";
+                        document.getElementById("Youtube-Arduino").style.height = "0";
+                    }
+                </script>
+                <div style="display:flex;">
+                    <li onclick="OpenESPHTTPServer()" style="width: 40%; ">ESP HTTP Server</li>
+                    <img class="sidebar" onclick="CloseESPHTTPServer()" id="Image-ESPHTTPServer"
+                        src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0hKjquhoiBHiIFFg/root/content"
+                        alt="ESPHTTPServer">
+                </div>
+                <script>
+                    function OpenESPHTTPServer() {
+                        document.getElementById("Image-ESPHTTPServer").style.width = "60%";
+                    }
+                    function CloseESPHTTPServer() {
+                        document.getElementById("Image-ESPHTTPServer").style.width = "0";
+                    }
+                </script>
+                <div style="display:flex;">
+                    <li onclick="OpenESPCAM()" style="width: 40%; ">Web Server ESP CAM</li>
+                    <img class="sidebar" onclick="CloseESPCAM()" id="Image-ESPCAM"
+                        src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0jBLW2gB_ARJstZg/root/content"
+                        alt="ESPCAM">
+                </div>
+                <script>
+                    function OpenESPCAM() {
+                        document.getElementById("Image-ESPCAM").style.width = "60%";
+                    }
+                    function CloseESPCAM() {
+                        document.getElementById("Image-ESPCAM").style.width = "0";
+                    }
+                </script>
+            </ol>
+        </ul>
+        <li onclick="TabServer()">Server</li>
+        <ol class="margin-25 d-none" id="Server">
+            <div style="display:flex;">
+                <li onclick="OpenMyStructuredQueryLanguage()" style="width: 40%; ">My Structured Query Language</li>
+                <img class="sidebar" onclick="CloseMyStructuredQueryLanguage()" id="Image-MyStructuredQueryLanguage"
+                    src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="MyStructuredQueryLanguage">
+            </div>
+            <script>
+                function OpenMyStructuredQueryLanguage() {
+                    document.getElementById("Image-MyStructuredQueryLanguage").style.width = "60%";
+                }
+                function CloseMyStructuredQueryLanguage() {
+                    document.getElementById("Image-MyStructuredQueryLanguage").style.width = "0";
+                }
+            </script>
+            <div style="display:flex;">
+                <li onclick="OpenHypertextPreprocessor()" style="width: 40%; ">Hypertext Preprocessor</li>
+                <img class="sidebar" onclick="CloseHypertextPreprocessor()" id="Image-HypertextPreprocessor"
+                    src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="HypertextPreprocessor">
+            </div>
+            <script>
+                function OpenHypertextPreprocessor() {
+                    document.getElementById("Image-HypertextPreprocessor").style.width = "60%";
+                }
+                function CloseHypertextPreprocessor() {
+                    document.getElementById("Image-HypertextPreprocessor").style.width = "0";
+                }
+            </script>
+            <div style="display:flex;">
+                <li onclick="OpenExtensibleMarkupLanguage()" style="width: 40%; ">Extensible Markup Language</li>
+                <img class="sidebar" onclick="CloseExtensibleMarkupLanguage()" id="Image-ExtensibleMarkupLanguage"
+                    src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="ExtensibleMarkupLanguage">
+            </div>
+            <script>
+                function OpenExtensibleMarkupLanguage() {
+                    document.getElementById("Image-ExtensibleMarkupLanguage").style.width = "60%";
+                }
+                function CloseExtensibleMarkupLanguage() {
+                    document.getElementById("Image-ExtensibleMarkupLanguage").style.width = "0";
+                }
+            </script>
+        </ol>
+        <li onclick="TabWebsite()">Website</li>
+        <ol class="margin-25 d-none" id="Website">
+            <div style="display:flex;">
+                <li onclick="OpenHyperTextMarkupLanguage()" style="width: 40%; ">HyperText Markup Language</li>
+                <img class="sidebar" onclick="CloseHyperTextMarkupLanguage()" id="Image-HyperTextMarkupLanguage"
+                    src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="HyperTextMarkupLanguage">
+            </div>
+            <script>
+                function OpenHyperTextMarkupLanguage() {
+                    document.getElementById("Image-HyperTextMarkupLanguage").style.width = "60%";
+                }
+                function CloseHyperTextMarkupLanguage() {
+                    document.getElementById("Image-HyperTextMarkupLanguage").style.width = "0";
+                }
+            </script>
+            <div style="display:flex;">
+                <li onclick="OpenCascadingStyleSheet()" style="width: 40%; ">Cascading Style Sheet</li>
+                <img class="sidebar" onclick="CloseCascadingStyleSheet()" id="Image-CascadingStyleSheet"
+                    src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="CascadingStyleSheet">
+            </div>
+            <script>
+                function OpenCascadingStyleSheet() {
+                    document.getElementById("Image-CascadingStyleSheet").style.width = "60%";
+                }
+                function CloseCascadingStyleSheet() {
+                    document.getElementById("Image-CascadingStyleSheet").style.width = "0";
+                }
+            </script>
+
+            <li onclick="TabJavascript()">Javascript</li>
+            <ol class="margin-25 d-none" id="Javascript">
+                <div style="display:flex;">
+                    <li onclick="OpenJavaScript()" style="width: 40%; ">Java Script</li>
+                    <img class="sidebar" onclick="CloseJavaScript()" id="Image-JavaScript"
+                        src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="JavaScript">
+                </div>
+                <script>
+                    function OpenJavaScript() {
+                        document.getElementById("Image-JavaScript").style.width = "60%";
+                    }
+                    function CloseJavaScript() {
+                        document.getElementById("Image-JavaScript").style.width = "0";
+                    }
+                </script>
+
+                <div style="display:flex;">
+                    <li onclick="OpenJQuery()" style="width: 40%; ">J Query</li>
+                    <img class="sidebar" onclick="CloseJQuery()" id="Image-JQuery"
+                        src="https://cf.shopee.co.id/file/a113dd79159ba1fedf7e567b5ea51118" alt="JQuery">
+                </div>
+                <script>
+                    function OpenJQuery() {
+                        document.getElementById("Image-JQuery").style.width = "60%";
+                    }
+                    function CloseJQuery() {
+                        document.getElementById("Image-JQuery").style.width = "0";
+                    }
+                </script>
+            </ol>
+        </ol>
+        <li onclick="TabPLC()">Programmable Logic Controller</li>
+        <ol class="margin-25 d-none" id="PLC">
+            <li> CX Programmer </li>
+            <li> Out Seal</li>
+        </ol>
+    </ul>
+    <script>
+
+        function TabMicrocontroller() {
+            $("#Microcontroller").slideToggle("fast");
+        }
+        function TabServer() {
+            $("#Server").slideToggle("fast");
+        }
+        function TabWebsite() {
+            $("#Website").slideToggle("fast");
+        }
+        function TabJavascript() {
+            $("#Javascript").slideToggle("fast");
+        }
+        function TabPLC() {
+            $("#PLC").slideToggle("fast");
+        }
+        function TabArduino() {
+            $("#Arduino").slideToggle("fast");
+        }
+        function TabESP8266() {
+            $("#ESP8266").slideToggle("fast");
+        }
+        function TabESP32() {
+            $("#ESP32").slideToggle("fast");
+        }
+        function TabExample() {
+            $("#Example").slideToggle("fast");
+        }
+
+    </script>
+</body>
+
+</html>
