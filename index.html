@@ -8,11 +8,13 @@
             background-color: rgb(19, 19, 19);
             font: Times;
             font-size: 20px;
+
         }
 
         ul,
         ol,
         li {
+            text-align: justify;
             line-height: 25px;
             letter-spacing: 0.5px;
         }
@@ -33,7 +35,7 @@
             padding: 20px;
             color: #fff;
             background-color: #111;
-            
+
 
         }
 
@@ -44,6 +46,19 @@
 
         .d-none {
             display: none;
+        }
+
+        .SidebarN {
+            height: 100%;
+            width: 100%;
+            margin: 210px 10px 10px 533px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
         }
 
         .SidebarT {
@@ -147,6 +162,21 @@
             background-color: #ddd;
             color: black;
         }
+
+        @media (max-width: 1000px) {
+            .SidebarN {
+                height: 100%;
+                width: 100%;
+                margin: auto;
+                position: unset;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 0px;
+            }
+        }
     </style>
 </head>
 
@@ -174,7 +204,7 @@
         View Work
     </div>
     <div>
-        Hire Me !
+        Hire Me !ramming
     </div>-->
     <div id="navbar">
         <a href="#home">Home</a>
@@ -182,19 +212,24 @@
         <a href="#contact">Contact</a>
         <span>Support</span>
     </div>
+    <div id="SidebarT-Programming" class="SidebarT">
+        <a href="javascript:void(0)" class="closebtn" onclick="CloseSidebarTProgramming()">×</a>
+        <div id="JProgramming" class="f-color center">Programming Skills</div>
+        <div id="Hasil-Programming" class="f-color"></div>
+    </div>
     <div id="SidebarT-Modul-dan-Komponen" class="SidebarT">
         <a href="javascript:void(0)" class="closebtn" onclick="CloseSidebarTModulKomponen()">×</a>
-        <div id="Judul" class="f-color center">List Modul Dan Komponen Yang Sudah Di Test</div>
+        <div id="Judul" class="f-color center">List of Tested Modules and Components</div>
         <div id="List-Modul-Komponen" class="f-color"></div>
     </div>
     <div style="display: flex; color:white; padding: 20px;  ">
         <div style="width:500px;">
-            <span style="font-size: 40px;">About Me</span>
+            <span style="font-size: 40px;">About Skills Me</span>
             <div style="letter-spacing: 0.5px; line-height: 25px;">
                 <ol style="text-align: left;">
                     <li onclick="TabKelistrikan()">Electrical Skills</li>
                     <ul id="Hasil-Kelistrikan" class="d-none">
-                        <li>Maintenance ~Belum Ada Data</li>
+                        <li>Maintenance ~ No Data yet</li>
                         <script>
                             function TabKelistrikan() {
                                 $("#Hasil-Kelistrikan").slideToggle("fast");
@@ -203,7 +238,8 @@
                     </ul>
                     <li onclick="TabElektronika()">Electronics Skills</li>
                     <ul id="Hasil-Elektronika" class="d-none">
-                        <li onclick="OpenSidebarTModulKomponen()">Modul dan Komponen Tested</li>
+                        <li onclick="OpenSidebarTModulKomponen()">List of Tested Modules and Components</li>
+                        <li>Create your own electronic product</li>
                     </ul>
                     <script>
                         function TabElektronika() {
@@ -211,6 +247,9 @@
                         }
                         document.getElementById("List-Modul-Komponen").style.width = window.innerWidth - 50 + "px";
                         document.getElementById("Judul").style.width = window.innerWidth - 50 + "px";
+                        document.getElementById("Hasil-Programming").style.width = window.innerWidth - 50 + "px";
+
+                        document.getElementById("JProgramming").style.width = window.innerWidth - 50 + "px";
 
                         function OpenSidebarTModulKomponen() {
                             document.getElementById("SidebarT-Modul-dan-Komponen").style.width = "100%";
@@ -219,163 +258,112 @@
                             document.getElementById("SidebarT-Modul-dan-Komponen").style.width = "0";
                         }
                     </script>
-
                     <li onclick="TabKomputer()">Computer Skills</li>
                     <div id="PC" class="d-none"></div>
                     <script>
                         function TabKomputer() {
                             $("#PC").slideToggle("fast");
                         }
+                        function TabCreateNetwork() {
+                            $("#TabCreateNetwork").slideToggle("fast");
+                        }
                     </script>
-            <li onclick="TabJaringan()">Computer Networking Skills</li>
-            <div id="Hasil-Jaringan"></div>
+                    <li onclick="TabJaringan()">Computer Networking Skills but not only for computers</li>
+                    <div id="Hasil-Jaringan"></div>
+                    <ul style=" margin:0px 0px 0px -40px;">
+                        <li>Mikrotik Configuration</li>
+                        <li>Routers Configuration</li>
+                        <li onclick="TabCreateNetwork()">Create your own local Network System product<br> My Example
+                            Creating a Network :</li>
+                        <ul id="TabCreateNetwork" class="d-none" style=" margin:0px 0px 0px -40px;">
+                            <div id="Pemisah" style="display:flex; ">
+                                <div>
+                                    <li>First For Free Hotspot Network.</li>
+                                    <li>Second For VIP Hotspot Network.</li>
+                                    <li>Third For PPPoE Network.</li>
+                                    <li>Four For VLAN Network.</li>
+                                    <li>Five For Microcontroller Networks.</li>
+                                    <li>Six Networks For Computer Operators.</li>
+                                    <li>Seven Networks For DHCP Or Clients.</li>
+                                    <li>Eight For DHCP Static Networks.</li>
+                                    <li>Nine For High-Speed Network.</li>
+                                    <li>Ten For Network Bridge Servers With Internet Service Providers.</li>
+                                </div>
+                                <div class="SidebarN">
+                                    <img id="Network" style="margin:1px 2px 3px 4px;" onclick="CloseMega()"
+                                        src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0_MlV6kpJWozwuaQ/root/content"
+                                        alt="Mega">
+                                    <script>
+                                        document.getElementById("Network").style.width = 380 + "px";
+                                    </script>
+                                </div>
+                            </div>
+                        </ul>
+                        <li onclick="TabCreateNetwork()">Create Domain Name System Server On Local Network:</li>
+                        <li>Create Network connected storage, Server on Local Network:</li>
+                        <li>Create Printer connected to Network, Server on Local Network:</li>
+                        <li>Create Local Hosting Server connected to Local Network:</li>
+                        <li>Create website redirect, block, rollback ( Firewall ) servers in Local Network:</li>
+                    </ul>
+                    <li id="BahasaP" onclick="OpenSidebarTProgramming()">Programming Skills</li>
+                    <script>
 
-            <li id="BahasaP" onclick="TabProgramming()">Programming Skills</li>
-            <div id="Bahasa" style="display: none;"></div>
+                        function OpenSidebarTProgramming() {
+                            document.getElementById("SidebarT-Programming").style.width = "100%";
+                        }
+                        function CloseSidebarTProgramming() {
+                            document.getElementById("SidebarT-Programming").style.width = "0";
+                        }
+                    </script>
+                    <li onclick="TabKonsultasi()">Consultation Of The Above Skills</li>
+                    <div id="Contoh-Konsul"></div>
+                    <li>My Current Project</li>
+                    <ol class="margin-25">
+                        <li onclick="TabProjectSmartHome()">Smart Home [Control your home anywhere and any website]
+                        </li>
+                        <li onclick="TabProjectSmartBel()">Smart Bel</li>
+                        <li onclick="TabProjectSmartRoom()">Smart Room</li>
+                    </ol>
+                </ol>
 
-            <li onclick="TabKonsultasi()">Consultation Of The Above Skills</li>
-            <div id="Contoh-Konsul"></div>
-            <li>My Current Project</li>
-            <ol class="margin-25">
-                <li onclick="TabProjectSmartHome()">Smart Home [Control your home anywhere and any website]
-                </li>
-                <li onclick="TabProjectSmartBel()">Smart Bel</li>
-                <li onclick="TabProjectSmartRoom()">Smart Room</li>
-            </ol>
-            </ol>
 
 
-
-            <div id="Tested">
                 <script>
                     $(document).ready(
                         function () {
                             $("#List-Modul-Komponen").load("https://muhamad-bekti-wibowo.github.io/Portofolio/list.html");
                             $("#PC").load("https://muhamad-bekti-wibowo.github.io/Portofolio/pc.html");
-                     
+                            $("#Hasil-Programming").load("https://muhamad-bekti-wibowo.github.io/Portofolio/Programming.html");
+
                         });
 
 
-                    function openNav() {
-                        document.getElementById("mySidebarT").style.width = "250px";
-                        document.getElementById("main").style.marginLeft = "250px";
-                    }
 
-                    function closeNav() {
-                        document.getElementById("mySidebarT").style.width = "0";
-                        document.getElementById("main").style.marginLeft = "0";
-                    }
                 </script>
             </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div style="width:3%;">
+            Foto
+        </div>
+        <div style="width:3%;">
+            Siapa Saya
         </div>
 
 
-
-
-
-
-
-
-
-
-
-    </div>
-    <div style="width:3%;">
-        Foto
-    </div>
-    <div style="width:3%;">
-        Siapa Saya
-    </div>
-    <script>
-        var Tab = 1;
-        let BProgramming = `
-            <ul class="margin-25" style="text-align: left; font-size: 15px; letter-spacing: 0.1px; line-height: 15px;">
-            <li onclick="TabMicrocontroller()">Microcontroller</li>
-            <ul class="margin-25 d-none" id="Microcontroller">
-                <li onclick="TabArduino()">Arduino</li>
-                <ol class="margin-25 d-none" id="Arduino">
-                    <li>Mega</li>
-                    <li>Uno R3</li>
-                    <li>Pro Mini</li>
-                </ol>
-                <li onclick="TabESP8266()">ESP8266</li>
-                <ol class="margin-25 d-none" id="ESP8266">
-                    <li>01</li>
-                    <li>NodeMCU</li>
-                    <li>Wemos D1 Mini</li>
-                </ol>
-                <li onclick="TabESP32()">ESP32</li>
-                <ol class="margin-25 d-none" id="ESP32">
-                    <li>Dev Module</li>
-                    <li>AI Thinker CAM</li>
-                </ol>
-                <li onclick="openNav()">Modul dan Komponen Tested</li>
-                <div id="Lihat">
-                </div>
-            </ul>
-            <li onclick="TabServer()">Server</li>
-            <ol class="margin-25 d-none" id="Server">
-                <li>My Structured Query Language</li>
-                <li>Hypertext Preprocessor</li>
-                <li>Extensible Markup Language</li>
-            </ol>
-            <li onclick="TabWebsite()">Website</li>
-            <ol class="margin-25 d-none" id="Website" style="margin: 0px 0px 0px -25px;">
-                <li>HyperText Markup Language</li>
-                <li>Cascading Style Sheet</li>
-                <li onclick="TabJavascript()">Javascript</li>
-                <ol class="margin-25 d-none" id="Javascript">
-                    <li>Javascript</li>
-                    <li>J Query</li>
-                </ol>
-            </ol>
-            <li onclick="TabPLC()">Programmable Logic Controller</li>
-            <ol class="margin-25 d-none" id="PLC">
-                <li> CX Programmer </li>
-                <li> Out Seal</li>
-            </ol>
-            </ul>
-            `;
-        function TabMicrocontroller() {
-            $("#Microcontroller").slideToggle("slow");
-        }
-        function TabServer() {
-            $("#Server").slideToggle("slow");
-        }
-        function TabWebsite() {
-            $("#Website").slideToggle("slow");
-        }
-        function TabJavascript() {
-            $("#Javascript").slideToggle("slow");
-        }
-        function TabPLC() {
-            $("#PLC").slideToggle("slow");
-        }
-        function TabArduino() {
-            $("#Arduino").slideToggle("slow");
-        }
-        function TabESP8266() {
-            $("#ESP8266").slideToggle("slow");
-        }
-        function TabESP32() {
-            $("#ESP32").slideToggle("slow");
-        }
-
-        function TabProgramming() {
-
-            if (Tab == 1) {
-                document.getElementById("Bahasa").innerHTML = BProgramming;
-                Tab = 0; $("#Bahasa").slideToggle("slow");
-            }
-            else {
-                Tab = 1; $("#Bahasa").slideToggle("slow");
-            }
-        }
-
-    </script>
-
-    <!--
+        <!--
     <div class="sizez">
 
         <hr />
@@ -616,9 +604,7 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
     laborum.</p>
 
-<script src='https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0bbMdTv1H4pVsgfA/root/content' type='text/javascript'>
-    <!-- PC -->
-</script>
+
 <script>
     // When the user scrolls down 20px from the top of the document, slide down the navbar
     window.onscroll = function () { scrollFunction() };
