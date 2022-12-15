@@ -1,621 +1,849 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLgZxQ5TUByJHd7gG3gg/root/content
+' rel='stylesheet' type='text/css' />
+<!-- Switch -->
 
 <head>
-    <style>
-        html {
-            background-color: rgb(19, 19, 19);
-            font: Times;
-            font-size: 20px;
-
-        }
-
-        ul,
-        ol,
-        li {
-            text-align: justify;
-            line-height: 25px;
-            letter-spacing: 0.5px;
-        }
-
-        .margin-25 {
-            margin: 0px 0px 0px -25px;
-        }
-
-        .margin3 {
-            margin: 0px 0px 0px -15.65px;
-        }
-
-        .margin-ol {
-            margin: 0px 0px 0px -19.86px;
-        }
-
-        .f-color {
-            padding: 20px;
-            color: #fff;
-            background-color: #111;
-
-
-        }
-
-        .center {
-            text-align: center;
-            font-size: 40px;
-        }
-
-        .d-none {
-            display: none;
-        }
-
-        .SidebarN {
-            height: 100%;
-            width: 100%;
-            margin: 210px 10px 10px 533px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .SidebarT {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .SidebarT a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .SidebarT a:hover {
-            color: #f1f1f1;
-        }
-
-        .SidebarT .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        .openbtn {
-            font-size: 20px;
-            cursor: pointer;
-            background-color: #111;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-        }
-
-        .openbtn:hover {
-            background-color: #444;
-        }
-
-        #main {
-            transition: margin-left .5s;
-            padding: 16px;
-        }
-
-        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-        @media screen and (max-height: 450px) {
-            .SidebarT {
-                padding-top: 15px;
-            }
-
-            .SidebarT a {
-                font-size: 18px;
-            }
-        }
-
-        #navbar {
-            background-color: #333;
-            position: fixed;
-            top: -50px;
-            width: 100%;
-            display: block;
-            transition: top 0.3s;
-        }
-
-        #navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 15px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        #navbar span {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 15px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        #navbar span:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        #navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        @media (max-width: 1000px) {
-            .SidebarN {
-                height: 100%;
-                width: 100%;
-                margin: auto;
-                position: unset;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                overflow-x: hidden;
-                transition: 0.5s;
-                padding-top: 0px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <!-- <div>
-        Welcome !
-
-    </div>
-    <div
-        I am
-
-    </div>
-    <div>
-        Muhamad Bekti Wibowo
-
-
-    </div>
-    <div>
-        Programer
-    </div>
-    <div>
-        Portofolio
-    </div>
-    <div>
-        View Work
-    </div>
-    <div>
-        Hire Me !ramming
-    </div>-->
-    <div id="navbar">
-        <a href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <span>Support</span>
-    </div>
-    <div id="SidebarT-Programming" class="SidebarT">
-        <a href="javascript:void(0)" class="closebtn" onclick="CloseSidebarTProgramming()">×</a>
-        <div id="JProgramming" class="f-color center">Programming Skills</div>
-        <div id="Hasil-Programming" class="f-color"></div>
-    </div>
-    <div id="SidebarT-Modul-dan-Komponen" class="SidebarT">
-        <a href="javascript:void(0)" class="closebtn" onclick="CloseSidebarTModulKomponen()">×</a>
-        <div id="Judul" class="f-color center">List of Tested Modules and Components</div>
-        <div id="List-Modul-Komponen" class="f-color"></div>
-    </div>
-    <div style="display: flex; color:white; padding: 20px;  ">
-        <div style="width:500px;">
-            <span style="font-size: 40px;">About Skills Me</span>
-            <div style="letter-spacing: 0.5px; line-height: 25px;">
-                <ol style="text-align: left;">
-                    <li onclick="TabKelistrikan()">Electrical Skills</li>
-                    <ul id="Hasil-Kelistrikan" class="d-none">
-                        <li>Maintenance ~ No Data yet</li>
-                        <script>
-                            function TabKelistrikan() {
-                                $("#Hasil-Kelistrikan").slideToggle("fast");
-                            }
-                        </script>
-                    </ul>
-                    <li onclick="TabElektronika()">Electronics Skills</li>
-                    <ul id="Hasil-Elektronika" class="d-none">
-                        <li onclick="OpenSidebarTModulKomponen()">List of Tested Modules and Components</li>
-                        <li>Create your own electronic product</li>
-                    </ul>
-                    <script>
-                        function TabElektronika() {
-                            $("#Hasil-Elektronika").slideToggle("fast");
-                        }
-                        document.getElementById("List-Modul-Komponen").style.width = window.innerWidth - 50 + "px";
-                        document.getElementById("Judul").style.width = window.innerWidth - 50 + "px";
-                        document.getElementById("Hasil-Programming").style.width = window.innerWidth - 50 + "px";
-
-                        document.getElementById("JProgramming").style.width = window.innerWidth - 50 + "px";
-
-                        function OpenSidebarTModulKomponen() {
-                            document.getElementById("SidebarT-Modul-dan-Komponen").style.width = "100%";
-                        }
-                        function CloseSidebarTModulKomponen() {
-                            document.getElementById("SidebarT-Modul-dan-Komponen").style.width = "0";
-                        }
-                    </script>
-                    <li onclick="TabKomputer()">Computer Skills</li>
-                    <div id="PC" class="d-none"></div>
-                    <script>
-                        function TabKomputer() {
-                            $("#PC").slideToggle("fast");
-                        }
-                        function TabCreateNetwork() {
-                            $("#TabCreateNetwork").slideToggle("fast");
-                        }
-                    </script>
-                    <li onclick="TabJaringan()">Computer Networking Skills but not only for computers</li>
-                    <div id="Hasil-Jaringan"></div>
-                    <ul style=" margin:0px 0px 0px -40px;">
-                        <li>Mikrotik Configuration</li>
-                        <li>Routers Configuration</li>
-                        <li onclick="TabCreateNetwork()">Create your own local Network System product<br> My Example
-                            Creating a Network :</li>
-                        <ul id="TabCreateNetwork" class="d-none" style=" margin:0px 0px 0px -40px;">
-                            <div id="Pemisah" style="display:flex; ">
-                                <div>
-                                    <li>First For Free Hotspot Network.</li>
-                                    <li>Second For VIP Hotspot Network.</li>
-                                    <li>Third For PPPoE Network.</li>
-                                    <li>Four For VLAN Network.</li>
-                                    <li>Five For Microcontroller Networks.</li>
-                                    <li>Six Networks For Computer Operators.</li>
-                                    <li>Seven Networks For DHCP Or Clients.</li>
-                                    <li>Eight For DHCP Static Networks.</li>
-                                    <li>Nine For High-Speed Network.</li>
-                                    <li>Ten For Network Bridge Servers With Internet Service Providers.</li>
-                                </div>
-                                <div class="SidebarN">
-                                    <img id="Network" style="margin:1px 2px 3px 4px;" onclick="CloseMega()"
-                                        src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga0_MlV6kpJWozwuaQ/root/content"
-                                        alt="Mega">
-                                    <script>
-                                        document.getElementById("Network").style.width = 380 + "px";
-                                    </script>
-                                </div>
-                            </div>
-                        </ul>
-                        <li onclick="TabCreateNetwork()">Create Domain Name System Server On Local Network:</li>
-                        <li>Create Network connected storage, Server on Local Network:</li>
-                        <li>Create Printer connected to Network, Server on Local Network:</li>
-                        <li>Create Local Hosting Server connected to Local Network:</li>
-                        <li>Create website redirect, block, rollback ( Firewall ) servers in Local Network:</li>
-                    </ul>
-                    <li id="BahasaP" onclick="OpenSidebarTProgramming()">Programming Skills</li>
-                    <script>
-
-                        function OpenSidebarTProgramming() {
-                            document.getElementById("SidebarT-Programming").style.width = "100%";
-                        }
-                        function CloseSidebarTProgramming() {
-                            document.getElementById("SidebarT-Programming").style.width = "0";
-                        }
-                    </script>
-                    <li onclick="TabKonsultasi()">Consultation Of The Above Skills</li>
-                    <div id="Contoh-Konsul"></div>
-                    <li>My Current Project</li>
-                    <ol class="margin-25">
-                        <li onclick="TabProjectSmartHome()">Smart Home [Control your home anywhere and any website]
-                        </li>
-                        <li onclick="TabProjectSmartBel()">Smart Bel</li>
-                        <li onclick="TabProjectSmartRoom()">Smart Room</li>
-                    </ol>
-                </ol>
-
-
-
-                <script>
-                    $(document).ready(
-                        function () {
-                            $("#List-Modul-Komponen").load("https://muhamad-bekti-wibowo.github.io/Portofolio/list.html");
-                            $("#PC").load("https://muhamad-bekti-wibowo.github.io/Portofolio/pc.html");
-                            $("#Hasil-Programming").load("https://muhamad-bekti-wibowo.github.io/Portofolio/Programming.html");
-
-                        });
-
-
-
-                </script>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </div>
-        <div style="width:3%;">
-            Foto
-        </div>
-        <div style="width:3%;">
-            Siapa Saya
-        </div>
-
-
-        <!--
-    <div class="sizez">
-
-        <hr />
-        <div class="display" id="Konsultasi">
-            <div class="Text" id="Konsultasi"><span class="konsul">Contact Me...</span>
-                <hr />
-                <a href="https://wa.me/088212711176" title="WhatsApp"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPn_HLOX5NVut-8hd1D_MSsvioVVujfyLmTJYN91wnCOzRbb4fYJmZKI7EIjBLJ0KF-ID0lWHRWNuNuVH3z_dqTITEg2gLB0-Ydh7Vlu2yXW9MqWE6PKtIxO1gBw71pvaxtXGKguk3okziojoz4jiELBhvYUCx_Ed4tkpj1pVVk__iyj5TGcadSCjs1A/s1600/watsap.png" />&nbsp;<span
-                        class="konsul">WhatsApp</span></a>
-                <hr />
-                <a href="https://t.me/MBektiW" title="Telegram"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHbgQEjlD6WN_rpb1qO3wXj0MpqZXNfB1wlyQ9g624qJ-uYPGHDk7kNYOHNZCF5JzpVXtij10-5COsgOdmdopUsMnYoAxCekKg_ukPQMlTEfKXd250vghEQTXnuzRKAvplMCee7BheEtOAQxhFJ9PzzNEMYkWANOynKW4faBMPrCg0nJOEG7OiHhpdhA/s16/telegram.png" />&nbsp;<span
-                        class="konsul">Telegram</span></a>
-                <hr />
-                <a href="https://m.me/Muhamad.bekti.Wibowo" title="Facebook Messengger"><img height="16" id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRbmA3pInt-3irdVZncHtQwNB_Nnti64TmC0rsm2jBRKGDWNt4yDd9-AV4Q7SCHIUCGfHINlCEYLpnXLeWkXGwUkF-Q0xFTs0_P8HvyQA1W2kZNO8dfnQSTIgah20RHq6nRa_116dBHH2x1zUanf0Di4HSaAsvhOrHiyjLfrKAnx8z_5P8VEa3MB9llQ/s1600/facebook-messenger.png"
-                        width="16" />&nbsp;<span class="konsul">Facebook Messenger</span></a><br />
-                <hr />
-            </div>
-            <div class="Text" id="Konsultasi"><span class="konsul">Konten Me...</span>
-                <hr />
-                <a href="https://stat-upgrade.blogspot.com" title="Blog"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYEvcRwYMixI7HmozkUi8AePvBcuEFhh3ZfT2rGNTFJzoXhNjSRIbkzrHHO02FCLxymT-leZTfPAhR8V3Qv7TLOJwjXPfw2izfr3TX4orxu5YvzMa23Lc4udtToakqiQ4lb4lmvwLZM9P1TT0yDHM5EKZMwPe226CZovMgUF92nBVmAZ-jEQF46etTPg/s1600/blog.png" />&nbsp;<span
-                        class="Konten">Konten Edukasi By Me ~Blog</span></a>
-                <hr />
-                <a href="https://www.youtube.com/@muhamad-bekti-wibowo" title="Youtube"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkz__6cDsyDDLJsMMubzbVflGyIdZPBwvPJFmzmrN-FHRxW2REneUr6ZPtOpayK5ZtDbJhWge1_-7XAM6uH6tdhfPilJAkmcgCQAK3SmQFgDCaKYtQi4k63-fh8Zm0sk3bif0RrkZ8UmnZKP4NB1Aw3chY_7K8G5mQGkpi6EdzH4aRLMGyYGBg_GaZkg/s16000/youtube.png" />&nbsp;<span
-                        class="Konten">Konten Edukasi By Me ~Youtube</span></a>
-                <hr />
-                <a href="https://www.youtube.com/@obow-bermain-game" title="Youtube"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkz__6cDsyDDLJsMMubzbVflGyIdZPBwvPJFmzmrN-FHRxW2REneUr6ZPtOpayK5ZtDbJhWge1_-7XAM6uH6tdhfPilJAkmcgCQAK3SmQFgDCaKYtQi4k63-fh8Zm0sk3bif0RrkZ8UmnZKP4NB1Aw3chY_7K8G5mQGkpi6EdzH4aRLMGyYGBg_GaZkg/s16000/youtube.png" />&nbsp;<span
-                        class="Konten">Konten Bermain Game ~Youtube</span></a>
-                <hr />
-            </div>
-            <div class="Text" id="Konsultasi"><span class="konsul">Follow Me...</span>
-                <hr />
-                <a href="www.facebook.com/muhamad.bektiwibowo" title="Facebook"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVE7C8Lty9MOI94v_L5GUYmgDPzGjGuDoiMz96M3ciFo4a2htNEI9O6dxo40e2QaZWU41razWxRdiPTEsR5IG1yWPPSkKFiaJXj6rKqC7Qw7Q3LLeqZ3mrTuI-CJQt_dwdvGvdCma3fk4-Y6g4VKpKvFcmZpsB7bipUtDynM4wef-pOTN0fZS03OVIpg/s1600/facebook.png" />&nbsp;<span
-                        class="Sosmed">Facebook</span></a>
-
-                <hr />
-                <a href="https://www.instagram.com/muhamadbekti.wibowo" title="Instagram"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLes64W42hPn_14sxvbMgEa3J2AWQOaTFd3RGqM3lFNmEiFoqTdLH-cNYz2MfWC9ot_BeX4CSdCQ0_N3yjFbRgEH29UmmrUcEvKFZbsV5aCyNVnRrv5yNsMn5V60TgCpHMCaCJBhq96g5cXZ05R7shaySnunCFVKcl2xi2HjJxeh_ITE7-RrIBGlcoWw/s1600/instagram.png" />&nbsp;<span
-                        class="Sosmed">Instagram</span></a>
-
-                <hr />
-                <a href="https://www.tiktok.com/@muhamadbektiwibowo" title="Tik Tok"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhErR7XRNo_iDM9-0CMG7dxpVxe9_OJXOwD1O2hoOtAnaz6j7l-RE9RQXnLT_kouFQPEi0-yT5NWVAN6Ki52P9HUhHwBSosGtfRfvs5pdYg3RdFO1obp-LIj4_9th91aRqTdJ6VxqdTApY9B4cMh-c5qv8sOKF7bEM6r4zQKUaPYDvo7tSszcjfi7er0g/s1600/tiktok.png" />&nbsp;<span
-                        class="Sosmed">Tik Tok</span></a>
-                <hr />
-            </div>
-            <div class="Text" id="Konsultasi"><span class="konsul">Product Me...</span>
-                <hr />
-                <a href="https://shopee.co.id/muhamadbektiwibowo" title="Shopee"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVx0sNnkV2aNwTYK-IfaVKYs9fr4HtaMH8dAsf2TVMIpz4j60VcjrTtHVChdiEMhfJDEE7iiSTZijXUoUClETtr5p9-yE7_4BFDu-iXD9iO0ZT7_sriENa1-V7cb8uVurVqQAU3WKYs46rq3Hal2kmJUdJ-SNPqhuUoSRCK_b9cVR90lpKrLNo5fS16w/s1600/shope.png" />&nbsp;<span
-                        class="Toko">Shopee</span></a>
-                <hr />
-                <a href="https://shopee.co.id/muhamadbektiwibowo" title="Toko di blog"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYEvcRwYMixI7HmozkUi8AePvBcuEFhh3ZfT2rGNTFJzoXhNjSRIbkzrHHO02FCLxymT-leZTfPAhR8V3Qv7TLOJwjXPfw2izfr3TX4orxu5YvzMa23Lc4udtToakqiQ4lb4lmvwLZM9P1TT0yDHM5EKZMwPe226CZovMgUF92nBVmAZ-jEQF46etTPg/s1600/blog.png" />&nbsp;<span
-                        class="Toko">Toko di Blog</span></a>
-                <hr />
-                <a href="https://shopee.co.id/muhamadbektiwibowo" title="Shopee"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVx0sNnkV2aNwTYK-IfaVKYs9fr4HtaMH8dAsf2TVMIpz4j60VcjrTtHVChdiEMhfJDEE7iiSTZijXUoUClETtr5p9-yE7_4BFDu-iXD9iO0ZT7_sriENa1-V7cb8uVurVqQAU3WKYs46rq3Hal2kmJUdJ-SNPqhuUoSRCK_b9cVR90lpKrLNo5fS16w/s1600/shope.png" />&nbsp;<span
-                        class="Toko">Website</span></a>
-                <hr />
-            </div>
-        </div>
-        <div class="display" id="Konsultasi">
-            <div class="Text-Kanan" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
-                        class="Data-Free">Koleksi Me...</span>
-                    <hr />
-                </a><a href="https://drive.google.com/drive/folders/18J1ZBaUhDTAq0q4G-koLkY3eNM6rBsKB" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
-                        class="Data-Free">Data Sheet </span></a>
-
-
-            </div>
-            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
-                        class="Data-Free">...</span>
-                    <hr />
-                </a><a href="https://drive.google.com/drive/u/1/folders/1Ap1plemhbPigrbRau6pEVav27ScygiC4"
-                    title="Blog"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
-                        class="Data-Free">Program Pendukung</span></a>
-
-
-            </div>
-            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
-                        class="Data-Free">...</span>
-                    <hr />
-                </a><a href="https://drive.google.com/drive/folders/17ekq8yaImmQHhflgfFvDhNlbHU6kygsD" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
-                        class="Data-Free">Liblary Arduino</span></a>
-
-
-            </div>
-            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
-                        class="Data-Free">...</span>
-                    <hr />
-                </a><a href="https://drive.google.com/drive/folders/18pZEb3JIcBuFdzMOM0W8zVH3nOtxFLCz" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
-                        class="Data-Free">Skema</span></a>
-
-
-            </div>
-            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
-                        class="Data-Free">...</span>
-                    <hr />
-                </a><a href="https://drive.google.com/drive/folders/1p9NIZPOYD4cb0rxvSpUIOLmIVp9GgQUV" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
-                        class="Data-Free">Program Arduino</span></a>
-
-
-            </div>
-            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
-                        class="Data-Free">...</span>
-                    <hr />
-                </a><a href="https://drive.google.com/drive/folders/1bw2F-4wlqWNLwhnpA6BwDpDSlulDLFHR" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
-                        class="Data-Free">Rumus dalam Excel</span></a>
-
-
-            </div>
-            <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
-                        class="Data-Free">...</span>
-                    <hr />
-                </a><a href="https://drive.google.com/drive/u/1/folders/1nkaMDoX_8OppSktkJ600s9p1EZSHHKv3"
-                    title="Blog"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
-                        class="Data-Free">Script Mikrotik</span></a>
-
-
-            </div>
-
-            <div class="Text-Kiri" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-                        id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;<span
-                        class="Data-Free">...</span>
-                    <hr />
-                </a><a href="https://drive.google.com/drive/u/1/folders/1MOfZX-Zqhs9-IKcNIZGDpwJCn-jmYHXk"
-                    title="Blog"><img id="tautan"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;<span
-                        class="Data-Free">Freeware</span></a>
-            </div>
-        </div>
-    </div>-->
-    </div>
-</body>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-<p>Scroll to the top to hide the navbar.</p>
-<p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.</p>
-
-
-<script>
-    // When the user scrolls down 20px from the top of the document, slide down the navbar
-    window.onscroll = function () { scrollFunction() };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("navbar").style.top = "0";
-        } else {
-            document.getElementById("navbar").style.top = "-50px";
-        }
+  <style>
+    html {
+      background-color: rgb(17, 17, 17);
+      color: white;
+      margin: 10px;
     }
-</script>
+
+    .JAbout {
+      font-size: 40px;
+    }
+
+    .AboutMe {
+      text-align: justify;
+    }
+
+    .Kotak {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .Header {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .top-left {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+    }
+
+    .Data-Center-Image {
+      color: rgb(255, 255, 255);
+      width: 100%;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .d-none {
+      display: none;
+    }
+
+    .SidebarT {
+      height: 100%;
+      width: 0;
+      z-index: 1;
+      top: 0;
+      left: 0;
+
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+
+    .SidebarT a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .SidebarT a:hover {
+      color: #f1f1f1;
+    }
+
+    .JPicture6 {
+      margin: auto;
+      width: 20px;
+      height: 30px;
+      position: relative;
+    }
+
+    .JPicture8 {
+      margin: auto;
+      width: 20px;
+      height: 30px;
+      position: relative;
+    }
+
+    .SidebarT .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .Judul {
+      text-align: center;
+
+    }
+
+    .Tab {
+      background-color: rgb(20, 20, 20);
+      padding: 0px 40px 20px 40px;
+      margin: 40px 0px 40px 0px;
+    }
+
+    .Explanation {
+      padding-bottom: 20px;
+      text-align: center;
+      font-size: 13px;
+      height: 60px;
+    }
+
+    .SidebarT {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+
+    .SidebarT a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .SidebarT a:hover {
+      color: #f1f1f1;
+    }
+
+    .SidebarT .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .LockScreen {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0, 0, 0);
+      overflow-x: hidden;
+      transition: 0.5s;
+      opacity: 1;
+    }
+
+    .CShop {
+      text-align: center;
+      margin: 2px;
+      background-color: rgb(31, 31, 31);
+    }
+  </style>
+</head>
+<div id="LockScreen" class="LockScreen" style="text-align: center; font-size: 50px;"> <span id="LoadingLockScreen" ></span> 
+  <script>
+    for (let a = 0; a <= 100; a++) {
+      task(a);
+    }
+    function task(a) {
+      setTimeout(function () {
+        $(document).ready(function () {
+          $(".LockScreen").css("opacity",  100-a +"%");
+          $(".LockScreen").css("margin", ` ` + a + `% 0px 0px 0px`);
+          document.getElementById("LoadingLockScreen").innerHTML = a;
+        });
+      }, 100 * a);
+    }
+    setTimeout(function () {
+      document.getElementById("LockScreen").style.height = "0px";
+    }, 10000);
+  </script>
+</div>
+
+<!--atas kanan bawah kiri-->
+<div id="SidebarT-Modul-dan-Komponen" class="SidebarT">
+  <div style="display: flex; text-align: center; ">
+    <div id="List-Modul-Komponen" style="margin: -27px 0px 0px 0px;"></div>
+    <a href="javascript:void(0)" class="closebtn" onclick="CloseSidebarTModulKomponen()">×</a>
+  </div>
+</div>
+
+<div id="All-Data">
+  <div
+    style="text-align: center; display:flex; background-color: rgb(17, 17, 17); padding:20px 40px 20px 40px;margin-top: 20px;">
+    <div style="width: 100%; text-align: center; ">
+      <div class="Header">
+        <img class="Background-Home" style="width: 100%; opacity: 0.1;" src="Gua.png">
+        <div class="top-left">Portofolio</div>
+        <div class="Data-Center-Image">
+          <div id="Welcome">Welcome !</div>
+          <span id="Isi-Welcome" style="color:blue;"></span>
+          <script>
+            let SwitchHome = 1;
+            let data = " ";
+            setInterval(
+              function () {
+                switch (SwitchHome) {
+                  case 1:
+                    data = "I am Muhamad Bekti Wibowo";
+                    break;
+                  case 2:
+                    data = "I am Content Creator";
+                    break;
+                  case 3:
+                    data = "I am Programer";
+                    break;
+                }
+                if (SwitchHome < 3) {
+                  SwitchHome++;
+                }
+                else {
+                  SwitchHome = 1;
+                }
+                let a = 0;
+                for (let a = 0; a <= data.length; a++) {
+                  task(a);
+                }
+                function task(a) {
+                  setTimeout(function () {
+                    console.log(a);
+                    document.getElementById("Isi-Welcome").innerHTML = " " + data.slice(0, a);
+                  }, 50 * a);
+                }
+              }, 2500);
+            document.getElementById("Welcome").style.fontSize = window.innerWidth / 15 + "px";
+            document.getElementById("Isi-Welcome").style.fontSize = window.innerWidth / 35 + "px";
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Tab" style="display:flex; ">
+    <script> window.outerHeight
+      $(document).ready(function () {
+        $(".AboutMe").css("font-size", ((window.outerHeight * window.outerWidth) * 1.35) / 100000 + "px");
+        $(".Who").css("font-size", window.outerWidth * 1.5 / 100 + "px");
+        $(".Name").css("font-size", window.outerWidth * 3 / 100 + "px");
+        $(".Skill").css("font-size", window.outerWidth * 1.5 / 100 + "px");
+        $(".Tab").css("font-size", window.outerWidth * 2 / 100 + "px");
+        $(".TabShop").css("font-size", window.outerWidth * 14 / 1000 + "px");
+        $(".MySkill").css("font-size", window.outerWidth * 4 / 100 + "px");
+        $(".Judul").css("font-size", window.outerWidth * 4.5 / 100 + "px");
+      }); </script>
+    <div style="width: 50%;">
+      <div class="Who">Who I am</div>
+      <div class="Name" style="color:blue; background-color: rgb(0, 0, 0);">Muhamad Bekti
+        Wibowo.</div>
+      <div class="AboutMe">
+        I am usually called Bowo and Bekti, but sometimes I am called Obow, Bow, Obos.
+        I'm
+        interested in the name Obos for my nickname, so call me Boss.
+        <br>
+        I am very interested in Electrical, Electronics, Computers, Internet Networks, Programming.<br> I also have
+        several projects that maybe the system can be used in your company and maybe it can improve your company's
+        performance.
+        <br>
+        <li>Smart Home</li>
+        <li>Smart Bell</li>
+        <li>Smart Room</li>
+      </div>
+    </div>
+    <div style="width: 30%; text-align: center;">
+      <img style="width: 90%;" id="Orang" src="Orang.png">
+    </div>
+    <div style="width: 20%;  ">
+      <div class="MySkill">My Skills</div>
+      <ol class="Skill" style=" margin: 0px 20px 0px 0px; ">
+        <li>Electrical</li>
+        <li>Electronics</li>
+        <li>Computer</li>
+        <li>Network</li>
+        <li>Programming</li>
+        <li>Expertise Consultation Above...</li>
+        <li>Language .<br> Can only speak Indonesian...</li>
+      </ol>
+    </div>
+  </div>
+  <div class="Tab">
+    <div class="Judul" id="JServices"> Services
+      <script>
+        document.getElementById("JServices").style.fontSize = window.innerWidth / 25 + "px";
+        $(document).ready(function () {
+          $(".JPicture6").css("width", window.outerWidth * 14 / 100 + "px");
+          $(".JPicture6").css("height", window.outerWidth * 21 / 100 + "px");
+          /* var W, X, Z;
+           if (window.outerHeight < window.outerWidth) {
+             W = window.outerWidth;
+             X = 15;
+           }
+           else {
+             W = window.outerHeight;
+             X = 20;
+           }
+           $(".Kotak").css("margin", W * 20 / 1000 + `% 0px 0px 0px`);
+           $(".PP").css("margin", W * 7 / 1000 + `% 0px 0px 0px`);*/
+        }); </script>
+    </div>
+    <div style="display:flex; justify-content: center; align-items: center;">
+      <div style="width: 20%; ">
+        <div>
+          <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture6">
+              <img style="width: 80%; vertical-align: middle; " class="Kotak" id="Orang" src="Listrik.png">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Electrical
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 20%;  ">
+        <div onclick="OpenSidebarTModulKomponen()"
+          style=" text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6" style="width: 90%;">
+            <img style="width: 90%;" class="Kotak" src="IC.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Electronics
+          </div>
+          <script>
+            function OpenSidebarTModulKomponen() {
+              document.getElementById("SidebarT-Modul-dan-Komponen").style.width = "100%";
+            }
+            function CloseSidebarTModulKomponen() {
+              document.getElementById("SidebarT-Modul-dan-Komponen").style.width = "0";
+            }
+          </script>
+        </div>
+      </div>
+      <div style="width: 20%; ">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%;" class="Kotak" src="Komputer.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Computer
+          </div>
+        </div>
+      </div>
+      <div style="width: 20%;  ">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%;" class="Kotak" src="Network.png">
+          </div>
+          <div style="padding-bottom: 20px; ">
+            Network</div>
+        </div>
+      </div>
+      <div style="width: 20%;  ">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%;" class="Kotak" src="Programing.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Programming</div>
+        </div>
+      </div>
+      <div style="width: 20%;  ">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%;" class="Kotak" src="Binder2.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Testimony</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Tab">
+    <div class="Judul" id="JBlog"> My Blog
+      <script>
+        document.getElementById("JBlog").style.fontSize = window.innerWidth / 25 + "px";
+      </script>
+    </div>
+    <div style="display:flex; justify-content: center; align-items: center;">
+      <div style="width: 20%; ">
+        <div style=" text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%; " id="Orang" src="LListrik.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Electrical
+          </div>
+          <div class="Explanation">
+            List of Electrical Components in General Electrical Panels.<br>
+            List of Electrical Components at the Substation.
+          </div>
+        </div>
+      </div>
+      <div style="width: 20%;  ">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%;" src="Electronika.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Electronics
+          </div>
+          <div class="Explanation">
+            List of General Electronic Components.<br>
+            A list of electronic modules and components I've tested.
+          </div>
+        </div>
+      </div>
+      <div style="width: 20%; ">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%;" class="Kotak" src="Komputer.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Computer
+          </div>
+          <div class="Explanation">
+            List of Computer Components in General.
+          </div>
+        </div>
+      </div>
+      <div style="width: 20%;  ">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%;" class="Kotak" src="Network.png">
+          </div>
+          <div style="padding-bottom: 20px; ">
+            Network</div>
+          <div class="Explanation">
+            List of common local area network components.
+          </div>
+        </div>
+      </div>
+      <div style="width: 20%;  ">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%;" class="Kotak" src="Programing.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Programming</div>
+          <div class="Explanation">
+            List of Programs I've ever made.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Tab">
+    <div class="Judul1" style="text-align:center;">
+      Please try my project, you can control the equipment from the website anywhere and anytime
+    </div>
+    <div style="display:flex;">
+      <a style="width: 33.33%; " href="https://muhamad-bekti-wibowo.000webhostapp.com/" target="_blank">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 100%; margin: auto; " class="Kotak" id="Orang" src="Smart Home.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Demo Smart Home
+          </div>
+          <div class="Explanation">
+            Control equipment with website anytime anywhere.
+          </div>
+        </div>
+      </a>
+      <div style="width: 33.33%;  ">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%;" class="Kotak" src="Development.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Demo Smart Room
+          </div>
+          <div class="Explanation">
+            In Development.
+          </div>
+        </div>
+      </div>
+      <div style="width: 33.33%; ">
+        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+          <div class="JPicture6">
+            <img style="width: 90%;" class="Kotak" src="Smart Bel.png">
+          </div>
+          <div style="padding-bottom: 20px;">
+            Demo Smart Bell
+          </div>
+          <div class="Explanation">
+            In Development.
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="TabShop">
+      <div style="font-size: 30px; padding:20px; text-align:center;">Some of the items available in my house
+      </div>
+      <script>
+        $(document).ready(function () {
+          $(".JPicture8").css("width", window.outerWidth * 9 / 100 + "px");
+          $(".JPicture8").css("height", window.outerWidth * 11 / 100 + "px");
+
+          $(".CShop").css("height", window.outerWidth * 22 / 100 + "px");
+        }); </script>
+      <div style="display:flex;">
+        <div class="CShop" style="width: 12.5%;">
+          <div style="width: 98%; ">
+            <div class="JPicture8">
+              <img style="width: 70%; margin: auto; " class="Kotak" id="Orang" src="Listrik.png">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Electrical Products
+            </div>
+            <div class="Explanation">
+              In Development.
+            </div>
+          </div>
+        </div>
+        <div class="CShop" style="width: 12.5%; ">
+          <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture8">
+              <img style="width: 90%;" class="Kotak" src="IC.png">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Electronic Products
+            </div>
+            <div class="Explanation">
+              In Development.
+            </div>
+          </div>
+        </div>
+        <div class="CShop" style="width: 12.5%;">
+          <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture8">
+              <img style="width: 90%;" class="Kotak" src="Komputer.png">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Products for Computers
+            </div>
+            <div class="Explanation">
+              In Development.
+            </div>
+          </div>
+        </div>
+        <div class="CShop" style="width: 12.5%;">
+          <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture8">
+              <img style="width: 90%; margin: auto; " class="Kotak" src="Network.png">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Products for Networks
+            </div>
+            <div class="Explanation">
+              In Development.
+            </div>
+          </div>
+        </div>
+        <div class="CShop" style="width: 12.5%; ">
+          <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture8">
+              <img style="width: 90%;" class="Kotak" src="Made By Me.png">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Product Made By Me
+            </div>
+            <div class="Explanation">
+              In Development.
+            </div>
+          </div>
+        </div>
+        <div class="CShop" style="width: 12.5%;">
+          <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture8">
+              <img style="width: 90%;" class="Kotak" src="Plant.png">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Plant Products
+            </div>
+            <div class="Explanation">
+              In Development.
+            </div>
+          </div>
+        </div>
+        <div class="CShop" style="width: 12.5%; ">
+          <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture8">
+              <img style="width: 90%;" class="Kotak" src="Development.png">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Accessories product
+            </div>
+            <div class="Explanation">
+              In Development.
+            </div>
+          </div>
+        </div>
+        <div class="CShop" style="width: 12.5%;">
+          <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture8">
+              <img style="width: 90%;" class="Kotak" src="Development.png">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Food Product
+            </div>
+            <div class="Explanation">
+              In Development.
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align: center; font-size: 100px; margin: 0px 20px 0px 20px; ">Hire Me Project PM WhatsApp
+        088212711176</div>
+    </div>
+
+    <body>
+
+      <div class="display" id="Konsultasi">
+        <div class="Text" id="Konsultasi">
+          <li class="konsul">Contact Me...</li>
+          <div>
+            <a href="https://wa.me/088212711176" title="WhatsApp"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPn_HLOX5NVut-8hd1D_MSsvioVVujfyLmTJYN91wnCOzRbb4fYJmZKI7EIjBLJ0KF-ID0lWHRWNuNuVH3z_dqTITEg2gLB0-Ydh7Vlu2yXW9MqWE6PKtIxO1gBw71pvaxtXGKguk3okziojoz4jiELBhvYUCx_Ed4tkpj1pVVk__iyj5TGcadSCjs1A/s1600/watsap.png" />&nbsp;
+              <li class="konsul">WhatsApp</li>
+            </a>
+          </div>
+          <div>
+            <a href="https://t.me/MBektiW" title="Telegram"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHbgQEjlD6WN_rpb1qO3wXj0MpqZXNfB1wlyQ9g624qJ-uYPGHDk7kNYOHNZCF5JzpVXtij10-5COsgOdmdopUsMnYoAxCekKg_ukPQMlTEfKXd250vghEQTXnuzRKAvplMCee7BheEtOAQxhFJ9PzzNEMYkWANOynKW4faBMPrCg0nJOEG7OiHhpdhA/s16/telegram.png" />&nbsp;
+              <li class="konsul">Telegram</li>
+            </a>
+          </div>
+          <div>
+            <a href="https://m.me/Muhamad.bekti.Wibowo" title="Facebook Messengger"><img height="16" id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRbmA3pInt-3irdVZncHtQwNB_Nnti64TmC0rsm2jBRKGDWNt4yDd9-AV4Q7SCHIUCGfHINlCEYLpnXLeWkXGwUkF-Q0xFTs0_P8HvyQA1W2kZNO8dfnQSTIgah20RHq6nRa_116dBHH2x1zUanf0Di4HSaAsvhOrHiyjLfrKAnx8z_5P8VEa3MB9llQ/s1600/facebook-messenger.png"
+                width="16" />&nbsp;<li class="konsul">Facebook
+                Messenger</li></a><br />
+          </div>
+        </div>
+
+        <div class="Text" id="Konsultasi">
+          <li class="konsul">Follow Me...</li>
+          <div>
+            <a href="www.facebook.com/muhamad.bektiwibowo" title="Facebook"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVE7C8Lty9MOI94v_L5GUYmgDPzGjGuDoiMz96M3ciFo4a2htNEI9O6dxo40e2QaZWU41razWxRdiPTEsR5IG1yWPPSkKFiaJXj6rKqC7Qw7Q3LLeqZ3mrTuI-CJQt_dwdvGvdCma3fk4-Y6g4VKpKvFcmZpsB7bipUtDynM4wef-pOTN0fZS03OVIpg/s1600/facebook.png" />&nbsp;
+              <li class="Sosmed">Facebook</li>
+            </a>
+
+          </div>
+          <div>
+            <a href="https://www.instagram.com/muhamadbekti.wibowo" title="Instagram"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLes64W42hPn_14sxvbMgEa3J2AWQOaTFd3RGqM3lFNmEiFoqTdLH-cNYz2MfWC9ot_BeX4CSdCQ0_N3yjFbRgEH29UmmrUcEvKFZbsV5aCyNVnRrv5yNsMn5V60TgCpHMCaCJBhq96g5cXZ05R7shaySnunCFVKcl2xi2HjJxeh_ITE7-RrIBGlcoWw/s1600/instagram.png" />&nbsp;
+              <li class="Sosmed">Instagram</li>
+            </a>
+
+          </div>
+          <div>
+            <a href="https://www.tiktok.com/@muhamadbektiwibowo" title="Tik Tok"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhErR7XRNo_iDM9-0CMG7dxpVxe9_OJXOwD1O2hoOtAnaz6j7l-RE9RQXnLT_kouFQPEi0-yT5NWVAN6Ki52P9HUhHwBSosGtfRfvs5pdYg3RdFO1obp-LIj4_9th91aRqTdJ6VxqdTApY9B4cMh-c5qv8sOKF7bEM6r4zQKUaPYDvo7tSszcjfi7er0g/s1600/tiktok.png" />&nbsp;
+              <li class="Sosmed">Tik Tok</li>
+            </a>
+          </div>
+        </div>
+
+        <div class="Text" id="Konsultasi">
+          <li class="konsul">Konten By Me...</li>
+          <div>
+            <a href="https://muhamad-bekti-wibowo.blogspot.com" title="Blog"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYEvcRwYMixI7HmozkUi8AePvBcuEFhh3ZfT2rGNTFJzoXhNjSRIbkzrHHO02FCLxymT-leZTfPAhR8V3Qv7TLOJwjXPfw2izfr3TX4orxu5YvzMa23Lc4udtToakqiQ4lb4lmvwLZM9P1TT0yDHM5EKZMwPe226CZovMgUF92nBVmAZ-jEQF46etTPg/s1600/blog.png" />&nbsp;
+              <li class="Konten">Blog</li>
+            </a>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/@muhamad-bekti-wibowo" title="Youtube"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkz__6cDsyDDLJsMMubzbVflGyIdZPBwvPJFmzmrN-FHRxW2REneUr6ZPtOpayK5ZtDbJhWge1_-7XAM6uH6tdhfPilJAkmcgCQAK3SmQFgDCaKYtQi4k63-fh8Zm0sk3bif0RrkZ8UmnZKP4NB1Aw3chY_7K8G5mQGkpi6EdzH4aRLMGyYGBg_GaZkg/s16000/youtube.png" />&nbsp;
+              <li class="Konten">Youtube</li>
+            </a>
+          </div>
+          <div>
+            <a href="https://github.com/muhamad-bekti-wibowo" title="Youtube"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkz__6cDsyDDLJsMMubzbVflGyIdZPBwvPJFmzmrN-FHRxW2REneUr6ZPtOpayK5ZtDbJhWge1_-7XAM6uH6tdhfPilJAkmcgCQAK3SmQFgDCaKYtQi4k63-fh8Zm0sk3bif0RrkZ8UmnZKP4NB1Aw3chY_7K8G5mQGkpi6EdzH4aRLMGyYGBg_GaZkg/s16000/youtube.png" />&nbsp;
+              <li class="Konten">GitHub</li>
+            </a>
+          </div>
+        </div>
+        <div class="Text" id="Konsultasi">
+          <li class="konsul">Product By Me...</li>
+          <div>
+            <a href="https://shopee.co.id/muhamadbektiwibowo" title="Shopee"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVx0sNnkV2aNwTYK-IfaVKYs9fr4HtaMH8dAsf2TVMIpz4j60VcjrTtHVChdiEMhfJDEE7iiSTZijXUoUClETtr5p9-yE7_4BFDu-iXD9iO0ZT7_sriENa1-V7cb8uVurVqQAU3WKYs46rq3Hal2kmJUdJ-SNPqhuUoSRCK_b9cVR90lpKrLNo5fS16w/s1600/shope.png" />&nbsp;
+              <li class="Toko">Shopee</li>
+            </a>
+          </div>
+          <div>
+            <a href="https://shopee.co.id/muhamadbektiwibowo" title="Toko di blog"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYEvcRwYMixI7HmozkUi8AePvBcuEFhh3ZfT2rGNTFJzoXhNjSRIbkzrHHO02FCLxymT-leZTfPAhR8V3Qv7TLOJwjXPfw2izfr3TX4orxu5YvzMa23Lc4udtToakqiQ4lb4lmvwLZM9P1TT0yDHM5EKZMwPe226CZovMgUF92nBVmAZ-jEQF46etTPg/s1600/blog.png" />&nbsp;
+              <li class="Toko">Toko di Blog</li>
+            </a>
+          </div>
+          <div> <a href="https://shopee.co.id/muhamadbektiwibowo" title="Shopee"><img id="tautan"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVx0sNnkV2aNwTYK-IfaVKYs9fr4HtaMH8dAsf2TVMIpz4j60VcjrTtHVChdiEMhfJDEE7iiSTZijXUoUClETtr5p9-yE7_4BFDu-iXD9iO0ZT7_sriENa1-V7cb8uVurVqQAU3WKYs46rq3Hal2kmJUdJ-SNPqhuUoSRCK_b9cVR90lpKrLNo5fS16w/s1600/shope.png" />&nbsp;
+              <li class="Toko">Website</li>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="display" id="Konsultasi">
+        <div class="Text-Kanan" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
+            <li class="Data-Free">Koleksi Me...</li>
+        </div>
+        <div>
+          </a><a href="https://drive.google.com/drive/folders/18J1ZBaUhDTAq0q4G-koLkY3eNM6rBsKB" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
+            <li class="Data-Free">Data Sheet </li>
+          </a>
+
+
+        </div>
+        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
+            <li class="Data-Free">...</li>
+        </div>
+        <div>
+          </a><a href="https://drive.google.com/drive/u/1/folders/1Ap1plemhbPigrbRau6pEVav27ScygiC4" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
+            <li class="Data-Free">Program Pendukung</li>
+          </a>
+
+
+        </div>
+        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
+            <li class="Data-Free">...</li>
+
+          </a><a href="https://drive.google.com/drive/folders/17ekq8yaImmQHhflgfFvDhNlbHU6kygsD" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
+            <li class="Data-Free">Liblary Arduino</li>
+          </a>
+
+
+        </div>
+        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
+            <li class="Data-Free">...</li>
+
+          </a><a href="https://drive.google.com/drive/folders/18pZEb3JIcBuFdzMOM0W8zVH3nOtxFLCz" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
+            <li class="Data-Free">Skema</li>
+          </a>
+
+
+        </div>
+        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
+            <li class="Data-Free">...</li>
+
+          </a><a href="https://drive.google.com/drive/folders/1p9NIZPOYD4cb0rxvSpUIOLmIVp9GgQUV" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
+            <li class="Data-Free">Program Arduino</li>
+          </a>
+
+
+        </div>
+        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
+            <li class="Data-Free">...</li>
+
+          </a><a href="https://drive.google.com/drive/folders/1bw2F-4wlqWNLwhnpA6BwDpDSlulDLFHR" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
+            <li class="Data-Free">Rumus dalam Excel</li>
+          </a>
+
+
+        </div>
+        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
+            <li class="Data-Free">...</li>
+
+          </a><a href="https://drive.google.com/drive/u/1/folders/1nkaMDoX_8OppSktkJ600s9p1EZSHHKv3" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
+            <li class="Data-Free">Script Mikrotik</li>
+          </a>
+
+
+        </div>
+
+        <div class="Text-Kiri" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
+            <li class="Data-Free">...</li>
+
+          </a><a href="https://drive.google.com/drive/u/1/folders/1MOfZX-Zqhs9-IKcNIZGDpwJCn-jmYHXk" title="Blog"><img
+              id="tautan"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
+            <li class="Data-Free">Freeware</li>
+          </a>
+        </div>
+      </div>
+  </div>
+  </body>
+  <script>
+    $(document).ready(
+      function () {
+        $("#List-Modul-Komponen").load("General-Electronic-Components.html");
+        $("#PC").load("PC.html");
+        $("#Hasil-Programming").load("Programming.html");
+
+      });
+
+
+
+  </script>
 
 </html>
