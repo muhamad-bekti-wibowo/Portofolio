@@ -13,6 +13,10 @@
       margin: 10px;
     }
 
+    .D-J {
+      text-align: justify;
+    }
+
     .JAbout {
       font-size: 40px;
     }
@@ -169,30 +173,125 @@
       opacity: 1;
     }
 
+    .Scale {
+      width: 16.66%;
+    }
+
     .CShop {
       text-align: center;
-      margin: 2px;
+      margin: 4px;
       background-color: rgb(31, 31, 31);
+    }
+
+    .I {
+      width: 50%;
+    }
+
+    .Gua {
+      width: 30%;
+      text-align: center;
+    }
+
+    .Skills {
+      width: 20%;
+      text-align: center;
+    }
+
+    .SProject {
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .SDemo {
+      width: 33.333%;
+
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .SidebarT {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    @media (max-width: 900px) {
+      .Tab-Isi {
+        flex-direction: column;
+        padding: 0px 20px 20px 20px;
+        margin: 20px 0px 20px 0px;
+      }
+
+      .Scale {
+        width: 100%;
+        height: 100%;
+
+      }
+
+      .SDemo {
+        width: 100%;
+        height: 100%;
+
+      }
+
+      .Separator {
+        margin: 0px 0px 20px 0px;
+      }
+
+      .I {
+        width: 100%;
+      }
+
+      .Gua {
+        width: 100%;
+        text-align: center;
+      }
+
+      .Skills {
+        width: 100%;
+        text-align: center;
+
+      }
+
+      .CShop {
+        width: 45%;
+      }
     }
   </style>
 </head>
-<div id="LockScreen" class="LockScreen" style="text-align: center; font-size: 50px;"> <span id="LoadingLockScreen" ></span> 
+<div id="LockScreen" class="LockScreen" style="text-align: center; font-size: 50px;"> <span id="LoadingLockScreen"
+    class="Kotak"></span>
   <script>
-    for (let a = 0; a <= 100; a++) {
-      task(a);
-    }
-    function task(a) {
+    $(document).ready(function () {
+      for (let a = 0; a <= 100; a++) {
+        task(a);
+      }
+      function task(a) {
+        setTimeout(function () {
+          if (a > 30) {
+            if (a > 50) {
+              $(".LockScreen").css("opacity", 100 - a + "%");
+            }
+            $(".LockScreen").css("margin", ` ` + a + `% 0px 0px 0px`);
+          }
+          document.getElementById("LoadingLockScreen").innerHTML = "Warning This website is very heavy to load<br> Waiting is loading " + a + " %";
+        }, 100 * a);
+      }
+
       setTimeout(function () {
-        $(document).ready(function () {
-          $(".LockScreen").css("opacity",  100-a +"%");
-          $(".LockScreen").css("margin", ` ` + a + `% 0px 0px 0px`);
-          document.getElementById("LoadingLockScreen").innerHTML = a;
-        });
-      }, 100 * a);
-    }
-    setTimeout(function () {
-      document.getElementById("LockScreen").style.height = "0px";
-    }, 10000);
+        document.getElementById("LockScreen").style.height = "0px";
+      }, 10000);
+    });
   </script>
 </div>
 
@@ -203,145 +302,129 @@
     <a href="javascript:void(0)" class="closebtn" onclick="CloseSidebarTModulKomponen()">×</a>
   </div>
 </div>
+<script>
+  $(document).ready(function () {
+    if (window.outerWidth > 900) {
+      $(".AboutMe").css("font-size", ((window.outerHeight * window.outerWidth) * 1.35) / 100000 + "px");
+      $(".Who").css("font-size", window.outerWidth * 1.5 / 100 + "px");
+      $(".Name").css("font-size", window.outerWidth * 3 / 100 + "px");
+      $(".Skill").css("font-size", window.outerWidth * 1.5 / 100 + "px");
+      $(".MySkill").css("font-size", window.outerWidth * 4 / 100 + "px");
+    }
+    else {
+      $(".AboutMe").css("font-size", ((window.outerHeight * window.outerWidth) * 1.35) / 100000 + "px");
+      $(".Who").css("font-size", window.outerWidth * 1.5 / 100 + "px");
+      $(".Name").css("font-size", window.outerWidth * 3 / 100 + "px");
+      $(".Skill").css("font-size", window.outerWidth * 1.5 / 100 + "px");
+      $(".MySkill").css("font-size", window.outerWidth * 4 / 100 + "px");
+      $(".Judul").css("font-size", window.outerWidth * 4.5 / 100 + "px");
+      $(".JDemo").css("font-size", window.outerWidth * 30 / 1000 + "px");
+      $(".Tab-Isi").css("font-size", window.outerWidth * 2 / 100 + "px");
+      $(".TabShop").css("font-size", window.outerWidth * 14 / 1000 + "px");
 
-<div id="All-Data">
-  <div
-    style="text-align: center; display:flex; background-color: rgb(17, 17, 17); padding:20px 40px 20px 40px;margin-top: 20px;">
-    <div style="width: 100%; text-align: center; ">
-      <div class="Header">
-        <img class="Background-Home" style="width: 100%; opacity: 0.1;" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga40xqGay6C3zEHuSw/root/content">
-        <div class="top-left">Portofolio</div>
-        <div class="Data-Center-Image">
-          <div id="Welcome">Welcome !</div>
-          <span id="Isi-Welcome" style="color:blue;"></span>
-          <script>
-            let SwitchHome = 1;
-            let data = " ";
-            setInterval(
-              function () {
-                switch (SwitchHome) {
-                  case 1:
-                    data = "I am Muhamad Bekti Wibowo";
-                    break;
-                  case 2:
-                    data = "I am Content Creator";
-                    break;
-                  case 3:
-                    data = "I am Programer";
-                    break;
-                }
-                if (SwitchHome < 3) {
-                  SwitchHome++;
-                }
-                else {
-                  SwitchHome = 1;
-                }
-                let a = 0;
-                for (let a = 0; a <= data.length; a++) {
-                  task(a);
-                }
-                function task(a) {
-                  setTimeout(function () {
-                    console.log(a);
-                    document.getElementById("Isi-Welcome").innerHTML = " " + data.slice(0, a);
-                  }, 50 * a);
-                }
-              }, 2500);
-            document.getElementById("Welcome").style.fontSize = window.innerWidth / 15 + "px";
-            document.getElementById("Isi-Welcome").style.fontSize = window.innerWidth / 35 + "px";
-          </script>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="Tab" style="display:flex; ">
-    <script> window.outerHeight
-      $(document).ready(function () {
-        $(".AboutMe").css("font-size", ((window.outerHeight * window.outerWidth) * 1.35) / 100000 + "px");
-        $(".Who").css("font-size", window.outerWidth * 1.5 / 100 + "px");
-        $(".Name").css("font-size", window.outerWidth * 3 / 100 + "px");
-        $(".Skill").css("font-size", window.outerWidth * 1.5 / 100 + "px");
-        $(".Tab").css("font-size", window.outerWidth * 2 / 100 + "px");
-        $(".TabShop").css("font-size", window.outerWidth * 14 / 1000 + "px");
-        $(".MySkill").css("font-size", window.outerWidth * 4 / 100 + "px");
-        $(".Judul").css("font-size", window.outerWidth * 4.5 / 100 + "px");
-      }); </script>
-    <div style="width: 50%;">
-      <div class="Who">Who I am</div>
-      <div class="Name" style="color:blue; background-color: rgb(0, 0, 0);">Muhamad Bekti
-        Wibowo.</div>
-      <div class="AboutMe">
-        I am usually called Bowo and Bekti, but sometimes I am called Obow, Bow, Obos.
-        I'm
-        interested in the name Obos for my nickname, so call me Boss.
-        <br>
-        I am very interested in Electrical, Electronics, Computers, Internet Networks, Programming.<br> I also have
-        several projects that maybe the system can be used in your company and maybe it can improve your company's
-        performance.
-        <br>
-        <li>Smart Home</li>
-        <li>Smart Bell</li>
-        <li>Smart Room</li>
-      </div>
-    </div>
-    <div style="width: 30%; text-align: center;">
-      <img style="width: 90%;" id="Orang" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga42PyAtVH65HQpPfw/root/content">
-    </div>
-    <div style="width: 20%;  ">
-      <div class="MySkill">My Skills</div>
-      <ol class="Skill" style=" margin: 0px 20px 0px 0px; ">
-        <li>Electrical</li>
-        <li>Electronics</li>
-        <li>Computer</li>
-        <li>Network</li>
-        <li>Programming</li>
-        <li>Expertise Consultation Above...</li>
-        <li>Language .<br> Can only speak Indonesian...</li>
-      </ol>
-    </div>
-  </div>
-  <div class="Tab">
-    <div class="Judul" id="JServices"> Services
+    }
+  }); 
+</script>
+<div id="All-Data" style="width: 100%;">
+  <div class="First-Content-Section"></div>
+  <div class="Second-Content-Section"></div>
+
+  <div>
+    <div class="Judul" id="JServices"
+      style="margin: 5px 0px 5px 0px; padding-bottom: 10px; background-color:rgb(32, 32, 32);  "> Services
       <script>
         document.getElementById("JServices").style.fontSize = window.innerWidth / 25 + "px";
         $(document).ready(function () {
-          $(".JPicture6").css("width", window.outerWidth * 14 / 100 + "px");
-          $(".JPicture6").css("height", window.outerWidth * 21 / 100 + "px");
-          /* var W, X, Z;
-           if (window.outerHeight < window.outerWidth) {
-             W = window.outerWidth;
-             X = 15;
-           }
-           else {
-             W = window.outerHeight;
-             X = 20;
-           }
-           $(".Kotak").css("margin", W * 20 / 1000 + `% 0px 0px 0px`);
-           $(".PP").css("margin", W * 7 / 1000 + `% 0px 0px 0px`);*/
+          if (window.outerWidth > 900) {
+            $(".JPicture6").css("width", window.outerWidth * 10 / 100 + "px");
+            $(".JPicture6").css("height", window.outerWidth * 21 / 100 + "px");
+          }
+          else {
+            $(".JPicture6").css("width", window.outerWidth * 40 / 100 + "px");
+            $(".JPicture6").css("height", window.outerWidth * 70 / 100 + "px");
+
+          }
+          /*var W, X, Z;
+         if (window.outerHeight < window.outerWidth) {
+           W = window.outerWidth;
+           X = 15;
+         }
+         else {
+           W = window.outerHeight;
+           X = 20;
+         }
+         $(".Kotak").css("margin", W * 20 / 1000 + `% 0px 0px 0px`);
+         $(".PP").css("margin", W * 7 / 1000 + `% 0px 0px 0px`);*/
         }); </script>
     </div>
-    <div style="display:flex; justify-content: center; align-items: center;">
-      <div style="width: 20%; ">
-        <div>
+    <div class="Tab-Isi" style="display:flex; justify-content: center; align-items: center;">
+      <div onclick="OpenTabKelistrikan()" class="Scale">
+        <div class="Separator" onclick="TabKelistrikan()">
           <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
             <div class="JPicture6">
-              <img style="width: 80%; vertical-align: middle; " class="Kotak" id="Orang" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5mdgKW0r5j2KslxA/root/content">
+              <img style="width: 80%; vertical-align: middle; " class="Kotak" id="Orang"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5mdgKW0r5j2KslxA/root/content">
             </div>
+
             <div style="padding-bottom: 20px;">
-              Electrical
+              Electrical <div id="TabIntegratedKelistrikan">
+                <ul id="TabIKelistrikan" class="d-none">
+                  <li>Electrical Panel Maintenance ~ No Data yet.</li>
+                  <li>Manufacture of 3 Phase Electric Motor Control Panels.</li>
+                  <ul>
+                    <li>DOL Control Circuit [Direct On Line].</li>
+                    <li>Forward Backward Control Circuit.</li>
+                    <li>Star Delta Control Circuit.</li>
+                  </ul>
+                  <li>List of Electrical Components that I Know on Electrical Panels and lighting electrical networks.
+                  </li>
+                  <li>List of Electrical Components That I Know at Substations.</li>
+                </ul>
+                <script>
+                  function TabKelistrikan() {
+                    $("#TabIKelistrikan").slideToggle("fast");
+                  }
+                </script>
+                <style>
+                  @media (min-width: 900px) {
+                    .TabIntegratedKelistrikan {
+                      display: none;
+                    }
+                  }
+                </style>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div style="width: 20%;  ">
-        <div onclick="OpenSidebarTModulKomponen()"
+      <div onclick="OpenTabElektronika()" class="Scale">
+        <div onclick="TabElektronika()" class="Separator"
           style=" text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
           <div class="JPicture6" style="width: 90%;">
-            <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5kYbhoXGIFsn3czw/root/content">
+            <img style="width: 90%;" class="Kotak"
+              src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5kYbhoXGIFsn3czw/root/content">
           </div>
           <div style="padding-bottom: 20px;">
             Electronics
+            <ul id="TabIntegratedElektronika" class="d-none">
+              <li>List of Electronic Components I Know.</li>
+              <li>List of Modules and Components I've Tested.</li>
+              <li>Create your own electronic product.</li>
+              onclick="OpenSidebarTModulKomponen()"
+            </ul>
+            <script>
+              function TabElektronika() {
+                $("#TabIntegratedElektronika").slideToggle("fast");
+              }
+            </script>
           </div>
+          <style>
+            @media (min-width: 900px) {
+              .TabIntegratedElektronika {
+                display: none;
+              }
+            }
+          </style>
           <script>
             function OpenSidebarTModulKomponen() {
               document.getElementById("SidebarT-Modul-dan-Komponen").style.width = "100%";
@@ -352,165 +435,908 @@
           </script>
         </div>
       </div>
-      <div style="width: 20%; ">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+      <div onclick="OpenTabKomputer()" class="Scale">
+        <div onclick="TabKomputer()" class="Separator"
+          style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
           <div class="JPicture6">
-            <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5nb9jtCrF-y-U2fg/root/content">
+            <img style="width: 90%;" class="Kotak"
+              src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5nb9jtCrF-y-U2fg/root/content">
           </div>
           <div style="padding-bottom: 20px;">
             Computer
+            <div class="TabIntegratedKomputer">
+              <ul id="PC" class="d-none D-J"></ul>
+              <ul id="PC1" class="d-none D-J">
+                I Can Also Use Several Office Applications Like:
+                <ul>
+                  <li>Adobe Photoshop </li>
+                  <li>Adobe Premiere Pro</li>
+                  <li>Adobe Auditions</li>
+                  <li>Microsoft Office Word </li>
+                  <li>Microsoft Office Excel </li>
+                  <li>Microsoft Office Power Point
+                  </li>
+                </ul>
+              </ul>
+            </div>
+            <style>
+              @media (min-width: 900px) {
+                .TabIntegratedKomputer {
+                  display: none;
+                }
+              }
+            </style>
+            <script>
+              function TabKomputer() {
+                $("#PC").slideToggle("fast");
+                $("#PC1").slideToggle("fast");
+
+              }
+              function TabCreateNetwork() {
+                $("#TabCreateNetwork").slideToggle("fast");
+              }
+              function TabNetwork1() {
+                $("#TabNetworking").slideToggle("fast");
+              }
+            </script>
           </div>
         </div>
       </div>
-      <div style="width: 20%;  ">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+
+      <div class="Scale" onclick="OpenTabNetwork()">
+        <div onclick="TabNetwork1()" class="Separator"
+          style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
           <div class="JPicture6">
-            <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5lMFKrIyN3GA2nQQ/root/content">
+            <img style="width: 90%;" class="Kotak"
+              src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5lMFKrIyN3GA2nQQ/root/content">
           </div>
           <div style="padding-bottom: 20px; ">
-            Network</div>
+            Network
+            <div class="TabIntegratedNetwork">
+              <ul id="TabNetworking" class="d-none">
+                <li>Mikrotik Configuration.</li>
+                <li>Router Configuration</li>
+                <li onclick="TabCreateNetwork()">Create Your Own Local Network System.</li>
+                <ul id="TabCreateNetwork" class="d-none">
+                  My Example Creating
+                  a Network:
+                  <li>First For Free Hotspot Network.</li>
+                  <li>The Second Is For The VVIP Hotspot Network.</li>
+                  <li>The Third is for the PPpoe network.</li>
+                  <li>The Fourth For Vlan Networks.</li>
+                  <li>The Fifth For Microcontroller Networks.</li>
+                  <li>Six Networks For Operators Network Manager.</li>
+                  <li>Seven Networks For DHCP Or Clients.</li>
+                  <li>Eight For DHCP Static Networks.</li>
+                  <li>Ninth For High-Speed Network.</li>
+                  <li>Ten For Network Bridge Servers With Internet Service Providers.</li>
+
+                </ul>
+                <li>Create Domain Name System Server On Local Network.</li>
+
+                <li>Create a Network Attached Storage Server On Local Network.</li>
+                <li>Make Printer Connected To Network, Server On Local Network.</li>
+                <li>Create Local Hosting Server Connected To Local Network.</li>
+                <li>Create Website Redirect, Block Website, Restore Server (Firewall) On Local Network.</li>
+                <li>List of common local area network components.</li>
+              </ul>
+              <style>
+                @media (min-width: 900px) {
+                  .TabIntegratedNetwork {
+                    display: none;
+                  }
+                }
+              </style>
+            </div>
+          </div>
         </div>
       </div>
-      <div style="width: 20%;  ">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+      <div onclick="OpenTabProgramming()" class="Scale">
+        <div onclick="Tab1Programming()" class="Separator"
+          style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
           <div class="JPicture6">
-            <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5jv4Ow4dg0uI4ZBA/root/content">
+            <img style="width: 90%;" class="Kotak"
+              src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5jv4Ow4dg0uI4ZBA/root/content">
           </div>
           <div style="padding-bottom: 20px;">
-            Programming</div>
+            Programming
+            <div class="TabIntegratedProgramming">
+              <div id="Tab1Programming" class="d-none"></div>
+              <script>
+
+                function Tab1Programming() {
+                  $("#Tab1Programming").slideToggle("fast");
+                }
+              </script>
+              <style>
+                @media (min-width: 900px) {
+                  .TabIntegratedProgramming {
+                    display: none;
+                  }
+                }
+              </style>
+            </div>
+          </div>
         </div>
       </div>
-      <div   href="https://muhamad-bekti-wibowo.000webhostapp.com/" target="_blank" style="width: 20%;  ">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+      <div onclick="OpenTabTestimony()" class="Scale">
+        <div onclick="TabTestimony()" style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
           <div class="JPicture6">
-            <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga51EJE2edHC3CGgKw/root/content">
+            <img style="width: 90%;" class="Kotak"
+              src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga51EJE2edHC3CGgKw/root/content">
           </div>
           <div style="padding-bottom: 20px;">
             Testimony</div>
+          <div id="Tab1Testimony" class="d-none"> <iframe allowfullscreen="" style=" width: 100%; height: 900px;"
+              src="https://www.youtube.com/embed/vMTnlGcAGHA" youtube-src-id="vMTnlGcAGHA"></iframe>
+            <script>
+              function TabTestimony() {
+                $("#Tab1Testimony").slideToggle("fast");
+              }
+            </script>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="Tab">
-    <div class="Judul" id="JBlog"> My Blog
+  <div id="Mode-PC">
+    <div id="E-E" class="d-none" style="width: 100%; background-color: rgb(31, 31, 31); ">
+      <div class="D-B">
+        <div class="Scale">
+          <div class="S-1"></div>
+        </div>
+        <div class="Scale">
+          <div class="S-2"></div>
+        </div>
+        <div class="Scale">
+          <div class="S-3"></div>
+        </div>
+        <div class="Scale">
+          <div class="S-4"></div>
+        </div>
+        <div class="Scale">
+          <div class="S-5"></div>
+        </div>
+        <div class="Scale">
+          <div class="S-6"></div>
+        </div>
+      </div>
+      <div id="Tab-E-1" class="Tab-E-1">
+        <ul id="TabKelistrikan" class="d-none">
+          <li>Electrical Panel Maintenance ~ No Data yet.</li>
+          <li>Manufacture of 3 Phase Electric Motor Control Panels.</li>
+          <ul>
+            <li>DOL Control Circuit [Direct On Line].</li>
+            <li>Forward Backward Control Circuit.</li>
+            <li>Star Delta Control Circuit.</li>
+          </ul>
+          <li>List of Electrical Components that I Know on Electrical Panels and lighting electrical networks.
+          </li>
+          <li>List of Electrical Components That I Know at Substations.</li>
+        </ul>
+      </div>
+      <div id="Tab-E-2" class="Tab-E-2">
+        <ul id="TabElektronika" class="d-none">
+          <li>List of Electronic Components I Know.</li>
+          <li>List of Modules and Components I've Tested.</li>
+          <li>Create your own electronic product.</li>
+          onclick="OpenSidebarTModulKomponen()"
+        </ul>
+      </div>
+      <div id="Tab-E-3" class="Tab-E-3" onclick="TabKomputer()">
+
+        <ul id="PC" class="d-none D-J"></ul>
+        <ul id="PC1" class="d-none D-J">
+          I Can Also Use Several Office Applications Like:
+          <ul class="d-none">
+            <li>Adobe Photoshop </li>
+            <li>Adobe Premiere Pro</li>
+            <li>Adobe Auditions</li>
+            <li>Microsoft Office Word </li>
+            <li> Microsoft Office Excel </li>
+            <li> Microsoft Office Power Point
+            </li>
+          </ul>
+        </ul>
+
+        <script>
+          function TabKomputer() {
+
+
+          }
+          function TabCreateNetwork() {
+            $("#TabCreateNetwork").slideToggle("fast");
+          }
+          function TabNetwork() {
+            $("#TabNetwork").slideToggle("fast");
+          }
+        </script>
+      </div>
+      <div id="Tab-E-4" class="Tab-E-4">
+        <ul id="TabNetwork" class="d-none">
+          <li>Mikrotik Configuration.</li>
+          <li>Router Configuration</li>
+          <li onclick="TabCreateNetwork()">Create Your Own Local Network System.</li>
+          <ul id="TabCreateNetwork" class="d-none">
+            My Example Creating
+            a Network:
+            <li>First For Free Hotspot Network.</li>
+            <li>The Second Is For The VVIP Hotspot Network.</li>
+            <li>The Third is for the PPpoe network.</li>
+            <li>The Fourth For Vlan Networks.</li>
+            <li>The Fifth For Microcontroller Networks.</li>
+            <li>Six Networks For Operators Network Manager.</li>
+            <li>Seven Networks For DHCP Or Clients.</li>
+            <li>Eight For DHCP Static Networks.</li>
+            <li>Ninth For High-Speed Network.</li>
+            <li>Ten For Network Bridge Servers With Internet Service Providers.</li>
+
+          </ul>
+          <li>Create Domain Name System Server On Local Network.</li>
+
+          <li>Create a Network Attached Storage Server On Local Network.</li>
+          <li>Make Printer Connected To Network, Server On Local Network.</li>
+          <li>Create Local Hosting Server Connected To Local Network.</li>
+          <li>Create Website Redirect, Block Website, Restore Server (Firewall) On Local Network.</li>
+          <li>A list of local area network components that I am aware of.</li>
+        </ul>
+      </div>
+      <div id="Tab-E-5" class="Tab-E-5">
+        <div id="TabProgramming" class="d-none"></div>
+
+      </div>
+      <div id="Tab-E-6" class="Tab-E-6">
+        <div id="TabTestimony" class="d-none">
+          <div class="D-B">
+            <ol class="D-W50">
+              <li onclick="TabTestimony1()">
+                Kang Eddy
+              </li>
+            </ol>
+            <ol id="TabTestimony1" class="D-W50 d-none"><iframe allowfullscreen=""
+                style="transform: translate(-50%, 0%); width: 100%; height: 100%;"
+                src="https://www.youtube.com/embed/vMTnlGcAGHA" youtube-src-id="vMTnlGcAGHA"></iframe>
+          </div>
+          </ol>
+          <script>
+            function TabTestimony1() {
+              $("#TabTestimony1").slideToggle("fast");
+              $(".D-W50").css("height", window.outerHeight * 9 / 16 + "px");
+            }
+          </script>
+        </div>
+      </div>
+      <style>
+        .D-B {
+          display: flex;
+        }
+
+        .D-W50 {
+          width: 50%;
+          padding: 20px;
+
+
+        }
+
+        .Tab-E-1,
+        .Tab-E-2,
+        .Tab-E-3,
+        .Tab-E-4,
+        .Tab-E-5,
+        .Tab-E-6 {
+          height: auto;
+          width: 0%;
+          padding: 0px;
+          margin-top: 4px;
+          background-color: rgb(29, 29, 29);
+          overflow-x: hidden;
+          border: 1px solid #fff"
+
+        }
+
+        @media (max-width: 900px) {
+
+          .Tab-E-1,
+          .Tab-E-2,
+          .Tab-E-3,
+          .Tab-E-4,
+          .Tab-E-5,
+          .Tab-E-6 {
+            display: none;
+          }
+
+          .D-B {
+            display: none;
+          }
+
+          .Mode-PC {
+            display: none;
+          }
+        }
+      </style>
       <script>
-        document.getElementById("JBlog").style.fontSize = window.innerWidth / 25 + "px";
+        if (window.outerWidth > 900) {
+          var DisplayEnhancement = 0;
+          var ProtectTabKelistrikan = 0;
+          function OpenTabKelistrikan() {
+            if (ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+              $("#E-E").slideToggle("fast");
+            }
+            if (ProtectTabKelistrikan == 0) {
+              for (let ii = 0; ii <= 100; ii++) {
+                task(ii);
+              }
+              $(".Tab-E-1").css("padding", "1px");
+              function task(ii) {
+                setTimeout(function () {
+                  $(".S-1").css("border", 1 + "px solid #fff");
+                  $(".S-1").css("width", ii + "%");
+                  $(".Tab-E-1").css("width", ii + "%");
+                  $(".Tab-E-1").css("border", 1 + "px solid #fff");
+                  if (ii == 90) {
+                    $("#TabKelistrikan").slideToggle("medium");
+
+                    ProtectTabKelistrikan = 10;
+                    if (ProtectTabElektronika == 10) {
+                      CloseTabElektronika();
+                    }
+                    if (ProtectTabNetwork == 10) {
+                      CloseTabNetwork();
+                    }
+                    if (ProtectTabKomputer == 10) {
+                      CloseTabKomputer();
+                    }
+                    if (ProtectTabProgramming == 10) {
+                      CloseTabProgramming();
+                    }
+                    if (ProtectTabTestimony == 10) {
+                      CloseTabTestimony();
+                    }
+
+                  }
+                }, 3 * ii);
+              }
+            }
+            if (ProtectTabKelistrikan == 10) {
+              CloseTabKelistrikan();
+            }
+          }
+
+          function CloseTabKelistrikan() {
+
+            for (let ii = 0; ii <= 100; ii++) {
+              taskKelistrikan(ii);
+            }
+            ProtectTabKelistrikan = 0;
+            $("#TabKelistrikan").slideToggle("fast");
+            function taskKelistrikan(ii) {
+              setTimeout(function () {
+                if (ii == 90) {
+                  taskKelistrikan2();
+                }
+              }, 2 * ii);
+            }
+            function taskKelistrikan2() {
+              for (let ii = 0; ii <= 100; ii++) {
+                taskKelistrikan3(ii);
+              }
+              function taskKelistrikan3(ii) {
+                setTimeout(function () {
+                  $(".S-1").css("width", 100 - ii + "%");
+                  $(".Tab-E-1").css("width", 100 - ii + "%");
+                  if (ii == 90) {
+                    $(".Tab-E-1").css("padding", "0px");
+                    $(".Tab-E-1").css("border", 0 + "px solid #fff");
+                    $(".S-1").css("border", 0 + "px solid #fff");
+                  }
+                  if (ii == 100 && ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+                    $("#E-E").slideToggle("fast");
+                  }
+                }, 2 * ii);
+              }
+            }
+
+          }
+
+          var ProtectTabElektronika = 0;
+          function OpenTabElektronika() {
+            if (ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+              $("#E-E").slideToggle("fast");
+            }
+            if (ProtectTabElektronika == 0) {
+              for (let ii = 0; ii <= 100; ii++) {
+                task(ii);
+              }
+              $(".Tab-E-2").css("padding", "1px");
+              function task(ii) {
+                setTimeout(function () {
+                  $(".S-2").css("border", 1 + "px solid #fff");
+                  $(".S-2").css("width", ii + "%");
+                  $(".Tab-E-2").css("width", ii + "%");
+                  $(".Tab-E-2").css("border", 1 + "px solid #fff");
+                  if (ii == 90) {
+                    $("#TabElektronika").slideToggle("medium");
+                    ProtectTabElektronika = 10;
+                    if (ProtectTabKelistrikan == 10) {
+                      CloseTabKelistrikan();
+                    }
+                    if (ProtectTabNetwork == 10) {
+                      CloseTabNetwork();
+                    }
+                    if (ProtectTabKomputer == 10) {
+                      CloseTabKomputer();
+                    }
+                    if (ProtectTabProgramming == 10) {
+                      CloseTabProgramming();
+                    }
+                    if (ProtectTabTestimony == 10) {
+                      CloseTabTestimony();
+                    }
+                  }
+                }, 3 * ii);
+              }
+            }
+            if (ProtectTabElektronika == 10) {
+              CloseTabElektronika();
+            }
+          }
+          function CloseTabElektronika() {
+            for (let ii = 0; ii <= 100; ii++) {
+              taskElektronika(ii);
+            }
+            ProtectTabElektronika = 0;
+            $("#TabElektronika").slideToggle("fast");
+            function taskElektronika(ii) {
+              setTimeout(function () {
+                if (ii == 90) {
+                  taskElektronika2();
+                }
+              }, 2 * ii);
+            }
+            function taskElektronika2() {
+              for (let ii = 0; ii <= 100; ii++) {
+                taskElektronika3(ii);
+              }
+              function taskElektronika3(ii) {
+                setTimeout(function () {
+                  $(".S-2").css("width", 100 - ii + "%");
+                  $(".Tab-E-2").css("width", 100 - ii + "%");
+                  if (ii == 90) {
+                    $(".Tab-E-2").css("padding", "0px");
+                    $(".Tab-E-2").css("border", 0 + "px solid #fff");
+                    $(".S-2").css("border", 0 + "px solid #fff");
+                  }
+                  if (ii == 100 && ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+                    $("#E-E").slideToggle("fast");
+                  }
+                }, 2 * ii);
+              }
+            }
+          }
+          var ProtectTabKomputer = 0;
+          function OpenTabKomputer() {
+            if (ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+              $("#E-E").slideToggle("fast");
+            }
+            if (ProtectTabKomputer == 0) {
+              for (let ii = 0; ii <= 100; ii++) {
+                task(ii);
+              }
+              $(".Tab-E-3").css("padding", "1px");
+              function task(ii) {
+                setTimeout(function () {
+                  $(".S-3").css("border", 1 + "px solid #fff");
+                  $(".S-3").css("width", ii + "%");
+                  $(".Tab-E-3").css("width", ii + "%");
+                  $(".Tab-E-3").css("border", 1 + "px solid #fff");
+                  if (ii == 90) {
+                    $("#TabKomputer").slideToggle("medium");
+                    $("#PC").slideToggle("slow");
+                    $("#PC1").slideToggle("slow");
+                    ProtectTabKomputer = 10;
+                    if (ProtectTabKelistrikan == 10) {
+                      CloseTabKelistrikan();
+                    }
+                    if (ProtectTabElektronika == 10) {
+                      CloseTabElektronika();
+                    }
+                    if (ProtectTabNetwork == 10) {
+                      CloseTabNetwork();
+                    }
+                    if (ProtectTabProgramming == 10) {
+                      CloseTabProgramming();
+                    }
+                    if (ProtectTabTestimony == 10) {
+                      CloseTabTestimony();
+                    }
+                  }
+                }, 3 * ii);
+              }
+            }
+            if (ProtectTabKomputer == 10) {
+              CloseTabKomputer();
+            }
+          }
+          function CloseTabKomputer() {
+            for (let ii = 0; ii <= 100; ii++) {
+              taskKomputer(ii);
+            }
+            ProtectTabKomputer = 0;
+            $("#TabKomputer").slideToggle("fast");
+            $("#PC").slideToggle("fast");
+            $("#PC1").slideToggle("fast");
+            function taskKomputer(ii) {
+              setTimeout(function () {
+                if (ii == 90) {
+                  taskKomputer2();
+                }
+              }, 2 * ii);
+            }
+            function taskKomputer2() {
+              for (let ii = 0; ii <= 100; ii++) {
+                taskKomputer3(ii);
+              }
+              function taskKomputer3(ii) {
+                setTimeout(function () {
+                  $(".S-3").css("width", 100 - ii + "%");
+                  $(".Tab-E-3").css("width", 100 - ii + "%");
+                  if (ii == 90) {
+                    $(".Tab-E-3").css("padding", "0px");
+                    $(".Tab-E-3").css("border", 0 + "px solid #fff");
+                    $(".S-3").css("border", 0 + "px solid #fff");
+                  }
+                  if (ii == 100 && ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+                    $("#E-E").slideToggle("fast");
+                  }
+                }, 2 * ii);
+              }
+            }
+          }
+          var ProtectTabNetwork = 0;
+          function OpenTabNetwork() {
+            if (ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+              $("#E-E").slideToggle("fast");
+            }
+            if (ProtectTabNetwork == 0) {
+              for (let ii = 0; ii <= 100; ii++) {
+                task(ii);
+              }
+              $(".Tab-E-4").css("padding", "1px");
+              function task(ii) {
+                setTimeout(function () {
+                  $(".S-4").css("border", 1 + "px solid #fff");
+                  $(".S-4").css("width", ii + "%");
+                  $(".Tab-E-4").css("width", ii + "%");
+                  $(".Tab-E-4").css("border", 1 + "px solid #fff");
+                  if (ii == 90) {
+                    $("#TabNetwork").slideToggle("medium");
+                    ProtectTabNetwork = 10;
+                    if (ProtectTabKelistrikan == 10) {
+                      CloseTabKelistrikan();
+                    }
+                    if (ProtectTabElektronika == 10) {
+                      CloseTabElektronika();
+                    }
+                    if (ProtectTabKomputer == 10) {
+                      CloseTabKomputer();
+                    }
+                    if (ProtectTabProgramming == 10) {
+                      CloseTabProgramming();
+                    }
+                    if (ProtectTabTestimony == 10) {
+                      CloseTabTestimony();
+                    }
+                  }
+                }, 3 * ii);
+              }
+            }
+            if (ProtectTabNetwork == 10) {
+              CloseTabNetwork();
+            }
+          }
+          function CloseTabNetwork() {
+            for (let ii = 0; ii <= 100; ii++) {
+              taskNetwork(ii);
+            }
+            ProtectTabNetwork = 0;
+            $("#TabNetwork").slideToggle("fast");
+            function taskNetwork(ii) {
+              setTimeout(function () {
+                if (ii == 90) {
+                  taskNetwork2();
+                }
+              }, 2 * ii);
+            }
+            function taskNetwork2() {
+              for (let ii = 0; ii <= 100; ii++) {
+                taskNetwork3(ii);
+              }
+              function taskNetwork3(ii) {
+                setTimeout(function () {
+                  $(".S-4").css("width", 100 - ii + "%");
+                  $(".Tab-E-4").css("width", 100 - ii + "%");
+                  if (ii == 90) {
+                    $(".Tab-E-4").css("padding", "0px");
+                    $(".Tab-E-4").css("border", 0 + "px solid #fff");
+                    $(".S-4").css("border", 0 + "px solid #fff");
+                  }
+                  if (ii == 100 && ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+                    $("#E-E").slideToggle("fast");
+                  }
+                }, 2 * ii);
+              }
+            }
+          }
+          var ProtectTabProgramming = 0;
+          function OpenTabProgramming() {
+            if (ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+              $("#E-E").slideToggle("fast");
+            }
+            if (ProtectTabProgramming == 0) {
+              for (let ii = 0; ii <= 100; ii++) {
+                task(ii);
+              }
+              $(".Tab-E-5").css("padding", "1px");
+              function task(ii) {
+                setTimeout(function () {
+                  $(".S-5").css("border", 1 + "px solid #fff");
+                  $(".S-5").css("width", ii + "%");
+                  $(".Tab-E-5").css("width", ii + "%");
+                  $(".Tab-E-5").css("border", 1 + "px solid #fff");
+                  if (ii == 90) {
+                    $("#TabProgramming").slideToggle("medium");
+                    ProtectTabProgramming = 10;
+                    if (ProtectTabElektronika == 10) {
+                      CloseTabElektronika();
+                    }
+                    if (ProtectTabNetwork == 10) {
+                      CloseTabNetwork();
+                    }
+                    if (ProtectTabKomputer == 10) {
+                      CloseTabKomputer();
+                    }
+                    if (ProtectTabKelistrikan == 10) {
+                      CloseTabKelistrikan();
+                    }
+                    if (ProtectTabTestimony == 10) {
+                      CloseTabTestimony();
+                    }
+                  }
+                }, 3 * ii);
+              }
+            }
+            if (ProtectTabProgramming == 10) {
+              CloseTabProgramming();
+            }
+          }
+          function CloseTabProgramming() {
+            for (let ii = 0; ii <= 100; ii++) {
+              taskProgramming(ii);
+            }
+            ProtectTabProgramming = 0;
+            $("#TabProgramming").slideToggle("fast");
+            function taskProgramming(ii) {
+              setTimeout(function () {
+                if (ii == 90) {
+                  taskProgramming2();
+                }
+              }, 2 * ii);
+            }
+            function taskProgramming2() {
+              for (let ii = 0; ii <= 100; ii++) {
+                taskProgramming3(ii);
+              }
+              function taskProgramming3(ii) {
+                setTimeout(function () {
+                  $(".S-5").css("width", 100 - ii + "%");
+                  $(".Tab-E-5").css("width", 100 - ii + "%");
+                  if (ii == 90) {
+                    $(".Tab-E-5").css("padding", "0px");
+                    $(".Tab-E-5").css("border", 0 + "px solid #fff");
+                    $(".S-5").css("border", 0 + "px solid #fff");
+                  }
+                  if (ii == 100 && ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+                    $("#E-E").slideToggle("fast");
+                  }
+                }, 2 * ii);
+              }
+            }
+          }
+
+          var ProtectTabTestimony = 0;
+          function OpenTabTestimony() {
+            if (ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+              $("#E-E").slideToggle("fast");
+            }
+            if (ProtectTabTestimony == 0) {
+              for (let ii = 0; ii <= 100; ii++) {
+                task(ii);
+              }
+              $(".Tab-E-6").css("padding", "1px");
+              function task(ii) {
+                setTimeout(function () {
+                  $(".S-6").css("border", 1 + "px solid #fff");
+                  $(".S-6").css("width", ii + "%");
+                  $(".Tab-E-6").css("width", ii + "%");
+                  $(".Tab-E-6").css("border", 1 + "px solid #fff");
+                  if (ii == 90) {
+                    $("#TabTestimony").slideToggle("medium");
+                    ProtectTabTestimony = 10;
+                    if (ProtectTabElektronika == 10) {
+                      CloseTabElektronika();
+                    }
+                    if (ProtectTabNetwork == 10) {
+                      CloseTabNetwork();
+                    }
+                    if (ProtectTabKomputer == 10) {
+                      CloseTabKomputer();
+                    }
+                    if (ProtectTabProgramming == 10) {
+                      CloseTabProgramming();
+                    }
+                    if (ProtectTabKelistrikan == 10) {
+                      CloseTabKelistrikan();
+                    }
+                  }
+                }, 3 * ii);
+              }
+            }
+            if (ProtectTabTestimony == 10) {
+              CloseTabTestimony();
+            }
+          }
+          function CloseTabTestimony() {
+            for (let ii = 0; ii <= 100; ii++) {
+              taskTestimony(ii);
+            }
+            ProtectTabTestimony = 0;
+            $("#TabTestimony").slideToggle("fast");
+            function taskTestimony(ii) {
+              setTimeout(function () {
+                if (ii == 90) {
+                  taskTestimony2();
+                }
+              }, 2 * ii);
+            }
+            function taskTestimony2() {
+              for (let ii = 0; ii <= 100; ii++) {
+                taskTestimony3(ii);
+              }
+              function taskTestimony3(ii) {
+                setTimeout(function () {
+                  $(".S-6").css("width", 100 - ii + "%");
+                  $(".Tab-E-6").css("width", 100 - ii + "%");
+                  if (ii == 90) {
+                    $(".Tab-E-6").css("padding", "0px");
+                    $(".Tab-E-6").css("border", 0 + "px solid #fff");
+                    $(".S-6").css("border", 0 + "px solid #fff");
+                  }
+                  if (ii == 100 && ProtectTabElektronika == 0 && ProtectTabNetwork == 0 && ProtectTabKomputer == 0 && ProtectTabProgramming == 0 && ProtectTabTestimony == 0 && ProtectTabKelistrikan == 0) {
+                    $("#E-E").slideToggle("fast");
+                  }
+                }, 2 * ii);
+              }
+            }
+          }
+        }
       </script>
     </div>
-    <div style="display:flex; justify-content: center; align-items: center;">
-      <div style="width: 20%; ">
-        <div style=" text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
-          <div class="JPicture6">
-            <img style="width: 90%; " id="Orang" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5mdgKW0r5j2KslxA/root/content">
-          </div>
-          <div style="padding-bottom: 20px;">
-            Electrical
-          </div>
-          <div class="Explanation">
-            List of Electrical Components in General Electrical Panels.<br>
-            List of Electrical Components at the Substation.
+    <div>
+      <div class="Judul" id="JBlog"
+        style="margin: 5px 0px 5px 0px; padding-bottom: 10px; background-color:rgb(32, 32, 32);  "> My Blog
+        <script>
+          document.getElementById("JBlog").style.fontSize = window.innerWidth / 25 + "px";
+        </script>
+      </div>
+      <div class="Tab-Isi" style="display:flex; justify-content: center; align-items: center;">
+        <div class="SProject">
+          <div class="Separator" style=" text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture6">
+              <img style="width: 90%; " id="Orang" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5mdgKW0r5j2KslxA/root/content">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Electrical
+            </div>
+
           </div>
         </div>
-      </div>
-      <div style="width: 20%;  ">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
-          <div class="JPicture6">
-            <img style="width: 90%;" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5kYbhoXGIFsn3czw/root/content">
-          </div>
-          <div style="padding-bottom: 20px;">
-            Electronics
-          </div>
-          <div class="Explanation">
-            List of General Electronic Components.<br>
-            A list of electronic modules and components I've tested.
+        <div class="SProject">
+          <div class="Separator" style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture6">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5kYbhoXGIFsn3czw/root/content">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Electronics
+            </div>
+
           </div>
         </div>
-      </div>
-      <div style="width: 20%; ">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
-          <div class="JPicture6">
-            <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5nb9jtCrF-y-U2fg/root/content">
-          </div>
-          <div style="padding-bottom: 20px;">
-            Computer
-          </div>
-          <div class="Explanation">
-            List of Computer Components in General.
-          </div>
-        </div>
-      </div>
-      <div style="width: 20%;  ">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
-          <div class="JPicture6">
-            <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5lMFKrIyN3GA2nQQ/root/content">
-          </div>
-          <div style="padding-bottom: 20px; ">
-            Network</div>
-          <div class="Explanation">
-            List of common local area network components.
+        <div class="SProject">
+          <div class="Separator" style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture6">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5nb9jtCrF-y-U2fg/root/content">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Computer
+            </div>
+
           </div>
         </div>
-      </div>
-      <div style="width: 20%;  ">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
-          <div class="JPicture6">
-            <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5jv4Ow4dg0uI4ZBA/root/content">
+        <div class="SProject">
+          <div class="Separator" style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture6">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5lMFKrIyN3GA2nQQ/root/content">
+            </div>
+            <div style="padding-bottom: 20px; ">
+              Network</div>
           </div>
-          <div style="padding-bottom: 20px;">
-            Programming</div>
-          <div class="Explanation">
-            List of Programs I've ever made.
+        </div>
+        <div class="SProject">
+          <div class="Separator" style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture6">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5jv4Ow4dg0uI4ZBA/root/content">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Programming</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="Tab">
-    <div class="Judul1" style="text-align:center;">
-      Please try my project, you can control the equipment from the website anywhere and anytime
-    </div>
-    <div style="display:flex;">
-      <a style="width: 33.33%; " href="https://muhamad-bekti-wibowo.000webhostapp.com/" target="_blank">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
-          <div class="JPicture6">
-            <img style="width: 100%; margin: auto; " class="Kotak" id="Orang" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga57Hp2FsoSWR_iP_g/root/content">
-          </div>
-          <div style="padding-bottom: 20px;">
-            Demo Smart Home
-          </div>
-          <div class="Explanation">
-            Control equipment with website anytime anywhere.
-          </div>
-        </div>
-      </a>
-      <div style="width: 33.33%;  ">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
-          <div class="JPicture6">
-            <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga55BsnXtXkPxa30WA/root/content">
-          </div>
-          <div style="padding-bottom: 20px;">
-            Demo Smart Room
-          </div>
-          <div class="Explanation">
-            In Development.
-          </div>
-        </div>
+    <div>
+      <div class="JDemo" style="text-align: justify; padding: 20px;">
+        Please try my project, you can control the equipment from the website anywhere and anytime
       </div>
-      <div style="width: 33.33%; ">
-        <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
-          <div class="JPicture6">
-            <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga59BjY3ivclzspaxQ/root/content">
+      <div class="Tab-Isi" style="display:flex; justify-content: center;">
+
+        <a class="SDemo" href="https://muhamad-bekti-wibowo.000webhostapp.com/" target="_blank">
+          <div class="Separator" style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture6">
+              <img style="width: 100%; margin: auto; " class="Kotak" id="Orang"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga57Hp2FsoSWR_iP_g/root/content">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Demo Smart Home
+            </div>
+            <div class="Explanation">
+              Control equipment with website anytime anywhere.
+            </div>
           </div>
-          <div style="padding-bottom: 20px;">
-            Demo Smart Bell
-          </div>
-          <div class="Explanation">
-            In Development.
+        </a>
+        <div class="SDemo">
+          <div class="Separator" style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture6">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga55BsnXtXkPxa30WA/root/content">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Demo Smart Room
+            </div>
+            <div class="Explanation">
+              In Development.
+            </div>
           </div>
         </div>
+        <div class="SDemo">
+          <div class="Separator" style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
+            <div class="JPicture6">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga59BjY3ivclzspaxQ/root/content">
+            </div>
+            <div style="padding-bottom: 20px;">
+              Demo Smart Bell
+            </div>
+            <div class="Explanation">
+              In Development.
+            </div>
+          </div>
+        </div>
+
       </div>
-
-
     </div>
 
     <div class="TabShop">
@@ -518,16 +1344,23 @@
       </div>
       <script>
         $(document).ready(function () {
-          $(".JPicture8").css("width", window.outerWidth * 9 / 100 + "px");
-          $(".JPicture8").css("height", window.outerWidth * 11 / 100 + "px");
-
-          $(".CShop").css("height", window.outerWidth * 22 / 100 + "px");
+          if (window.outerWidth < 800) {
+            $(".JPicture8").css("width", window.outerWidth * 6.5 / 100 + "px");
+            $(".JPicture8").css("height", window.outerWidth * 11 / 100 + "px");
+          }
+          else {
+            $(".CShop").css("width", window.outerWidth * 15 / 100 + "px");
+            $(".CShop").css("height", window.outerWidth * 38 / 100 + "px");
+            $(".JPicture8").css("width", window.outerWidth * 110 / 1000 + "px");
+            $(".JPicture8").css("height", window.outerWidth * 220 / 1000 + "px");
+          }
         }); </script>
-      <div style="display:flex;">
-        <div class="CShop" style="width: 12.5%;">
-          <div style="width: 98%; ">
+      <div style="display:flex; flex-wrap: wrap; justify-content: center;">
+        <div class="CShop">
+          <div style="width: 96%; ">
             <div class="JPicture8">
-              <img style="width: 70%; margin: auto; " class="Kotak" id="Orang" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5mdgKW0r5j2KslxA/root/content">
+              <img style="width: 70%; margin: auto; " class="Kotak" id="Orang"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5mdgKW0r5j2KslxA/root/content">
             </div>
             <div style="padding-bottom: 20px;">
               Electrical Products
@@ -537,10 +1370,11 @@
             </div>
           </div>
         </div>
-        <div class="CShop" style="width: 12.5%; ">
+        <div class="CShop">
           <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
             <div class="JPicture8">
-              <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5kYbhoXGIFsn3czw/root/content">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5kYbhoXGIFsn3czw/root/content">
             </div>
             <div style="padding-bottom: 20px;">
               Electronic Products
@@ -550,10 +1384,11 @@
             </div>
           </div>
         </div>
-        <div class="CShop" style="width: 12.5%;">
+        <div class="CShop">
           <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
             <div class="JPicture8">
-              <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5nb9jtCrF-y-U2fg/root/content">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5nb9jtCrF-y-U2fg/root/content">
             </div>
             <div style="padding-bottom: 20px;">
               Products for Computers
@@ -563,10 +1398,11 @@
             </div>
           </div>
         </div>
-        <div class="CShop" style="width: 12.5%;">
+        <div class="CShop">
           <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
             <div class="JPicture8">
-              <img style="width: 90%; margin: auto; " class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5lMFKrIyN3GA2nQQ/root/content">
+              <img style="width: 90%; margin: auto; " class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga5lMFKrIyN3GA2nQQ/root/content">
             </div>
             <div style="padding-bottom: 20px;">
               Products for Networks
@@ -576,10 +1412,11 @@
             </div>
           </div>
         </div>
-        <div class="CShop" style="width: 12.5%; ">
+        <div class="CShop">
           <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
             <div class="JPicture8">
-              <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga53fs86MBBz_L74ng/root/content">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga53fs86MBBz_L74ng/root/content">
             </div>
             <div style="padding-bottom: 20px;">
               Product Made By Me
@@ -589,10 +1426,11 @@
             </div>
           </div>
         </div>
-        <div class="CShop" style="width: 12.5%;">
+        <div class="CShop">
           <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
             <div class="JPicture8">
-              <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga54C7TCAIYnYb689w/root/content">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga54C7TCAIYnYb689w/root/content">
             </div>
             <div style="padding-bottom: 20px;">
               Plant Products
@@ -602,10 +1440,11 @@
             </div>
           </div>
         </div>
-        <div class="CShop" style="width: 12.5%; ">
+        <div class="CShop">
           <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
             <div class="JPicture8">
-              <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga55BsnXtXkPxa30WA/root/content">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga55BsnXtXkPxa30WA/root/content">
             </div>
             <div style="padding-bottom: 20px;">
               Accessories product
@@ -615,10 +1454,11 @@
             </div>
           </div>
         </div>
-        <div class="CShop" style="width: 12.5%;">
+        <div class="CShop">
           <div style="text-align: center; width: 98%; background-color: rgb(31, 31, 31); ">
             <div class="JPicture8">
-              <img style="width: 90%;" class="Kotak" src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga55BsnXtXkPxa30WA/root/content">
+              <img style="width: 90%;" class="Kotak"
+                src="https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga55BsnXtXkPxa30WA/root/content">
             </div>
             <div style="padding-bottom: 20px;">
               Food Product
@@ -636,214 +1476,30 @@
 
     <body>
 
-      <div class="display" id="Konsultasi">
-        <div class="Text" id="Konsultasi">
-          <li class="konsul">Contact Me...</li>
-          <div>
-            <a href="https://wa.me/088212711176" title="WhatsApp"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPn_HLOX5NVut-8hd1D_MSsvioVVujfyLmTJYN91wnCOzRbb4fYJmZKI7EIjBLJ0KF-ID0lWHRWNuNuVH3z_dqTITEg2gLB0-Ydh7Vlu2yXW9MqWE6PKtIxO1gBw71pvaxtXGKguk3okziojoz4jiELBhvYUCx_Ed4tkpj1pVVk__iyj5TGcadSCjs1A/s1600/watsap.png" />&nbsp;
-              <li class="konsul">WhatsApp</li>
-            </a>
-          </div>
-          <div>
-            <a href="https://t.me/MBektiW" title="Telegram"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHbgQEjlD6WN_rpb1qO3wXj0MpqZXNfB1wlyQ9g624qJ-uYPGHDk7kNYOHNZCF5JzpVXtij10-5COsgOdmdopUsMnYoAxCekKg_ukPQMlTEfKXd250vghEQTXnuzRKAvplMCee7BheEtOAQxhFJ9PzzNEMYkWANOynKW4faBMPrCg0nJOEG7OiHhpdhA/s16/telegram.png" />&nbsp;
-              <li class="konsul">Telegram</li>
-            </a>
-          </div>
-          <div>
-            <a href="https://m.me/Muhamad.bekti.Wibowo" title="Facebook Messengger"><img height="16" id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRbmA3pInt-3irdVZncHtQwNB_Nnti64TmC0rsm2jBRKGDWNt4yDd9-AV4Q7SCHIUCGfHINlCEYLpnXLeWkXGwUkF-Q0xFTs0_P8HvyQA1W2kZNO8dfnQSTIgah20RHq6nRa_116dBHH2x1zUanf0Di4HSaAsvhOrHiyjLfrKAnx8z_5P8VEa3MB9llQ/s1600/facebook-messenger.png"
-                width="16" />&nbsp;<li class="konsul">Facebook
-                Messenger</li></a><br />
-          </div>
-        </div>
-
-        <div class="Text" id="Konsultasi">
-          <li class="konsul">Follow Me...</li>
-          <div>
-            <a href="www.facebook.com/muhamad.bektiwibowo" title="Facebook"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVE7C8Lty9MOI94v_L5GUYmgDPzGjGuDoiMz96M3ciFo4a2htNEI9O6dxo40e2QaZWU41razWxRdiPTEsR5IG1yWPPSkKFiaJXj6rKqC7Qw7Q3LLeqZ3mrTuI-CJQt_dwdvGvdCma3fk4-Y6g4VKpKvFcmZpsB7bipUtDynM4wef-pOTN0fZS03OVIpg/s1600/facebook.png" />&nbsp;
-              <li class="Sosmed">Facebook</li>
-            </a>
-
-          </div>
-          <div>
-            <a href="https://www.instagram.com/muhamadbekti.wibowo" title="Instagram"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLes64W42hPn_14sxvbMgEa3J2AWQOaTFd3RGqM3lFNmEiFoqTdLH-cNYz2MfWC9ot_BeX4CSdCQ0_N3yjFbRgEH29UmmrUcEvKFZbsV5aCyNVnRrv5yNsMn5V60TgCpHMCaCJBhq96g5cXZ05R7shaySnunCFVKcl2xi2HjJxeh_ITE7-RrIBGlcoWw/s1600/instagram.png" />&nbsp;
-              <li class="Sosmed">Instagram</li>
-            </a>
-
-          </div>
-          <div>
-            <a href="https://www.tiktok.com/@muhamadbektiwibowo" title="Tik Tok"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhErR7XRNo_iDM9-0CMG7dxpVxe9_OJXOwD1O2hoOtAnaz6j7l-RE9RQXnLT_kouFQPEi0-yT5NWVAN6Ki52P9HUhHwBSosGtfRfvs5pdYg3RdFO1obp-LIj4_9th91aRqTdJ6VxqdTApY9B4cMh-c5qv8sOKF7bEM6r4zQKUaPYDvo7tSszcjfi7er0g/s1600/tiktok.png" />&nbsp;
-              <li class="Sosmed">Tik Tok</li>
-            </a>
-          </div>
-        </div>
-
-        <div class="Text" id="Konsultasi">
-          <li class="konsul">Konten By Me...</li>
-          <div>
-            <a href="https://muhamad-bekti-wibowo.blogspot.com" title="Blog"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYEvcRwYMixI7HmozkUi8AePvBcuEFhh3ZfT2rGNTFJzoXhNjSRIbkzrHHO02FCLxymT-leZTfPAhR8V3Qv7TLOJwjXPfw2izfr3TX4orxu5YvzMa23Lc4udtToakqiQ4lb4lmvwLZM9P1TT0yDHM5EKZMwPe226CZovMgUF92nBVmAZ-jEQF46etTPg/s1600/blog.png" />&nbsp;
-              <li class="Konten">Blog</li>
-            </a>
-          </div>
-          <div>
-            <a href="https://www.youtube.com/@muhamad-bekti-wibowo" title="Youtube"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkz__6cDsyDDLJsMMubzbVflGyIdZPBwvPJFmzmrN-FHRxW2REneUr6ZPtOpayK5ZtDbJhWge1_-7XAM6uH6tdhfPilJAkmcgCQAK3SmQFgDCaKYtQi4k63-fh8Zm0sk3bif0RrkZ8UmnZKP4NB1Aw3chY_7K8G5mQGkpi6EdzH4aRLMGyYGBg_GaZkg/s16000/youtube.png" />&nbsp;
-              <li class="Konten">Youtube</li>
-            </a>
-          </div>
-          <div>
-            <a href="https://github.com/muhamad-bekti-wibowo" title="Youtube"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkz__6cDsyDDLJsMMubzbVflGyIdZPBwvPJFmzmrN-FHRxW2REneUr6ZPtOpayK5ZtDbJhWge1_-7XAM6uH6tdhfPilJAkmcgCQAK3SmQFgDCaKYtQi4k63-fh8Zm0sk3bif0RrkZ8UmnZKP4NB1Aw3chY_7K8G5mQGkpi6EdzH4aRLMGyYGBg_GaZkg/s16000/youtube.png" />&nbsp;
-              <li class="Konten">GitHub</li>
-            </a>
-          </div>
-        </div>
-        <div class="Text" id="Konsultasi">
-          <li class="konsul">Product By Me...</li>
-          <div>
-            <a href="https://shopee.co.id/muhamadbektiwibowo" title="Shopee"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVx0sNnkV2aNwTYK-IfaVKYs9fr4HtaMH8dAsf2TVMIpz4j60VcjrTtHVChdiEMhfJDEE7iiSTZijXUoUClETtr5p9-yE7_4BFDu-iXD9iO0ZT7_sriENa1-V7cb8uVurVqQAU3WKYs46rq3Hal2kmJUdJ-SNPqhuUoSRCK_b9cVR90lpKrLNo5fS16w/s1600/shope.png" />&nbsp;
-              <li class="Toko">Shopee</li>
-            </a>
-          </div>
-          <div>
-            <a href="https://shopee.co.id/muhamadbektiwibowo" title="Toko di blog"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYEvcRwYMixI7HmozkUi8AePvBcuEFhh3ZfT2rGNTFJzoXhNjSRIbkzrHHO02FCLxymT-leZTfPAhR8V3Qv7TLOJwjXPfw2izfr3TX4orxu5YvzMa23Lc4udtToakqiQ4lb4lmvwLZM9P1TT0yDHM5EKZMwPe226CZovMgUF92nBVmAZ-jEQF46etTPg/s1600/blog.png" />&nbsp;
-              <li class="Toko">Toko di Blog</li>
-            </a>
-          </div>
-          <div> <a href="https://shopee.co.id/muhamadbektiwibowo" title="Shopee"><img id="tautan"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVx0sNnkV2aNwTYK-IfaVKYs9fr4HtaMH8dAsf2TVMIpz4j60VcjrTtHVChdiEMhfJDEE7iiSTZijXUoUClETtr5p9-yE7_4BFDu-iXD9iO0ZT7_sriENa1-V7cb8uVurVqQAU3WKYs46rq3Hal2kmJUdJ-SNPqhuUoSRCK_b9cVR90lpKrLNo5fS16w/s1600/shope.png" />&nbsp;
-              <li class="Toko">Website</li>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="display" id="Konsultasi">
-        <div class="Text-Kanan" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
-            <li class="Data-Free">Koleksi Me...</li>
-        </div>
-        <div>
-          </a><a href="https://drive.google.com/drive/folders/18J1ZBaUhDTAq0q4G-koLkY3eNM6rBsKB" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
-            <li class="Data-Free">Data Sheet </li>
-          </a>
-
-
-        </div>
-        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
-            <li class="Data-Free">...</li>
-        </div>
-        <div>
-          </a><a href="https://drive.google.com/drive/u/1/folders/1Ap1plemhbPigrbRau6pEVav27ScygiC4" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
-            <li class="Data-Free">Program Pendukung</li>
-          </a>
-
-
-        </div>
-        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
-            <li class="Data-Free">...</li>
-
-          </a><a href="https://drive.google.com/drive/folders/17ekq8yaImmQHhflgfFvDhNlbHU6kygsD" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
-            <li class="Data-Free">Liblary Arduino</li>
-          </a>
-
-
-        </div>
-        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
-            <li class="Data-Free">...</li>
-
-          </a><a href="https://drive.google.com/drive/folders/18pZEb3JIcBuFdzMOM0W8zVH3nOtxFLCz" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
-            <li class="Data-Free">Skema</li>
-          </a>
-
-
-        </div>
-        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
-            <li class="Data-Free">...</li>
-
-          </a><a href="https://drive.google.com/drive/folders/1p9NIZPOYD4cb0rxvSpUIOLmIVp9GgQUV" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
-            <li class="Data-Free">Program Arduino</li>
-          </a>
-
-
-        </div>
-        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
-            <li class="Data-Free">...</li>
-
-          </a><a href="https://drive.google.com/drive/folders/1bw2F-4wlqWNLwhnpA6BwDpDSlulDLFHR" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
-            <li class="Data-Free">Rumus dalam Excel</li>
-          </a>
-
-
-        </div>
-        <div class="Text-Tengah" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
-            <li class="Data-Free">...</li>
-
-          </a><a href="https://drive.google.com/drive/u/1/folders/1nkaMDoX_8OppSktkJ600s9p1EZSHHKv3" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
-            <li class="Data-Free">Script Mikrotik</li>
-          </a>
-
-
-        </div>
-
-        <div class="Text-Kiri" id="Konsultasi"><a href="https://stat-upgrade.blogspot.com" title="Blog"><img id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6OeSLeDWKvishjKXVgqtElI6pKOwWzCftbqPTRCZOhijSx5yBIPJ77bGitYJ7cAYMwThQaddGjSXKpD1gmc_LSxYiytkFqTB3YNJIxZie-D2nAbTileUNm75e3jPc2RP4hxgRQxLrisyOxtuY3Th4LLuFOLeRNJ8jrwndltLpdoVEmU4G8tIohSsfQw/s4199/OneDrive-Logo1.png" />&nbsp;
-            <li class="Data-Free">...</li>
-
-          </a><a href="https://drive.google.com/drive/u/1/folders/1MOfZX-Zqhs9-IKcNIZGDpwJCn-jmYHXk" title="Blog"><img
-              id="tautan"
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwVk6GhPF66yisjHRjStkxu9EwKN7y_CchwxyEEnIt8LXFdL_nUETTibcAP1kmmbVMaadnr3kDuBdemmSnjirRmAFLOh_zECnIJ9fb3n_5sMUb8Ya042EwIgKLy5Il94W246KcVnFYU3XJdMzHdC7mV2Ew6FodNpVmpsROHN9tqvLtaiHW_eYF6j1z4w/s229/google-drive.png" />&nbsp;
-            <li class="Data-Free">Freeware</li>
-          </a>
-        </div>
-      </div>
+      <div class="Footter"></div>
   </div>
+
   </body>
   <script>
     $(document).ready(
       function () {
         $("#List-Modul-Komponen").load("General-Electronic-Components.html");
         $("#PC").load("PC.html");
-        $("#Hasil-Programming").load("Programming.html");
+        $("#TabProgramming").load("Programming.html");
+        $("#Tab1Programming").load("Programming.html");
 
       });
 
 
 
+  </script>
+  <script>
+    $(document).ready(
+      function () {
+        $(".First-Content-Section").load("https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga8SNVVIekqX5esr8w/root/content");
+        $(".Second-Content-Section").load("https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga8WwzM8ShM1Pg6WMw/root/content");
+        $(".Footter").load("https://api.onedrive.com/v1.0/shares/s!AuOxR9BjfloLga8AXc6G7yt-O6IICA/root/content");
+      });
   </script>
 
 </html>
