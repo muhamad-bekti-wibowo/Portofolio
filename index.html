@@ -269,9 +269,10 @@
     }
   </style>
 </head>
-<div id="LockScreen" class="LockScreen" style="text-align: center; font-size: 50px;"> <span id="LoadingLockScreen"
+<!--<div id="LockScreen" class="LockScreen" style="text-align: center; font-size: 50px;"> <span id="LoadingLockScreen"
     class="Kotak"></span>
   <script>
+    var LoadingSelesai=0;
     $(document).ready(function () {
       for (let a = 0; a <= 100; a++) {
         task(a);
@@ -280,6 +281,9 @@
         setTimeout(function () {
           if (a > 30) {
             if (a > 50) {
+              if (a > 99) { LoadingSelesai = 100 ;
+
+              }
               $(".LockScreen").css("opacity", 100 - a + "%");
             }
             $(".LockScreen").css("margin", ` ` + a + `% 0px 0px 0px`);
@@ -387,7 +391,7 @@
                 </script>
                 <style>
                   @media (min-width: 900px) {
-                    .TabIntegratedKelistrikan {
+                    #TabIntegratedKelistrikan {
                       display: none;
                     }
                   }
@@ -406,7 +410,8 @@
           </div>
           <div style="padding-bottom: 20px;">
             Electronics
-            <ul id="TabIntegratedElektronika" class="d-none">
+            <div id="TabIntegratedElektronika">
+            <ul  class="d-none">
               <li>List of Electronic Components I Know.</li>
               <li>List of Modules and Components I've Tested.</li>
               <li>Create your own electronic product.</li>
@@ -416,11 +421,11 @@
               function TabElektronika() {
                 $("#TabIntegratedElektronika").slideToggle("fast");
               }
-            </script>
+            </script></div>
           </div>
           <style>
             @media (min-width: 900px) {
-              .TabIntegratedElektronika {
+              #TabIntegratedElektronika {
                 display: none;
               }
             }
@@ -444,9 +449,9 @@
           </div>
           <div style="padding-bottom: 20px;">
             Computer
-            <div class="TabIntegratedKomputer">
-              <ul id="PC" class="d-none D-J"></ul>
-              <ul id="PC1" class="d-none D-J">
+            <div id="TabIntegratedKomputer">
+              <ul id="PCX" class="d-none D-J"></ul>
+              <ul id="PCX1" class="d-none D-J">
                 I Can Also Use Several Office Applications Like:
                 <ul>
                   <li>Adobe Photoshop </li>
@@ -461,15 +466,15 @@
             </div>
             <style>
               @media (min-width: 900px) {
-                .TabIntegratedKomputer {
+                #TabIntegratedKomputer {
                   display: none;
                 }
               }
             </style>
             <script>
               function TabKomputer() {
-                $("#PC").slideToggle("fast");
-                $("#PC1").slideToggle("fast");
+                $("#PCX").slideToggle("fast");
+                $("#PCX1").slideToggle("fast");
 
               }
               function TabCreateNetwork() {
@@ -492,7 +497,7 @@
           </div>
           <div style="padding-bottom: 20px; ">
             Network
-            <div class="TabIntegratedNetwork">
+            <div id="TabIntegratedNetwork">
               <ul id="TabNetworking" class="d-none">
                 <li>Mikrotik Configuration.</li>
                 <li>Router Configuration</li>
@@ -522,7 +527,7 @@
               </ul>
               <style>
                 @media (min-width: 900px) {
-                  .TabIntegratedNetwork {
+                  #TabIntegratedNetwork {
                     display: none;
                   }
                 }
@@ -540,7 +545,7 @@
           </div>
           <div style="padding-bottom: 20px;">
             Programming
-            <div class="TabIntegratedProgramming">
+            <div id="TabIntegratedProgramming">
               <div id="Tab1Programming" class="d-none"></div>
               <script>
 
@@ -550,7 +555,7 @@
               </script>
               <style>
                 @media (min-width: 900px) {
-                  .TabIntegratedProgramming {
+                  #TabIntegratedProgramming {
                     display: none;
                   }
                 }
@@ -567,13 +572,21 @@
           </div>
           <div style="padding-bottom: 20px;">
             Testimony</div>
-          <div id="Tab1Testimony" class="d-none"> <iframe allowfullscreen="" style=" width: 100%; height: 900px;"
+            <div id="TabIntegratedTestimony">
+          <div id="Testimony" class="d-none"> <iframe allowfullscreen="" style=" width: 100%; height: 900px;"
               src="https://www.youtube.com/embed/vMTnlGcAGHA" youtube-src-id="vMTnlGcAGHA"></iframe>
             <script>
               function TabTestimony() {
-                $("#Tab1Testimony").slideToggle("fast");
+                $("#Testimony").slideToggle("fast");
               }
             </script>
+             <style>
+                @media (min-width: 900px) {
+                  #TabIntegratedTestimony {
+                    display: none;
+                  }
+                }
+              </style></div>
           </div>
         </div>
       </div>
